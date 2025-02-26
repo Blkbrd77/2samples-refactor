@@ -1,8 +1,21 @@
 {
-    "name": "Travel Blog Dev",
-    "image": "mcr.microsft.com/vscode/devcontainers/python:3.12.8",
-    "features": {"ghcr.io/devcontainers/features/python:1":{"version":"3.11"}},
-    "forwardPorts": [5000],
-    "postCreateCommand": "pip install flask"
-}
-
+    "name": "Python 3 and Flask",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "features": {
+      "ghcr.io/devcontainers/features/python": {
+        "version": "3.11"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "ms-python.vscode-pylance",
+          "visualstudioexptteam.vscodeintellicode"
+        ]
+      }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+     "forwardPorts": [5000],
+     "appPort": [5000]
+  }
