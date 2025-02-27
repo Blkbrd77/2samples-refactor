@@ -10,7 +10,7 @@ def home ():
         <link rel="stylesheet" href="/static/style.css">
     </head>
     <body>
-        <h1>Welcome to 2samples Travels!</h1>
+        <h1 class="header">Welcome to 2samples Travels!</h1>
         <p>Stories from the road, coming soon. <a href="/stories">Check out our stories!</a></p>
     </body>
     </html>
@@ -24,7 +24,7 @@ def stories():
        <link rel="stylesheet" href="/static/style.css">
     </head>
     <body>
-        <h1>Travel Stories</h1>
+        <h1 class="header">Travel Stories</h1>
         <p>Check out our latest tale: <a href="/stories/1">A Greek Island Adventure!</a></p>
     </body>
     </html>
@@ -36,11 +36,11 @@ def story_1():
    <html>
    <head>
         <link rel="stylesheet" href="/static/style.css">
-    <head>
+    </head>
     <body>
-        <h1>Greek Island Adventure!</h1>
+        <h1 class="header">Greek Island Adventure!</h1>
         <p>We cruised the Greek Island Glow with Virgin Voyages!!</p>
-        <body>
+        </body>
         </html>
    """
    

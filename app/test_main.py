@@ -8,6 +8,8 @@ def test_home_page():
     assert b"Welcome" in response.data #Check "Welcome" is in the page
     assert b'href="/stories"' in response.data # Check for the link
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data # Check for external CSS 
+    assert b'class="header"' in response.data #Check for header
+    
 
 
 def test_stories_page():

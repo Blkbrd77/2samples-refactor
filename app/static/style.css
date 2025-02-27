@@ -6,3 +6,15 @@ body {
 h1 {
     color:#8B4513;  /* Saddle brown */
 }
+.header {
+    background-color: #D2B48C; /* Tan, for a warm header */
+    padding: 10px;
+    text-align: center;
+}
+a {
+    color: #4682B4;           /* Steel blue for links */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline; /* Hover effect */
+}
