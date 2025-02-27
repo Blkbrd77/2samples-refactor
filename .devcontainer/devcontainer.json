@@ -12,7 +12,8 @@
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
-                "visualstudioexptteam.vscodeintellicode"
+                "visualstudioexptteam.vscodeintellicode",
+                "ecmel.vscode-html-css"  // Added HTML helper
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/workspaces/2samples-refactor/venv/bin/python3"
