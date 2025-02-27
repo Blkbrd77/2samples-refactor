@@ -2,7 +2,7 @@
 # Usage: pip install -r requirements.txt
 
 # Flask Framework
-Flask==1.0.2
+Flask==2.0.3
 
 # Flask Packages
 Flask-Login==0.4.0
@@ -15,3 +15,11 @@ Flask-User==1.0.1.5
 # Automated tests
 pytest==3.0.5
 pytest-cov==2.4.0
+
+# Add jinja2 with a compatible version
+jinja2==3.0.3
+# Pin Werkzeug to a compatible version
+Werkzeug==2.2.2
+# Pin itsdangerous to a compatible version
+itsdangerous==2.0.1
+
