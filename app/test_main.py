@@ -15,7 +15,8 @@ def test_stories_page():
     response = client.get('stories')
     assert response.status_code == 200
     assert b"Travel Stories" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data # Check for external CSS 
+    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data # Check for external CSS
+    assert b'href="/stories/1"' in response.data #Check for story link 
     
 def test_flask_installed():
     result = subprocess.run(["pip", "show", "flask"], capture_output=True, text=True)
