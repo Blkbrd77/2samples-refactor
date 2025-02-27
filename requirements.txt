@@ -18,9 +18,8 @@ pytest-cov==2.4.0
 
 # Add jinja2 with a compatible version
 jinja2==3.0.3
-
 # Pin Werkzeug to a compatible version
 Werkzeug==2.2.2
-
 # Pin itsdangerous to a compatible version
 itsdangerous==2.0.1
+
