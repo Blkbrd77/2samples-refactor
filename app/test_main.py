@@ -15,3 +15,11 @@ def test_stories_page():
     assert response.status_code == 200
     assert b"Travel Stories" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data # Check for external CSS 
+    
+def test_flask_installed():
+    result = subprocess.run(["pip", "show", "flask"], capture_output=True, text=True)
+    assert "Name: Flask" in result.stdout
+
+def test_pytest_installed():
+    result = subprocess.run(["pip", "show", "pytest"], capture_output=True, text=True)
+    assert "Name: pytest" in result.stdout
