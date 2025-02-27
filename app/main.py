@@ -25,7 +25,7 @@ def stories():
     </head>
     <body>
         <h1>Travel Stories</h1>
-        <p>Coming soon—tales from our adventures!</p>
+        <p>Check out our latest tale: <a href="/stories/1">A Greek Island Adventure!</a></p>
     </body>
     </html>
     """
