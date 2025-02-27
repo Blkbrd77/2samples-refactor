@@ -5,7 +5,9 @@ Sites using Flask:
 https://replit.com/
 
 Next Tasks:
-1. Automation for Codespaces
+
+~~1. Automation for Codespaces~~
+
 2. BootStrapping
 3. Add content (pictures, YouTube)
 4. Enhance Theme

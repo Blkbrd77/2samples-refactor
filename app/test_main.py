@@ -24,3 +24,11 @@ def test_flask_installed():
 def test_pytest_installed():
     result = subprocess.run(["pip", "show", "pytest"], capture_output=True, text=True)
     assert "Name: pytest" in result.stdout
+
+def test_story_page():
+    client = app.test_client()
+    response = client.get('/stories/1')
+    assert response.status_code == 200
+    assert b"Greek Island Adventure" in response.data # Story title
+    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data 
+
