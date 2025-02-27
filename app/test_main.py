@@ -6,10 +6,12 @@ def test_home_page():
     assert response.status_code == 200 #check it loads successfully
     assert b"Welcome" in response.data #Check "Welcome" is in the page
     assert b'href="/stories"' in response.data # Check for the link
-    assert b"<style>" in response.data # Check for CSS Styling
+    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data # Check for external CSS 
+
 
 def test_stories_page():
     client = app.test_client()
     response = client.get('stories')
     assert response.status_code == 200
     assert b"Travel Stories" in response.data
+    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data # Check for external CSS 
