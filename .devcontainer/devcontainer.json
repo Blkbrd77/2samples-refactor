@@ -19,5 +19,6 @@
           }
       }
   },
-"postStartCommand": "bash -c 'source venv/bin/activate && python3 app/main.py &'"
+"postStartCommand": "bash -c 'source venv/bin/activate && python3 app/main.py &'",
+"forwardPorts": [5000]
 }
