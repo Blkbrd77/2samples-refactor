@@ -6,20 +6,19 @@
             "version": "3.11"
         }
     },
-    "postCreateCommand": "bash -c 'python3 -m venv venv && source venv/bin/activate && pip install flask pytest==7.4.4'",
+    "postCreateCommand": "bash -c 'python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt'",
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "visualstudioexptteam.vscodeintellicode",
-                "ecmel.vscode-html-css"  // Added HTML helper
+                "ecmel.vscode-html-css"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/workspaces/2samples-refactor/venv/bin/python3"
             }
         }
     },
-    "postStartCommand": "bash -c 'source venv/bin/activate && python3 app/main.py &'",
     "forwardPorts": [5000]
 }
