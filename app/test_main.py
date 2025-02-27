@@ -1,4 +1,5 @@
 from app.main import app
+import subprocess
 
 def test_home_page():
     client = app.test_client() #Flask's built-in way to simulate requests
