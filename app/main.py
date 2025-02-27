@@ -29,5 +29,20 @@ def stories():
     </body>
     </html>
     """
+
+@app.route('/stories/1')
+def story_1():
+   return """
+   <html>
+   <head>
+        <link rel="stylesheet" href="/static/style.css">
+    <head>
+    <body>
+        <h1>Greek Island Adventure!</h1>
+        <p>We cruised the Greek Island Glow with Virgin Voyages!!</p>
+        <body>
+        </html>
+   """
+   
 if __name__=="__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)
