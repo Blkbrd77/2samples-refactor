@@ -18,6 +18,6 @@
               "python.defaultInterpreterPath": "/workspaces/2samples-refactor/venv/bin/python3"
           }
       }
-  }
+  },
 "postStartCommand": "bash -c 'source venv/bin/activate && python3 app/main.py &'"
 }
