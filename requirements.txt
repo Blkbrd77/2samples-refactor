@@ -10,3 +10,6 @@ itsdangerous==2.0.1 # Flask dependency, pinned
 # Automated tests
 pytest==7.4.4      # Matches devcontainer.json
 
+# Linting
+flake8==6.0.0
+
