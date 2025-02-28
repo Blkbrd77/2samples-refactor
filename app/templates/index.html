@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2samples Travels</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="header">
+        <a href="/">TRAVELS</a> | 
+        <a href="/japan2019">Japan 2019</a> | 
+        <a href="/ireland">Ireland</a> | 
+        <a href="/uk">UK</a> | 
+        <a href="/irelanduk">Ireland & UK</a> | 
+        <a href="/stories">Stories</a> | 
+        <a href="/blog">Blog</a> | 
+        <a href="/maps">Maps</a> | 
+        <a href="/privacy">Privacy</a>
+    </nav>
+    <div class="container">
+        <h1>TRAVELS</h1>
+        <div class="tiles">
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/japan2019.jpg') }}" alt="Japan 2019">
+                <h2>JAPAN 2019</h2>
+                <p>Our first trip abroad was to Japan. We flew to Osaka and met Jay’s Sister Mandi up from Okinawa where she was stationed.</p>
+                <a href="/japan2019" class="tile-button">JAPAN</a>
+            </div>
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/ireland.jpg') }}" alt="Republic of Ireland">
+                <h2>REPUBLIC OF IRELAND</h2>
+                <p>We finally got to go on the trip we had originally planned in what happened that year...</p>
+                <a href="/ireland" class="tile-button">IRELAND</a>
+            </div>
+            <div class="tile">
+                <img src="{{ url_for('static', filename='images/uk.jpg') }}" alt="United Kingdom">
+                <h2>UNITED KINGDOM</h2>
+                <p>After a few days in Ireland we caught a flight to Scotland and a lunch in England provided seeing three quarters of the UK, Wales will have to wait for the next trip.</p>
+                <a href="/uk" class="tile-button">UNITED KINGDOM</a>
+            </div>
+        </div>
+        <a href="/irelanduk" class="footer-button">Ireland and UK Travels</a>
+    </div>
+</body>
+</html>
