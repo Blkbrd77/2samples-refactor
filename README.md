@@ -19,27 +19,43 @@ Here are the upcoming priorities for this project:
 To run this project locally or in Codespaces:
 
 1. **Clone the Repository:**
-```
-  bash
 
+  bash
+```
    git clone https://github.com/Blkbrd77/2samples-refactor.git
    cd 2samples-refactor
 ```
 2. **Set Up Environment:**
   - Install Python 3.9+.
-  - Create a virtual environment: 
+  - Create a virtual environment:
+ 
+  bash 
 ```
-  bash
-
   python3 -m venv venv
   source venv/bin/activate  # On macOS/Linux
   venv\Scripts\activate     # On Windows
 ```
 3. **Run the Application:**
-```
-  bash
 
+  bash
+```
   python3 app/main.py
 ```
+Open http://localhost:5000 in you browser.
+4. **Run Tests:**  
 
-   
+bash
+```
+  pytest
+```
+## Project Structure
+
+  - app/: Contains Flask application files (main.py, templates/, static/).
+  - requirements.txt: Lists Python dependencies.
+  - .devcontainer/: Configures Codespaces automation.
+
+## Contributing
+
+Feel free to fork this repository, make improvements, and submit pull requests. This project is a learning tool for Flask, TDD, and CI/CD preparation.
+
+
