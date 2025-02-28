@@ -10,5 +10,5 @@ Next Tasks:
 
 2. BootStrapping
 3. Add content (pictures, YouTube)
-4. Enhance Theme
+~~4. Enhance Theme~~
 5. AWS Prep 
