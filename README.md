@@ -13,7 +13,7 @@ Here are the upcoming priorities for this project:
 2. Bootstrapping
 3. Add content (pictures, YouTube)
 4. Enhance Theme
-5. AWS Preparation
+5. ~~AWS Preparation~~ *Completed*
 
 ## Getting Started
 To run this project locally or in Codespaces:
