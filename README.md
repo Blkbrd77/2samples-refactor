@@ -50,9 +50,9 @@ bash
 ```
 ## Project Structure
 
-  - app/: Contains Flask application files (main.py, templates/, static/).
-  - requirements.txt: Lists Python dependencies.
-  - .devcontainer/: Configures Codespaces automation.
+  - **app/:** Contains Flask application files (main.py, templates/, static/).
+  - **requirements.txt:** Lists Python dependencies.
+  - **.devcontainer/:** Configures Codespaces automation.
 
 ## Contributing
 
