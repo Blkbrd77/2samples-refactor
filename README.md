@@ -12,8 +12,8 @@ Here are the upcoming priorities for this project:
 1. ~~Automation for Codespaces~~ *Completed*
 2. Bootstrapping
 3. Add content (pictures, YouTube)
-4. Enhance Theme
-5. ~~AWS Preparation~~ *Completed*  
+4. ~~Enhance Theme~~ *Completed* 
+5. AWS Preparation 
 
 ## Getting Started
 To run this project locally or in Codespaces:
