@@ -31,6 +31,7 @@ jobs:
           python -m venv venv
           . venv/bin/activate
           pip install -r requirements.txt
+          pip install awsebcli  # Install AWS Elastic Beanstalk CLI
 
       - name: Run linting
         run: |
@@ -42,9 +43,19 @@ jobs:
           . venv/bin/activate
           pytest
 
-      - name: Deploy to AWS (Placeholder)
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'us-east-2'  # Updated to your region
+          role-to-assume: ''  # Optional, leave blank if using direct keys
+          role-session-name: 'GitHubActions'
+
+      - name: Deploy to Elastic Beanstalk
         if: github.ref == 'refs/heads/main'  # Only on main branch push
         run: |
           . venv/bin/activate
-          chmod +x deploy.sh  # Ensure deploy.sh is executable
-          ./deploy.sh
+          eb init 2samples-refactor --region us-east-2 --platform python-3.11  # Application name matches your repo
+          eb use FlaskApp2samples-env  # Your environment name
+          eb deploy
