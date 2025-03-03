@@ -32,13 +32,14 @@ jobs:
           . venv/bin/activate
           pip install -r requirements.txt
           pip install awsebcli  # Install AWS Elastic Beanstalk CLI
+          pip install awscli  # Install AWS CLI for eb compatibility
 
-      - name: Install AWS CLI
-        uses: aws-actions/setup-aws@v1
+      - name: Install AWS CLI (system-wide)
+        uses: aws-actions/setup-aws@v1  # Ensure correct repository and version
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-2'  # Your region
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
+          aws-region: 'us-east-1'  # Your region
           install-python: false  # Use system Python for AWS CLI
 
       - name: Run linting
@@ -54,9 +55,9 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-2'  # Your region
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
+          aws-region: 'us-east-1'  # Your region
           role-to-assume: ''
           role-session-name: 'GitHubActions'
 
@@ -64,6 +65,6 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           . venv/bin/activate
-          eb init 2samples-refactor --region us-east-2 --platform python-3.11
-          eb use FlaskApp2samples-env
+          eb init 2samples-refactor --region us-east-1 --platform python-3.11
+          eb use 2samples-env  # Updated environment name
           eb deploy
