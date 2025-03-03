@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Pipeline with CodePipeline
 
 on:
   push:
@@ -31,25 +31,6 @@ jobs:
           python -m venv venv
           . venv/bin/activate
           pip install -r requirements.txt
-          pip install awsebcli  # Install AWS Elastic Beanstalk CLI
-          pip install awscli  # Install AWS CLI for eb compatibility
-
-      - name: Install AWS CLI (system-wide)
-        uses: aws-actions/setup-aws@v1  # Explicitly verified repository (this is only a test)
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-1'  # Your region
-          install-python: false  # Use system Python for AWS CLI
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-1'  # Your region
-          role-to-assume: ''
-          role-session-name: 'GitHubActions'
 
       - name: Run linting
         run: |
@@ -61,10 +42,11 @@ jobs:
           . venv/bin/activate
           pytest
 
-      - name: Deploy to Elastic Beanstalk
+      - name: Trigger AWS CodePipeline
         if: github.ref == 'refs/heads/main'
-        run: |
-          . venv/bin/activate
-          eb init 2samples-refactor --region us-east-1 --platform python-3.11
-          eb use 2samples-env  # Updated environment name
-          eb deploy
+        uses: aws-actions/aws-codepipeline-trigger@v1
+        with:
+          pipeline-name: '2samples-refactor-pipeline'  # Replace with your pipeline name if different
+          region: 'us-east-1'  # Your region
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
