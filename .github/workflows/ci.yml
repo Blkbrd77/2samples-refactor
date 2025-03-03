@@ -35,12 +35,21 @@ jobs:
           pip install awscli  # Install AWS CLI for eb compatibility
 
       - name: Install AWS CLI (system-wide)
-        uses: aws-actions/setup-aws@v1  # Explicitly verify repository
+        uses: aws-actions/setup-aws@v1  # Explicitly verified repository
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-east-1'  # Your region
           install-python: false  # Use system Python for AWS CLI
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'us-east-1'  # Your region
+          role-to-assume: ''
+          role-session-name: 'GitHubActions'
 
       - name: Run linting
         run: |
@@ -51,15 +60,6 @@ jobs:
         run: |
           . venv/bin/activate
           pytest
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-1'  # Your region
-          role-to-assume: ''
-          role-session-name: 'GitHubActions'
 
       - name: Deploy to Elastic Beanstalk
         if: github.ref == 'refs/heads/main'
