@@ -35,7 +35,7 @@ jobs:
           pip install awscli  # Install AWS CLI for eb compatibility
 
       - name: Install AWS CLI (system-wide)
-        uses: aws-actions/setup-aws@v1  # Explicitly verified repository
+        uses: aws-actions/setup-aws@v1  # Explicitly verified repository (this is only a test)
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
