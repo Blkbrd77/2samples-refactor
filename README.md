@@ -10,10 +10,13 @@ This project sets up a new 2Samples site using Python with the Flask web framewo
 Here are the upcoming priorities for this project:
 
 1. ~~Automation for Codespaces~~ *Completed*
-2. Bootstrapping
+2. ~~Bootstrapping~~ *Completed*
 3. Add content (pictures, YouTube)
 4. ~~Enhance Theme~~ *Completed* 
-5. AWS Preparation 
+5. ~~AWS Preparation~~ *Completed*
+6. Set up Production Environment in AWS
+7. Change CNAME to new production AWS from WordPress Site
+8. Deprecate Old Wordpress Site from NameCheap 
 
 ## Getting Started
 To run this project locally or in Codespaces:
