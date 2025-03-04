@@ -42,11 +42,16 @@ jobs:
           . venv/bin/activate
           pytest
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2  # Updated to v2 for latest features
+        with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
+            aws-region: 'us-east-1'  # Your region
+            role-to-assume: ''  # Optional, leave empty if not using a role
+  
       - name: Run AWS CodeBuild to Trigger CodePipeline
         if: github.ref == 'refs/heads/main'
         uses: aws-actions/aws-codebuild-run-build@v1.0.18
         with:
             project-name: '2samples-refactor-trigge'  # The CodeBuild project we created
-            region: 'us-east-1'  # Your region
-            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
