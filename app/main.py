@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from app.config import CLOUDFRONT_DOMAIN, IMAGE_PATH
 
 app = Flask(__name__)
 
