@@ -1,6 +1,7 @@
 from app.main import app
 import subprocess
 
+
 def test_home_page():
     client = app.test_client()
     response = client.get('/')
@@ -13,6 +14,7 @@ def test_home_page():
     assert b'class="header"' in response.data
     assert b'class="tile"' in response.data
 
+
 def test_japan2019_page():
     client = app.test_client()
     response = client.get('/japan2019')
@@ -20,6 +22,7 @@ def test_japan2019_page():
     assert b"JAPAN 2019" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
+
 
 def test_ireland_page():
     client = app.test_client()
@@ -29,6 +32,7 @@ def test_ireland_page():
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
+
 def test_uk_page():
     client = app.test_client()
     response = client.get('/uk')
@@ -36,6 +40,7 @@ def test_uk_page():
     assert b"UNITED KINGDOM" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
+
 
 def test_blog_page():
     client = app.test_client()
@@ -45,6 +50,7 @@ def test_blog_page():
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
+
 def test_maps_page():
     client = app.test_client()
     response = client.get('/maps')
@@ -52,6 +58,7 @@ def test_maps_page():
     assert b"Maps" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
+
 
 def test_privacy_page():
     client = app.test_client()
@@ -61,9 +68,11 @@ def test_privacy_page():
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
+
 def test_flask_installed():
     result = subprocess.run(["pip", "show", "flask"], capture_output=True, text=True)
     assert "Name: Flask" in result.stdout
+
 
 def test_pytest_installed():
     result = subprocess.run(["pip", "show", "pytest"], capture_output=True, text=True)
