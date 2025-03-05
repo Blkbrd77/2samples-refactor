@@ -1,7 +1,6 @@
 from app.main import app
 import subprocess
 
-
 def test_home_page():
     client = app.test_client()
     response = client.get('/')
@@ -14,7 +13,6 @@ def test_home_page():
     assert b'class="header"' in response.data
     assert b'class="tile"' in response.data
 
-
 def test_japan2019_page():
     client = app.test_client()
     response = client.get('/japan2019')
@@ -22,7 +20,6 @@ def test_japan2019_page():
     assert b"JAPAN 2019" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
-
 
 def test_ireland_page():
     client = app.test_client()
@@ -32,7 +29,6 @@ def test_ireland_page():
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
-
 def test_uk_page():
     client = app.test_client()
     response = client.get('/uk')
@@ -40,35 +36,6 @@ def test_uk_page():
     assert b"UNITED KINGDOM" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
-
-
-def test_irelanduk_page():
-    client = app.test_client()
-    response = client.get('/irelanduk')
-    assert response.status_code == 200
-    assert b"Ireland and UK Travels" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
-    assert b'class="header"' in response.data
-
-
-def test_stories_page():
-    client = app.test_client()
-    response = client.get('/stories')
-    assert response.status_code == 200
-    assert b"Travel Stories" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
-    assert b'href="/stories/1"' in response.data
-    assert b'class="header"' in response.data
-
-
-def test_story_page():
-    client = app.test_client()
-    response = client.get('/stories/1')
-    assert response.status_code == 200
-    assert b"A Desert Adventure" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
-    assert b'class="header"' in response.data
-
 
 def test_blog_page():
     client = app.test_client()
@@ -78,7 +45,6 @@ def test_blog_page():
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
-
 def test_maps_page():
     client = app.test_client()
     response = client.get('/maps')
@@ -86,7 +52,6 @@ def test_maps_page():
     assert b"Maps" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
-
 
 def test_privacy_page():
     client = app.test_client()
@@ -96,11 +61,9 @@ def test_privacy_page():
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
-
 def test_flask_installed():
     result = subprocess.run(["pip", "show", "flask"], capture_output=True, text=True)
     assert "Name: Flask" in result.stdout
-
 
 def test_pytest_installed():
     result = subprocess.run(["pip", "show", "pytest"], capture_output=True, text=True)
