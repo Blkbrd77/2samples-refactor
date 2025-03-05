@@ -1,4 +1,5 @@
 import pytest
+import subprocess
 from app.main import app
 from app.config import CLOUDFRONT_DOMAIN, IMAGE_PATH
 
@@ -21,7 +22,7 @@ def test_home_page():
     assert b'class="tile"' in response.data
     assert f"{CLOUDFRONT_DOMAIN}{IMAGE_PATH}IMG_3137.jpeg".encode() in response.data
     assert f"{CLOUDFRONT_DOMAIN}{IMAGE_PATH}RenderedImage.jpeg".encode() in response.data
-    assert f"{CLOUDFRONT_DOMAIN}{IMAGE_PATH}IIMG_3305-225x300.jpeg".encode() in response.data
+    assert f"{CLOUDFRONT_DOMAIN}{IMAGE_PATH}IMG_3305-225x300.jpeg".encode() in response.data
 
 
 def test_japan2019_page():
