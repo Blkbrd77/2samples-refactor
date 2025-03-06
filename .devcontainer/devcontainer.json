@@ -6,7 +6,7 @@
             "version": "3.11"
         }
     },
-    "postCreateCommand": "bash -c 'python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && pytest' && gh auth login'",
+    "postCreateCommand": "python3 -m venv venv && . venv/bin/activate && pip install -r requirements.txt && pytest",
     "customizations": {
         "vscode": {
             "extensions": [
