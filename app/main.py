@@ -23,21 +23,6 @@ def uk():
     return render_template('uk.html')
 
 
-@app.route('/irelanduk')
-def irelanduk():
-    return render_template('irelanduk.html')
-
-
-@app.route('/stories')
-def stories():
-    return render_template('stories.html')
-
-
-@app.route('/stories/1')
-def story_1():
-    return render_template('story1.html')
-
-
 @app.route('/blog')
 def blog():
     return render_template('blog.html')

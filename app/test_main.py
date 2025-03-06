@@ -1,5 +1,26 @@
+import pytest
 from app.main import app
 import subprocess
+
+
+# Use Flask's test client as a fixture
+@pytest.fixture
+def client():
+    app.config['TESTING'] = True
+    with app.test_client() as client:
+        yield client
+
+
+def test_index_route_renders_images(client):
+    """Test that the index route renders HTML with CloudFront image URLs."""
+    response = client.get('/')
+    assert response.status_code == 200  # Check the route loads successfully
+
+    # Convert response data to string (it's bytes by default)
+    html = response.data.decode('utf-8')# Check for each image URL in the rendered HTML
+    assert 'https://d1rhrn7ca7di1b.cloudfront.net/images/IMG_3137.jpeg' in html
+    assert 'https://d1rhrn7ca7di1b.cloudfront.net/images/RenderedImage.jpeg' in html
+    assert 'https://d1rhrn7ca7di1b.cloudfront.net/images/IMG_3305-225x300.jpeg' in html
 
 
 def test_home_page():
@@ -42,34 +63,6 @@ def test_uk_page():
     assert b'class="header"' in response.data
 
 
-def test_irelanduk_page():
-    client = app.test_client()
-    response = client.get('/irelanduk')
-    assert response.status_code == 200
-    assert b"Ireland and UK Travels" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
-    assert b'class="header"' in response.data
-
-
-def test_stories_page():
-    client = app.test_client()
-    response = client.get('/stories')
-    assert response.status_code == 200
-    assert b"Travel Stories" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
-    assert b'href="/stories/1"' in response.data
-    assert b'class="header"' in response.data
-
-
-def test_story_page():
-    client = app.test_client()
-    response = client.get('/stories/1')
-    assert response.status_code == 200
-    assert b"A Desert Adventure" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
-    assert b'class="header"' in response.data
-
-
 def test_blog_page():
     client = app.test_client()
     response = client.get('/blog')
@@ -105,3 +98,17 @@ def test_flask_installed():
 def test_pytest_installed():
     result = subprocess.run(["pip", "show", "pytest"], capture_output=True, text=True)
     assert "Name: pytest" in result.stdout
+
+import requests
+
+def test_cloudfront_images_accessible():
+    """Test that CloudFront image URLs return a 200 status code."""
+    image_urls = [
+        'https://d1rhrn7ca7di1b.cloudfront.net/images/IMG_3137.jpeg',
+        'https://d1rhrn7ca7di1b.cloudfront.net/images/RenderedImage.jpeg',
+        'https://d1rhrn7ca7di1b.cloudfront.net/images/IMG_3305-225x300.jpeg'
+    ]
+    
+    for url in image_urls:
+        response = requests.get(url)
+        assert response.status_code == 200, f"Failed to access {url}: {response.status_code}"
