@@ -1,6 +1,7 @@
 import pytest
 from app.main import app
 import subprocess
+import requests
 
 
 # Use Flask's test client as a fixture
@@ -17,7 +18,7 @@ def test_index_route_renders_images(client):
     assert response.status_code == 200  # Check the route loads successfully
 
     # Convert response data to string (it's bytes by default)
-    html = response.data.decode('utf-8')# Check for each image URL in the rendered HTML
+    html = response.data.decode('utf-8')  # Check for each image URL in the rendered HTML
     assert 'https://d1rhrn7ca7di1b.cloudfront.net/images/IMG_3137.jpeg' in html
     assert 'https://d1rhrn7ca7di1b.cloudfront.net/images/RenderedImage.jpeg' in html
     assert 'https://d1rhrn7ca7di1b.cloudfront.net/images/IMG_3305-225x300.jpeg' in html
@@ -99,7 +100,6 @@ def test_pytest_installed():
     result = subprocess.run(["pip", "show", "pytest"], capture_output=True, text=True)
     assert "Name: pytest" in result.stdout
 
-import requests
 
 def test_cloudfront_images_accessible():
     """Test that CloudFront image URLs return a 200 status code."""
@@ -108,7 +108,7 @@ def test_cloudfront_images_accessible():
         'https://d1rhrn7ca7di1b.cloudfront.net/images/RenderedImage.jpeg',
         'https://d1rhrn7ca7di1b.cloudfront.net/images/IMG_3305-225x300.jpeg'
     ]
-    
+
     for url in image_urls:
         response = requests.get(url)
         assert response.status_code == 200, f"Failed to access {url}: {response.status_code}"
