@@ -122,18 +122,15 @@ body {
 }
 
 .video-container {
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    overflow: hidden; /* Clear float */
 }
 
 .video-wrapper {
-    float: left;
     max-width: 600px;
+    margin: 0 auto 20px;
     text-align: center;
-    margin-right: 20px;
-    margin-bottom: 20px;
 }
 
 .video-wrapper h2 {
@@ -141,7 +138,6 @@ body {
 }
 
 .video-wrapper video {
-    max-width: 100%;
     width: 100%;
     height: auto;
     max-height: 400px;
@@ -150,29 +146,30 @@ body {
 }
 
 .video-text {
+    max-width: 600px
+    margin: 0 auto;
     line-height: 1.6;
     text-align: justify;
-    /* Removed margin-left to allow wrapping */
 }
 
 .video-text p {
-    margin: 0 0 15px;
+    margin: 0 0 30px;
 }
 
 @media (max-width: 768px) {
     .video-container {
-        text-align: center;
+        padding: 10px;
     }
 
     .video-wrapper {
-        float: none;
-        margin-right: 0;
-        margin-bottom: 20px;
-        max-width: 100%;
-        display: inline-block;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 0 20px;
     }
 
     .video-text {
+        width: 100%
+        max-width: 600px;
         text-align: left;
     }
 }
