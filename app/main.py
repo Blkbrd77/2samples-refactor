@@ -11,9 +11,9 @@ def home():
     return render_template('index.html', placeholder_image=placeholder_image)
 
 
-@app.route('/japan2019')
-def japan2019():
-    return render_template('japan2019.html', placeholder_image=placeholder_image)
+@app.route('/japan')
+def japan():
+    return render_template('japan.html', placeholder_image=placeholder_image)
 
 
 @app.route('/ireland')

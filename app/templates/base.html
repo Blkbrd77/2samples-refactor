@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="icon" type="image/png" href="https://2samples-static-assets-211125453069.s3.us-east-1.amazonaws.com/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="https://d1rhrn7ca7di1b.cloudfront.net/images/favicon-16x16.png">
 </head>
 <body>
     <nav class="header">
-        <a href="/">TRAVELS</a> | 
-        <a href="/japan2019">Japan 2019</a> | 
+        <a href="/">HOME</a> | 
+        <a href="/japan">Japan</a> | 
         <a href="/ireland">Ireland</a> | 
         <a href="/uk">UK</a> | 
         <a href="/blog">Blog</a> | 
         <a href="/maps">Maps</a> | 
-        <a href="/privacy">Privacy</a>
     </nav>
     {% block content %}{% endblock %}
 </body>
