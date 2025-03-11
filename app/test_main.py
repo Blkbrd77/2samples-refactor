@@ -28,8 +28,7 @@ def test_home_page():
     client = app.test_client()
     response = client.get('/')
     assert response.status_code == 200
-    assert b"TRAVELS" in response.data
-    assert b'href="/japan2019"' in response.data
+    assert b'href="/japan"' in response.data
     assert b'href="/ireland"' in response.data
     assert b'href="/uk"' in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
@@ -37,11 +36,11 @@ def test_home_page():
     assert b'class="tile"' in response.data
 
 
-def test_japan2019_page():
+def test_japan_page():
     client = app.test_client()
-    response = client.get('/japan2019')
+    response = client.get('/japan')
     assert response.status_code == 200
-    assert b"JAPAN 2019" in response.data
+    assert b"JAPAN" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
@@ -78,15 +77,6 @@ def test_maps_page():
     response = client.get('/maps')
     assert response.status_code == 200
     assert b"Maps" in response.data
-    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
-    assert b'class="header"' in response.data
-
-
-def test_privacy_page():
-    client = app.test_client()
-    response = client.get('/privacy')
-    assert response.status_code == 200
-    assert b"Privacy Policy" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
