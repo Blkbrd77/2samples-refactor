@@ -7,6 +7,9 @@ jinja2==3.0.3      # Flask dependency, pinned for safety
 Werkzeug==2.2.2    # Flask dependency, pinned for consistency
 itsdangerous==2.0.1 # Flask dependency, pinned
 
+# Http Requests
+requests==2.31.0 # Added for test_main.py
+
 # Automated tests
 pytest==7.4.4      # Matches devcontainer.json
 
