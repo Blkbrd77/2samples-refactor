@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # Update to v4 for consistency
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -19,12 +19,20 @@ jobs:
           python-version: '3.11'
 
       - name: Cache dependencies
-        uses: actions/cache@v4  # Update to v4 for consistency
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
+          aws-region: 'us-east-1'
+          role-to-assume: ''
 
       - name: Install dependencies
         run: |
@@ -45,18 +53,10 @@ jobs:
 
       - name: Upload coverage report
         if: always()
-        uses: actions/upload-artifact@v4  # Updated to v4
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coverage.xml
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
-          aws-region: 'us-east-1'
-          role-to-assume: ''
 
       - name: Run AWS CodeBuild to Trigger CodePipeline
         if: github.ref == 'refs/heads/main'
