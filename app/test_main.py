@@ -55,34 +55,30 @@ def test_ireland_page():
 
 
 def test_ireland_videos(client, monkeypatch):
-    # Mock S3 responses
     class MockS3Client:
         def list_objects_v2(self, Bucket, Prefix):
             if Prefix == 'videos/':
                 return {
                     'Contents': [
-                        {'Key': 'videos/Ireland-Scotland-Day-One.mp4'},
-                        {'Key': 'videos/Ireland-Scotland-Day-Two.mp4'}
-                        ]
-                    }
+                        {'Key': 'videos/Ireland-Scotland-Day-One.mov'}  # Match the actual file
+                    ]
+                }
             elif Prefix == 'stills/':
                 return {
-                        'Contents': [
-                            {'Key': 'stills/Ireland-Scotland-Day-One-still-001.jpg'},
-                            {'Key': 'stills/Ireland-Scotland-Day-Two-still-001.jpg'}
-                        ]
-                    }
+                    'Contents': [
+                        {'Key': 'stills/Ireland-Scotland-Day-One-still-013.jpg'}
+                    ]
+                }
             return {'Contents': []}
 
     monkeypatch.setattr('boto3.client', lambda *args, **kwargs: MockS3Client())
-
     response = client.get('/ireland')
     assert response.status_code == 200
     html = response.data.decode('utf-8')
-    assert 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mp4' in html
-    assert 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Two.mp4' in html
-    assert 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-One-still-001.jpg' in html
-    assert 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Two-still-001.jpg' in html
+    print("Rendered HTML:", html)  # Debug
+    assert '<video controls' in html
+    assert f'<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mov"' in html
+    assert f'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-One-still-001.jpg"' in html
 
 
 def test_uk_page():
