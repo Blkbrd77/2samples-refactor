@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Update to v4 for consistency
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -19,7 +19,7 @@ jobs:
           python-version: '3.11'
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4  # Update to v4 for consistency
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -30,6 +30,7 @@ jobs:
         run: |
           python -m venv venv
           . venv/bin/activate
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run linting
@@ -43,8 +44,8 @@ jobs:
           pytest --cov=app --cov-report=term-missing --cov-report=xml --cov-config=.coveragerc --cov-fail-under=95 app/test_main.py
 
       - name: Upload coverage report
-        if: always()  # Run even if tests fail
-        uses: actions/upload-artifact@v3
+        if: always()
+        uses: actions/upload-artifact@v4  # Updated to v4
         with:
           name: coverage-report
           path: coverage.xml
@@ -55,10 +56,10 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
           aws-region: 'us-east-1'
-          role-to-assume: ''  # Optional
+          role-to-assume: ''
 
       - name: Run AWS CodeBuild to Trigger CodePipeline
         if: github.ref == 'refs/heads/main'
         uses: aws-actions/aws-codebuild-run-build@v1.0.18
         with:
-          project-name: '2samples-refactor-trigge'  # Verify this matches your CodeBuild project
+          project-name: '2samples-refactor-trigge'
