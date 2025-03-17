@@ -1,5 +1,5 @@
 body {
-    background-color: #FFFFFF;
+    background-color: #F5F5F5;
     color: #000000;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,7 +13,7 @@ body {
     text-align: center;
     position: sticky;
     top: 0;
-    border-bottom: 2px solid #FF4040;
+    border-bottom: 2px solid #FFD700;
     z-index: 1000;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .tile {
-    background-color: #00008B;
+    background: linear-gradient(145deg, #000000, #404142);
     color: #FFFFFF;
     margin: 10px;
     padding: 20px;
@@ -59,7 +59,10 @@ body {
     max-width: 100%;
     height: 200px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 25px;
+    border: 2px solid #FFFFFF; /* Pronounced gold border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .tile h2 {
@@ -77,7 +80,7 @@ body {
 }
 
 .tile-button {
-    background-color: #1E90FF;
+    background-color: #FFCA28; /* Light UCF Gold */
     color: #FFFFFF;
     border: none;
     padding: 10px 20px;
@@ -86,14 +89,19 @@ body {
     cursor: pointer;
     display: inline-block;
     margin-top: 10px;
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .tile-button:hover {
-    background-color: #4169E1;
+    background-color: #D4A017; /* Darker, richer gold for pronounced effect */
+    transform: translateY(-2px); /* Slight lift for a pressed effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    color: #FFFFFF; /* Ensure text remains readable */
 }
 
 .footer-button {
-    background-color: #1E90FF;
+    background-color: #000000;
     color: #FFFFFF;
     border: none;
     padding: 10px 20px;
@@ -107,7 +115,7 @@ body {
 }
 
 .footer-button:hover {
-    background-color: #4169E1;
+    background-color: #404142;
 }
 
 @media (max-width: 768px) {
@@ -147,7 +155,7 @@ body {
 
 .video-text {
     max-width: 600px
-    margin: 0 auto;
+    margin; 0 auto;
     line-height: 1.6;
     text-align: justify;
 }
