@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -19,17 +19,26 @@ jobs:
           python-version: '3.11'
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
+          aws-region: 'us-east-1'
+          role-to-assume: ''
+
       - name: Install dependencies
         run: |
           python -m venv venv
           . venv/bin/activate
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run linting
@@ -37,21 +46,20 @@ jobs:
           . venv/bin/activate
           flake8 app/ --max-line-length=120 --extend-ignore=E203
 
-      - name: Run tests
+      - name: Run tests with coverage
         run: |
           . venv/bin/activate
-          pytest
+          pytest --cov=app --cov-report=term-missing --cov-report=xml --cov-config=.coveragerc --cov-fail-under=95 app/test_main.py
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2  # Updated to v2 for latest features
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS }}
-            aws-region: 'us-east-1'  # Your region
-            role-to-assume: ''  # Optional, leave empty if not using a role
-  
+          name: coverage-report
+          path: coverage.xml
+
       - name: Run AWS CodeBuild to Trigger CodePipeline
         if: github.ref == 'refs/heads/main'
         uses: aws-actions/aws-codebuild-run-build@v1.0.18
         with:
-            project-name: '2samples-refactor-trigge'  # The CodeBuild project we created
+          project-name: '2samples-refactor-trigge'
