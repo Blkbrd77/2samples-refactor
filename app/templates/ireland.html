@@ -1,8 +1,25 @@
 {% extends "base.html" %}
 {% block title %}REPUBLIC OF IRELAND{% endblock %}
 {% block content %}
-{% for video in videos %}
-        {{ video.url }} - {{ video.still }}
-    {% endfor %}
+    <div class="container">
+        <h1 style="text-align: center;">REPUBLIC OF IRELAND</h1>
+    </div>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day One</h2>
+            {% for video in videos %}
+                {% if video.name == "Ireland-Scotland-Day-One" %}
+                    <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                    <p>Your browser does not support the video tag. Check back later for video content.</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day One:</strong> 26-27 May 2023 - Orlando to Dublin. We left Orlando at 20:30 on Friday and arrived in Dublin at 10:00 on Saturday. After finding out Irish rental cars are not big enough for six and associated luggage, Anna and Trey caught a cab to the hotel while we drove ourselves and luggage. One wrong round-about exit and a quick drive on the sidewalk we located the hotel lobby to get checked in. We explored the local city and then went to EPIC the Irish Immigration Museum. We finished the day with a tour and tasting at Jameson Irish Whiskey.</p>
+        </div>
+    </div>
 {% endblock %}
- 

@@ -14,6 +14,7 @@ requests==2.31.0 # Added for test_main.py
 
 # Automated tests
 pytest==7.4.4      # Matches devcontainer.json
+pytest-cov>=4.0.0
 
 # Linting
 flake8==6.0.0

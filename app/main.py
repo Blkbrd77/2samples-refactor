@@ -37,7 +37,8 @@ def get_video_data(prefix='videos/'):
     for video in videos:
         video_stills = all_stills.get(video['name'], [])
         # Find still-001 if available, otherwise take the first one
-        preferred_still = next((url for url in video_stills if url.endswith('still-001.jpg')), video_stills[0] if video_stills else None)
+        preferred_still = next((url for url in video_stills if url.endswith('still-001.jpg')),
+                               video_stills[0] if video_stills else None)
         video['still'] = preferred_still
     return videos
 
