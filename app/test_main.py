@@ -60,13 +60,15 @@ def test_ireland_videos(client, monkeypatch):
             if Prefix == 'videos/':
                 return {
                     'Contents': [
-                        {'Key': 'videos/Ireland-Scotland-Day-One.mov'}
+                        {'Key': 'videos/Ireland-Scotland-Day-One.mov'},
+			{'Key': 'videos/Ireland-Scotland-Day-Two.mov'}
                     ]
                 }
             elif Prefix == 'stills/':
                 return {
                     'Contents': [
-                        {'Key': 'stills/Ireland-Scotland-Day-One-still-001.jpg'}
+                        {'Key': 'stills/Ireland-Scotland-Day-One-still-001.jpg'},
+			{'Key': 'stills/Ireland-Scotland-Day-Two-still-001.jpg'}
                     ]
                 }
             return {'Contents': []}
@@ -78,7 +80,9 @@ def test_ireland_videos(client, monkeypatch):
     print("Rendered HTML:", html)  # Debug
     assert '<video controls' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Two.mov"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-One-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Two-still-001.jpg"' in html
 
 
 def test_uk_page():
