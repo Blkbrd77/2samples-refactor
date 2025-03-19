@@ -55,7 +55,7 @@ def test_ireland_page():
 
 
 @pytest.fixture
-def mock_s3(monkeypatch):
+def mock_s3_ireland(monkeypatch):
     class MockS3Client:
         def list_objects_v2(self, Bucket, Prefix):
             if Prefix == 'videos/':
@@ -79,10 +79,38 @@ def mock_s3(monkeypatch):
             return {'Contents': []}
     monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
+@pytest.fixture
+def mock_s3_uk(monkeypatch):
+    class MockS3Client:
+        def list_objects_v2(self, Bucket, Prefix):
+            if Prefix == 'videos/':
+                return {
+                    'Contents': [
+                        {'Key': 'videos/Ireland-Scotland-Day-Five.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Six.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Seven.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Eight.mov'},
+                        {'Key': 'videos/Ireland-Scotland-England-Day-Nine.mov'}
+                    ]
+                }
+            elif Prefix == 'stills/':
+                return {
+                    'Contents': [
+                        {'Key': 'stills/Ireland-Scotland-Day-Five-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Six-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Seven-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Eight-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-England-Day-Nine-still-001.jpg'}
+                    ]
+                }
+            return {'Contents': []}
+    monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
-def test_ireland_videos(client, mock_s3):
+
+def test_ireland_videos(client, mock_s3_ireland):
     response = client.get('/ireland')
     assert response.status_code == 200
+    html = response.data.decode('utf-8') # Decode bytes to string
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Two.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Three.mov"' in html
@@ -90,10 +118,26 @@ def test_ireland_videos(client, mock_s3):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-One-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Two-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Three-still-001.jpg"' in html
-    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg"' in htm
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg"' in html
 
 
-def test_get_video_data_invalid_prefix(mock_s3):
+def test_uk_videos(client, mock_s3_uk):
+    response = client.get('/uk')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8') # Decode bytes to string
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Five.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Six.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Seven.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Eight.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-England-Day-Nine.mov"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Five-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-England-Day-Nine-still-001.jpg"' in html
+
+
+def test_get_video_data_invalid_prefix(mock_s3_ireland):
     from app.main import get_video_data
     videos = get_video_data(prefix='invalid/')  # Non-matching prefix
     assert len(videos) == 0  # Hits line 78
