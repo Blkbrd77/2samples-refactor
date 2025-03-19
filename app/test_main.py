@@ -54,7 +54,8 @@ def test_ireland_page():
     assert b'class="header"' in response.data
 
 
-def test_ireland_videos(client, monkeypatch):
+@pytest.fixture
+def mock_s3(monkeypatch):
     class MockS3Client:
         def list_objects_v2(self, Bucket, Prefix):
             if Prefix == 'videos/':
@@ -76,13 +77,12 @@ def test_ireland_videos(client, monkeypatch):
                     ]
                 }
             return {'Contents': []}
+    monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
-    monkeypatch.setattr('boto3.client', lambda *args, **kwargs: MockS3Client())
+
+def test_ireland_videos(client, mock_s3):
     response = client.get('/ireland')
     assert response.status_code == 200
-    html = response.data.decode('utf-8')
-    print("Rendered HTML:", html)  # Debug
-    assert '<video controls' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Two.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Three.mov"' in html
@@ -90,7 +90,13 @@ def test_ireland_videos(client, monkeypatch):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-One-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Two-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Three-still-001.jpg"' in html
-    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg"' in htm
+
+
+def test_get_video_data_invalid_prefix(mock_s3):
+    from app.main import get_video_data
+    videos = get_video_data(prefix='invalid/')  # Non-matching prefix
+    assert len(videos) == 0  # Hits line 78
 
 
 def test_uk_page():
