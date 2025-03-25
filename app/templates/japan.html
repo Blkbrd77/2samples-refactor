@@ -2,18 +2,40 @@
 {% block title %}JAPAN{% endblock %}
 {% block content %}
     <div class="container">
-        <h1 style="text-align: center;">JAPAN</h1>
-        <!-- Existing tile content, if any -->
+        <h1 style="text-align: center;">JAPAN 2019</h1>
     </div>
     <div class="video-container">
         <div class="video-wrapper">
-            <h2>Video Coming Soon</h2>
-            <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-                <p>Your browser does not support the video tag. Check back later for video content.</p>
-            </video>
+            <h2>Day One - Day Three Osaka</h2>
+            {% for video in videos %}
+                {% if video.name == "Japan-2019-Osaka" %}
+                    <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="video-text">
-            <p><strong>Day One:</strong> 31 May 2025 we flew to Scotland</p>
+            <p><strong>Day One – Day Three Osaka:</strong> We landed late in the evening after a 15+ hour flight.</p>
         </div>
-    </div>
+        <div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <h2>Day Two</h2>
+                    {% for video in videos %}
+                        {% if video.name == "Japan-2019" %}
+                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                            </video>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="video-text">
+                    <p><strong>Day Three Nagoya:</strong> Rode the Bullet Train from Osaka, made the mistake of leaving at rush-hour, the trains to get to the Bullet were packed!</p>
+        </div>
+            </div>
 {% endblock %}

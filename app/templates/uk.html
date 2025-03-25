@@ -1,19 +1,92 @@
 {% extends "base.html" %}
-{% block title %}UK{% endblock %}
+{% block title %}uk{% endblock %}
 {% block content %}
     <div class="container">
         <h1 style="text-align: center;">UNITED KINGDOM</h1>
-        <!-- Existing tile content, if any -->
     </div>
     <div class="video-container">
         <div class="video-wrapper">
-            <h2>Video Coming Soon</h2>
-            <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-                <p>Your browser does not support the video tag. Check back later for video content.</p>
-            </video>
+            <h2>Day Five</h2>
+            {% for video in videos %}
+                {% if video.name == "Ireland-Scotland-Day-Five" %}
+                    <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="video-text">
-            <p><strong>Day One:</strong> 31 May 2025 we flew to Scotland</p>
+            <p><strong>Day Five:</strong> 31 May 2023 - We left Galway, Ireland and headed north into the United Kingdom, first stopping in the beautiful villeage of Donegal to have lunch at a gastropub that was not open...whoops! The great thing about Ireland is if the place you want to go is no longer there, there is bound to be a pub with some good food nearby. From there we went to the Giants Causeway, this is an abosolute must stop if you are ever visiting anywhere on the Emerald Isle! One of the most amazing places I have ever visited, a place where the words of the Apostle Paul com to life and God's invisible attributes become visible. We then made our way to Derry for the night, unfortunately we were all a little road weary and did not do teh Derry Girls tour, check out the Netflix series if you haven't. Provides comedy and a history of Northern Ireland's "troubles" period.</p>
+        </div>
+        <div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <h2>Day Six</h2>
+                    {% for video in videos %}
+                        {% if video.name == "Ireland-Scotland-Day-Six" %}
+                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                            </video>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="video-text">
+                    <p><strong>Day Six:</strong> 1 June 2023 - We started the day with a Tesco breakfast, after eating out so much a trip to the grocery store was just what was needed. We then made the short drive to Belfast arriving just in time for our reservations at the Yellow Onion and Yardbird. After a delisious lunch the girls went shopping while the boys went to the pubs. The first pub had Poitin on offer, this is the Irish version of moonshine (uncasked whiskey) that we had heard about in the stories at the Hooley in Dublin. It's pretty much the same as American moonshine and would serve better as paint remover. Belfast is a beautiful city and we look forward to returning to explore more. We capped the evening off with an outstanding seafood dinner at Mourne Seafood, another must-stop destination!</p>
+        </div>
+        <div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <h2>Day Seven</h2>
+                    {% for video in videos %}
+                        {% if video.name == "Ireland-Scotland-Day-Seven" %}
+                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                            </video>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="video-text">
+                    <p><strong>Day Seven:</strong> 2 June 2023 - We’re on the move, testing Jay’s ability to drive on the “wrong” side of the road and navigate the multitude of round-a-bouts that run opposite to what you’re used to. Luckily, if you miss the turn, another round should get it, “Look kids Big Ben.” We successfully made it to Cork County and the Blarney Castle. Everyone made it to the top of the castle to lean out into the unknown, on our backs, and kiss the Blarney Stone. The verdict is still out on whether any of our verbal abilities have been improved, as Reagan said we should be able to talk good now. We then headed to the English Market in Cork and got our first taste of single track motorways. These roads would be one-way in the States but in Ireland they are two-way. We did get word that those headed uphill have the right-of-way but that did not make the first drive downhill any easier, ask about that story some time. At the English market we picked up some local goods and Portuguese wine for dinner at the Maryborough Hotel, set an impressive eighteenth-century estate!</p>
+        </div>
+        <div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <h2>Day Eight</h2>
+                    {% for video in videos %}
+                        {% if video.name == "Ireland-Scotland-Day-Eight" %}
+                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                            </video>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="video-text">
+                    <p><strong>Day Eight:</strong> 3 June 2023 - Farm Day, we are going to see how cheese is made at a working dairy farm, we first stopped by the Cliffs of Moher. The Cliffs were impressive but we only ended up with about 30 minutes to look around before we had to jump back in the car to make it to Kylemore Farms. We ended up without a minute to spare as we found that the single-track motorways can go on for miles… The right-of-way is a little less clear when on flat land and I think boils down to the one with the biggest kahunas winning, since I was a guest I yielded more often just to be safe. The farm was absolutely amazing! Once we had our protective booties on, can’t be too careful with lots of un-housetrained field animals roaming, we toured the grounds and dairy herd. Got the history of the place, Ireland, and how they got much of their fuel from cutting peat from the local bogs. The girls got to feed the baby cows and then we helped rotate the cheese, which is a daily task to keep the good bacteria growing on the rinds to protect the maturing cheese. Once this was complete Theresa and her family served us a true farm-to-table meal with many local delicacies, and of course plenty of cheese. We then headed to Galway with recommendations on which pubs to visit from the locals. We also learned that when we went to Northern Ireland, the first town we were visiting was Derry, NOT Londonderry!</p>
+        </div>
+        <div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <h2>Day Nine</h2>
+                    {% for video in videos %}
+                        {% if video.name == "Ireland-Scotland-England-Day-Nine" %}
+                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                            </video>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="video-text">
+                    <p><strong>Day Nine:</strong> 4 June 2023 - Farm Day, we are going to see how cheese is made at a working dairy farm, we first stopped by the Cliffs of Moher. The Cliffs were impressive but we only ended up with about 30 minutes to look around before we had to jump back in the car to make it to Kylemore Farms. We ended up without a minute to spare as we found that the single-track motorways can go on for miles… The right-of-way is a little less clear when on flat land and I think boils down to the one with the biggest kahunas winning, since I was a guest I yielded more often just to be safe. The farm was absolutely amazing! Once we had our protective booties on, can’t be too careful with lots of un-housetrained field animals roaming, we toured the grounds and dairy herd. Got the history of the place, Ireland, and how they got much of their fuel from cutting peat from the local bogs. The girls got to feed the baby cows and then we helped rotate the cheese, which is a daily task to keep the good bacteria growing on the rinds to protect the maturing cheese. Once this was complete Theresa and her family served us a true farm-to-table meal with many local delicacies, and of course plenty of cheese. We then headed to Galway with recommendations on which pubs to visit from the locals. We also learned that when we went to Northern Ireland, the first town we were visiting was Derry, NOT Londonderry!</p>
         </div>
     </div>
 {% endblock %}

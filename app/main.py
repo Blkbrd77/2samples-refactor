@@ -50,7 +50,8 @@ def home():
 
 @app.route('/japan')
 def japan():
-    return render_template('japan.html', placeholder_image=placeholder_image)
+    videos = get_video_data()
+    return render_template('japan.html', videos=videos, placeholder_image=placeholder_image)
 
 
 @app.route('/ireland')
@@ -61,7 +62,8 @@ def ireland():
 
 @app.route('/uk')
 def uk():
-    return render_template('uk.html', placeholder_image=placeholder_image)
+    videos = get_video_data()
+    return render_template('uk.html', videos=videos, placeholder_image=placeholder_image)
 
 
 @app.route('/blog')

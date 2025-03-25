@@ -1,0 +1,6 @@
+repos:
+- repo: https://github.com/pycqa/flake8
+  rev: 6.1.0  # Latest stable version as of now; update if needed
+  hooks:
+  - id: flake8
+    args: [--max-line-length=100]  # Optional: adjust line length

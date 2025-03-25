@@ -1,3 +1,4 @@
+from flask.testing import FlaskClient
 import pytest
 from app.main import app
 import subprocess
@@ -12,7 +13,7 @@ def client():
         yield client
 
 
-def test_index_route_renders_images(client):
+def test_index_route_renders_images(client: FlaskClient):
     """Test that the index route renders HTML with CloudFront image URLs."""
     response = client.get('/')
     assert response.status_code == 200  # Check the route loads successfully
@@ -54,31 +55,128 @@ def test_ireland_page():
     assert b'class="header"' in response.data
 
 
-def test_ireland_videos(client, monkeypatch):
+@pytest.fixture
+def mock_s3_ireland(monkeypatch: pytest.MonkeyPatch):
     class MockS3Client:
         def list_objects_v2(self, Bucket, Prefix):
             if Prefix == 'videos/':
                 return {
                     'Contents': [
-                        {'Key': 'videos/Ireland-Scotland-Day-One.mov'}
+                        {'Key': 'videos/Ireland-Scotland-Day-One.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Two.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Three.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Four.mov'}
                     ]
                 }
             elif Prefix == 'stills/':
                 return {
                     'Contents': [
-                        {'Key': 'stills/Ireland-Scotland-Day-One-still-001.jpg'}
+                        {'Key': 'stills/Ireland-Scotland-Day-One-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Two-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Three-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Four-still-001.jpg'}
                     ]
                 }
             return {'Contents': []}
+    monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
-    monkeypatch.setattr('boto3.client', lambda *args, **kwargs: MockS3Client())
+
+@pytest.fixture
+def mock_s3_japan(monkeypatch: pytest.MonkeyPatch):
+    class MockS3Client:
+        def list_objects_v2(self, Bucket, Prefix):
+            if Prefix == 'videos/':
+                return {
+                    'Contents': [
+                        {'Key': 'videos/Japan-2019-Osaka.mov'},
+                        {'Key': 'videos/Japan-2019.mov'},
+                    ]
+                }
+            elif Prefix == 'stills/':
+                return {
+                    'Contents': [
+                        {'Key': 'stills/Japan-2019-Osaka-still-001.jpg'},
+                        {'Key': 'stills/Japan-2019-still-001.jpg'},
+                    ]
+                }
+            return {'Contents': []}
+    monkeypatch.setattr('app.main.s3_client', MockS3Client())
+
+
+@pytest.fixture
+def mock_s3_uk(monkeypatch: pytest.MonkeyPatch):
+    class MockS3Client:
+        def list_objects_v2(self, Bucket, Prefix):
+            if Prefix == 'videos/':
+                return {
+                    'Contents': [
+                        {'Key': 'videos/Ireland-Scotland-Day-Five.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Six.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Seven.mov'},
+                        {'Key': 'videos/Ireland-Scotland-Day-Eight.mov'},
+                        {'Key': 'videos/Ireland-Scotland-England-Day-Nine.mov'}
+                    ]
+                }
+            elif Prefix == 'stills/':
+                return {
+                    'Contents': [
+                        {'Key': 'stills/Ireland-Scotland-Day-Five-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Six-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Seven-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-Day-Eight-still-001.jpg'},
+                        {'Key': 'stills/Ireland-Scotland-England-Day-Nine-still-001.jpg'}
+                    ]
+                }
+            return {'Contents': []}
+    monkeypatch.setattr('app.main.s3_client', MockS3Client())
+
+
+def test_ireland_videos(client: FlaskClient, mock_s3_ireland: None):
     response = client.get('/ireland')
     assert response.status_code == 200
-    html = response.data.decode('utf-8')
-    print("Rendered HTML:", html)  # Debug
-    assert '<video controls' in html
+    html = response.data.decode('utf-8')  # Decode bytes to string
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Two.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Three.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Four.mov"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-One-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Two-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Three-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg"' in html
+
+
+def test_japan_videos(client: FlaskClient, mock_s3_japan: None):
+    response = client.get('/japan')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')  # Decode bytes to string
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019-Osaka.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019.mov"' in html
+
+
+def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
+    response = client.get('/uk')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8')  # Decode bytes to string
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Five.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Six.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Seven.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Eight.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-England-Day-Nine.mov"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Five-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg"' in html
+    day_nine_poster = (
+        'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/'
+        'Ireland-Scotland-England-Day-Nine-still-001.jpg"'
+    )
+    assert day_nine_poster in html
+
+
+def test_get_video_data_invalid_prefix(mock_s3_ireland: None):
+    from app.main import get_video_data
+    videos = get_video_data(prefix='invalid/')  # Non-matching prefix
+    assert len(videos) == 0  # Hits line 78
 
 
 def test_uk_page():
