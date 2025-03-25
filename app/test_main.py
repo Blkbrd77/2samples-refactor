@@ -134,7 +134,7 @@ def mock_s3_uk(monkeypatch: pytest.MonkeyPatch):
 def test_ireland_videos(client: FlaskClient, mock_s3_ireland: None):
     response = client.get('/ireland')
     assert response.status_code == 200
-    html = response.data.decode('utf-8') # Decode bytes to string
+    html = response.data.decode('utf-8')  # Decode bytes to string
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Two.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Three.mov"' in html
@@ -148,7 +148,7 @@ def test_ireland_videos(client: FlaskClient, mock_s3_ireland: None):
 def test_japan_videos(client: FlaskClient, mock_s3_japan: None):
     response = client.get('/japan')
     assert response.status_code == 200
-    html = response.data.decode('utf-8') # Decode bytes to string
+    html = response.data.decode('utf-8')  # Decode bytes to string
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019-Osaka.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019.mov"' in html
 
@@ -156,7 +156,7 @@ def test_japan_videos(client: FlaskClient, mock_s3_japan: None):
 def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
     response = client.get('/uk')
     assert response.status_code == 200
-    html = response.data.decode('utf-8') # Decode bytes to string
+    html = response.data.decode('utf-8')  # Decode bytes to string
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Five.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Six.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Seven.mov"' in html
@@ -166,9 +166,11 @@ def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg"' in html
-    assert ('poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/'
-           'Ireland-Scotland-England-Day-Nine-still-001.jpg"' 
-    ) in html
+    day_nine_poster = (
+        'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/'
+        'Ireland-Scotland-England-Day-Nine-still-001.jpg"'
+    )
+    assert day_nine_poster in html
 
 
 def test_get_video_data_invalid_prefix(mock_s3_ireland: None):
