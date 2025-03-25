@@ -1,3 +1,4 @@
+from flask.testing import FlaskClient
 import pytest
 from app.main import app
 import subprocess
@@ -12,7 +13,7 @@ def client():
         yield client
 
 
-def test_index_route_renders_images(client):
+def test_index_route_renders_images(client: FlaskClient):
     """Test that the index route renders HTML with CloudFront image URLs."""
     response = client.get('/')
     assert response.status_code == 200  # Check the route loads successfully
@@ -55,7 +56,7 @@ def test_ireland_page():
 
 
 @pytest.fixture
-def mock_s3_ireland(monkeypatch):
+def mock_s3_ireland(monkeypatch: pytest.MonkeyPatch):
     class MockS3Client:
         def list_objects_v2(self, Bucket, Prefix):
             if Prefix == 'videos/':
@@ -81,7 +82,7 @@ def mock_s3_ireland(monkeypatch):
 
 
 @pytest.fixture
-def mock_s3_japan(monkeypatch):
+def mock_s3_japan(monkeypatch: pytest.MonkeyPatch):
     class MockS3Client:
         def list_objects_v2(self, Bucket, Prefix):
             if Prefix == 'videos/':
@@ -101,8 +102,9 @@ def mock_s3_japan(monkeypatch):
             return {'Contents': []}
     monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
+
 @pytest.fixture
-def mock_s3_uk(monkeypatch):
+def mock_s3_uk(monkeypatch: pytest.MonkeyPatch):
     class MockS3Client:
         def list_objects_v2(self, Bucket, Prefix):
             if Prefix == 'videos/':
@@ -129,7 +131,7 @@ def mock_s3_uk(monkeypatch):
     monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
 
-def test_ireland_videos(client, mock_s3_ireland):
+def test_ireland_videos(client: FlaskClient, mock_s3_ireland: None):
     response = client.get('/ireland')
     assert response.status_code == 200
     html = response.data.decode('utf-8') # Decode bytes to string
@@ -143,7 +145,7 @@ def test_ireland_videos(client, mock_s3_ireland):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg"' in html
 
 
-def test_japan_videos(client, mock_s3_japan):
+def test_japan_videos(client: FlaskClient, mock_s3_japan: None):
     response = client.get('/japan')
     assert response.status_code == 200
     html = response.data.decode('utf-8') # Decode bytes to string
@@ -151,7 +153,7 @@ def test_japan_videos(client, mock_s3_japan):
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019.mov"' in html
 
 
-def test_uk_videos(client, mock_s3_uk):
+def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
     response = client.get('/uk')
     assert response.status_code == 200
     html = response.data.decode('utf-8') # Decode bytes to string
@@ -164,10 +166,12 @@ def test_uk_videos(client, mock_s3_uk):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg"' in html
-    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-England-Day-Nine-still-001.jpg"' in html
+    assert ('poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/'
+           'Ireland-Scotland-England-Day-Nine-still-001.jpg"' 
+    ) in html
 
 
-def test_get_video_data_invalid_prefix(mock_s3_ireland):
+def test_get_video_data_invalid_prefix(mock_s3_ireland: None):
     from app.main import get_video_data
     videos = get_video_data(prefix='invalid/')  # Non-matching prefix
     assert len(videos) == 0  # Hits line 78
