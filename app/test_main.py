@@ -79,6 +79,28 @@ def mock_s3_ireland(monkeypatch):
             return {'Contents': []}
     monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
+
+@pytest.fixture
+def mock_s3_japan(monkeypatch):
+    class MockS3Client:
+        def list_objects_v2(self, Bucket, Prefix):
+            if Prefix == 'videos/':
+                return {
+                    'Contents': [
+                        {'Key': 'videos/Japan-2019-Osaka.mov'},
+                        {'Key': 'videos/Japan-2019.mov'},
+                    ]
+                }
+            elif Prefix == 'stills/':
+                return {
+                    'Contents': [
+                        {'Key': 'stills/Japan-2019-Osaka-still-001.jpg'},
+                        {'Key': 'stills/Japan-2019-still-001.jpg'},
+                    ]
+                }
+            return {'Contents': []}
+    monkeypatch.setattr('app.main.s3_client', MockS3Client())
+
 @pytest.fixture
 def mock_s3_uk(monkeypatch):
     class MockS3Client:
@@ -119,6 +141,14 @@ def test_ireland_videos(client, mock_s3_ireland):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Two-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Three-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg"' in html
+
+
+def test_japan_videos(client, mock_s3_japan):
+    response = client.get('/japan')
+    assert response.status_code == 200
+    html = response.data.decode('utf-8') # Decode bytes to string
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019-Osaka.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019.mov"' in html
 
 
 def test_uk_videos(client, mock_s3_uk):
