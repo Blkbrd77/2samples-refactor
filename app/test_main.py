@@ -32,6 +32,7 @@ def test_home_page():
     assert b'href="/japan"' in response.data
     assert b'href="/ireland"' in response.data
     assert b'href="/uk"' in response.data
+    assert b'href="/greece"' in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
     assert b'class="tile"' in response.data
@@ -202,6 +203,15 @@ def test_maps_page():
     response = client.get('/maps')
     assert response.status_code == 200
     assert b"Maps" in response.data
+    assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
+    assert b'class="header"' in response.data
+
+
+def test_greece_page():
+    client = app.test_client()
+    response = client.get('/greece')
+    assert response.status_code == 200
+    assert b"Greece" in response.data
     assert b'<link rel="stylesheet" href="/static/style.css">' in response.data
     assert b'class="header"' in response.data
 
