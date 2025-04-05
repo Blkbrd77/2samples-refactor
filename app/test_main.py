@@ -91,6 +91,7 @@ def mock_s3_japan(monkeypatch: pytest.MonkeyPatch):
                     'Contents': [
                         {'Key': 'videos/Japan-2019-Osaka.mov'},
                         {'Key': 'videos/Japan-2019.mov'},
+                        {'Key': 'videos/Tokyo.mov'}
                     ]
                 }
             elif Prefix == 'stills/':
@@ -98,6 +99,7 @@ def mock_s3_japan(monkeypatch: pytest.MonkeyPatch):
                     'Contents': [
                         {'Key': 'stills/Japan-2019-Osaka-still-001.jpg'},
                         {'Key': 'stills/Japan-2019-still-001.jpg'},
+                        {'Key': 'stills/Tokyo.mov'}
                     ]
                 }
             return {'Contents': []}
@@ -152,6 +154,7 @@ def test_japan_videos(client: FlaskClient, mock_s3_japan: None):
     html = response.data.decode('utf-8')  # Decode bytes to string
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019-Osaka.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Japan-2019.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Tokyo.mov"' in html
 
 
 def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
