@@ -117,7 +117,9 @@ def mock_s3_uk(monkeypatch: pytest.MonkeyPatch):
                         {'Key': 'videos/Ireland-Scotland-Day-Six.mov'},
                         {'Key': 'videos/Ireland-Scotland-Day-Seven.mov'},
                         {'Key': 'videos/Ireland-Scotland-Day-Eight.mov'},
-                        {'Key': 'videos/Ireland-Scotland-England-Day-Nine.mov'}
+                        {'Key': 'videos/Ireland-Scotland-England-Day-Nine.mov'},
+                        {'Key': 'videos/Edinburgh-Day-Ten.mov'},
+                        {'Key': 'videos/Edinburgh-Day-Eleven.mp4'}
                     ]
                 }
             elif Prefix == 'stills/':
@@ -127,7 +129,9 @@ def mock_s3_uk(monkeypatch: pytest.MonkeyPatch):
                         {'Key': 'stills/Ireland-Scotland-Day-Six-still-001.jpg'},
                         {'Key': 'stills/Ireland-Scotland-Day-Seven-still-001.jpg'},
                         {'Key': 'stills/Ireland-Scotland-Day-Eight-still-001.jpg'},
-                        {'Key': 'stills/Ireland-Scotland-England-Day-Nine-still-001.jpg'}
+                        {'Key': 'stills/Ireland-Scotland-England-Day-Nine-still-001.jpg'},
+                        {'Key': 'stills/Edinburgh-Day-Ten-stil-001.jpg'},
+                        {'Key': 'stills/Edinburgh-Day-Eleven-still-001.jpg'}
                     ]
                 }
             return {'Contents': []}
@@ -166,15 +170,15 @@ def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Seven.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Eight.mov"' in html
     assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-England-Day-Nine.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Edinburgh-Day-Ten.mov"' in html
+    assert '<source src="https://d1rhrn7ca7di1b.cloudfront.net/videos/Edinburgh-Day-Eleven.mp4"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Five-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg"' in html
-    day_nine_poster = (
-        'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/'
-        'Ireland-Scotland-England-Day-Nine-still-001.jpg"'
-    )
-    assert day_nine_poster in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Nine-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Ten-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Eleven-still-001.jpg"' in html
 
 
 def test_get_video_data_invalid_prefix(mock_s3_ireland: None):

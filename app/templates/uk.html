@@ -4,14 +4,15 @@
     <div class="container">
         <h1 style="text-align: center;">UNITED KINGDOM</h1>
     </div>
+    <!-- Day Five -->
     <div class="video-container">
         <div class="video-wrapper">
             <h2>Day Five</h2>
             {% for video in videos %}
                 {% if video.name == "Ireland-Scotland-Day-Five" %}
-                    <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
+                    <video controls poster="{{ video.still }}">
                         <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
-                        <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
+                        <source src="{{ video.url }}" type="video/mp4">
                         <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
                     </video>
                 {% endif %}
@@ -20,73 +21,113 @@
         <div class="video-text">
             <p><strong>Day Five:</strong> 31 May 2023 - We left Galway, Ireland and headed north into the United Kingdom, first stopping in the beautiful villeage of Donegal to have lunch at a gastropub that was not open...whoops! The great thing about Ireland is if the place you want to go is no longer there, there is bound to be a pub with some good food nearby. From there we went to the Giants Causeway, this is an abosolute must stop if you are ever visiting anywhere on the Emerald Isle! One of the most amazing places I have ever visited, a place where the words of the Apostle Paul com to life and God's invisible attributes become visible. We then made our way to Derry for the night, unfortunately we were all a little road weary and did not do teh Derry Girls tour, check out the Netflix series if you haven't. Provides comedy and a history of Northern Ireland's "troubles" period.</p>
         </div>
-        <div>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <h2>Day Six</h2>
-                    {% for video in videos %}
-                        {% if video.name == "Ireland-Scotland-Day-Six" %}
-                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
-                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
-                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
-                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
-                            </video>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="video-text">
-                    <p><strong>Day Six:</strong> 1 June 2023 - We started the day with a Tesco breakfast, after eating out so much a trip to the grocery store was just what was needed. We then made the short drive to Belfast arriving just in time for our reservations at the Yellow Onion and Yardbird. After a delisious lunch the girls went shopping while the boys went to the pubs. The first pub had Poitin on offer, this is the Irish version of moonshine (uncasked whiskey) that we had heard about in the stories at the Hooley in Dublin. It's pretty much the same as American moonshine and would serve better as paint remover. Belfast is a beautiful city and we look forward to returning to explore more. We capped the evening off with an outstanding seafood dinner at Mourne Seafood, another must-stop destination!</p>
+    </div>
+    <!-- Day Six -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Six</h2>
+            {% for video in videos %}
+                {% if video.name == "Ireland-Scotland-Day-Six" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
         </div>
-        <div>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <h2>Day Seven</h2>
-                    {% for video in videos %}
-                        {% if video.name == "Ireland-Scotland-Day-Seven" %}
-                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
-                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
-                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
-                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
-                            </video>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="video-text">
-                    <p><strong>Day Seven:</strong> 2 June 2023 - We’re on the move, testing Jay’s ability to drive on the “wrong” side of the road and navigate the multitude of round-a-bouts that run opposite to what you’re used to. Luckily, if you miss the turn, another round should get it, “Look kids Big Ben.” We successfully made it to Cork County and the Blarney Castle. Everyone made it to the top of the castle to lean out into the unknown, on our backs, and kiss the Blarney Stone. The verdict is still out on whether any of our verbal abilities have been improved, as Reagan said we should be able to talk good now. We then headed to the English Market in Cork and got our first taste of single track motorways. These roads would be one-way in the States but in Ireland they are two-way. We did get word that those headed uphill have the right-of-way but that did not make the first drive downhill any easier, ask about that story some time. At the English market we picked up some local goods and Portuguese wine for dinner at the Maryborough Hotel, set an impressive eighteenth-century estate!</p>
+        <div class="video-text">
+            <p><strong>Day Six:</strong> 1 June 2023 - We started the day with a Tesco breakfast, after eating out so much a trip to the grocery store was just what was needed. We then made the short drive to Belfast arriving just in time for our reservations at the Yellow Onion and Yardbird. After a delisious lunch the girls went shopping while the boys went to the pubs. The first pub had Poitin on offer, this is the Irish version of moonshine (uncasked whiskey) that we had heard about in the stories at the Hooley in Dublin. It's pretty much the same as American moonshine and would serve better as paint remover. Belfast is a beautiful city and we look forward to returning to explore more. We capped the evening off with an outstanding seafood dinner at Mourne Seafood, another must-stop destination!</p>
         </div>
-        <div>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <h2>Day Eight</h2>
-                    {% for video in videos %}
-                        {% if video.name == "Ireland-Scotland-Day-Eight" %}
-                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
-                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
-                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
-                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
-                            </video>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="video-text">
-                    <p><strong>Day Eight:</strong> 3 June 2023 - Farm Day, we are going to see how cheese is made at a working dairy farm, we first stopped by the Cliffs of Moher. The Cliffs were impressive but we only ended up with about 30 minutes to look around before we had to jump back in the car to make it to Kylemore Farms. We ended up without a minute to spare as we found that the single-track motorways can go on for miles… The right-of-way is a little less clear when on flat land and I think boils down to the one with the biggest kahunas winning, since I was a guest I yielded more often just to be safe. The farm was absolutely amazing! Once we had our protective booties on, can’t be too careful with lots of un-housetrained field animals roaming, we toured the grounds and dairy herd. Got the history of the place, Ireland, and how they got much of their fuel from cutting peat from the local bogs. The girls got to feed the baby cows and then we helped rotate the cheese, which is a daily task to keep the good bacteria growing on the rinds to protect the maturing cheese. Once this was complete Theresa and her family served us a true farm-to-table meal with many local delicacies, and of course plenty of cheese. We then headed to Galway with recommendations on which pubs to visit from the locals. We also learned that when we went to Northern Ireland, the first town we were visiting was Derry, NOT Londonderry!</p>
+    </div>
+    <!-- Day Seven -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Seven</h2>
+            {% for video in videos %}
+                {% if video.name == "Ireland-Scotland-Day-Seven" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
         </div>
-        <div>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <h2>Day Nine</h2>
-                    {% for video in videos %}
-                        {% if video.name == "Ireland-Scotland-England-Day-Nine" %}
-                            <video controls poster="{{ video.still }}" style="max-width: 100%; height: auto;">
-                                <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
-                                <source src="{{ video.url }}" type="video/mp4"> <!-- Fallback -->
-                                <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
-                            </video>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="video-text">
-                    <p><strong>Day Nine:</strong> 4 June 2023 - Farm Day, we are going to see how cheese is made at a working dairy farm, we first stopped by the Cliffs of Moher. The Cliffs were impressive but we only ended up with about 30 minutes to look around before we had to jump back in the car to make it to Kylemore Farms. We ended up without a minute to spare as we found that the single-track motorways can go on for miles… The right-of-way is a little less clear when on flat land and I think boils down to the one with the biggest kahunas winning, since I was a guest I yielded more often just to be safe. The farm was absolutely amazing! Once we had our protective booties on, can’t be too careful with lots of un-housetrained field animals roaming, we toured the grounds and dairy herd. Got the history of the place, Ireland, and how they got much of their fuel from cutting peat from the local bogs. The girls got to feed the baby cows and then we helped rotate the cheese, which is a daily task to keep the good bacteria growing on the rinds to protect the maturing cheese. Once this was complete Theresa and her family served us a true farm-to-table meal with many local delicacies, and of course plenty of cheese. We then headed to Galway with recommendations on which pubs to visit from the locals. We also learned that when we went to Northern Ireland, the first town we were visiting was Derry, NOT Londonderry!</p>
+        <div class="video-text">
+            <p><strong>Day Seven:</strong> 2 June 2023 - Day seven featured a return to Dublin to catch a flight to Glasgow, Scotland. After dropping the girls and the travel bags at the airport, Jay and Tray drove back to the city to pick up the bags that the hotel had stored. See day one and how an Irish rental car is not made for six people and luggage. We rode Ryan Air and got to experience what air travel was like in the days before the terminal bridges, boarding from an outdoor ladder. The flight provided much beautiful scenery and we were able to find a taxi that fit six people and all the bags. We had dinner in Glasgow and got to experience some of the local color…a drunk singing at the top of his lungs.</p>
+        </div>
+    </div>
+    <!-- Day Eight -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Eight</h2>
+            {% for video in videos %}
+                {% if video.name == "Ireland-Scotland-Day-Eight" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Eight:</strong> 3 June 2023 - We started in Glasgow by picking up the rental car which surprisingly fit not only six people but the original and additional bags that had been picked up along the way. Good thing too, we were setting out on a long journey to see Loch Ness and if we could catch a glimpse of Nessie. The first stop of the day was to Semple Castle, Loch, and grounds for a glimpse of the history of the Samples name. Through research on ancestry.com Jay has determined that he is the 10th great grandson of the 5th Lord of Semple, Hugh Semple. Unfortunately, we did not have time to take the one-mile walk (yes, in the UK they have not converted to metric yet either) to the castle. Instead, we visited with the staff at the visitor’s center about the relation to the Semples, they produced a flag and guest book for us to pose with and sign. Was a beautiful place and it is located on the approach path from the West if you ever fly into Glasgow airport. Next, we headed north. With it being a Saturday, and an unusually beautiful one at that, it seemed like most of the Glasgow population was also headed north. Their destination was Loch Lomond for a day at the beach, so once we got past that, the unusual amount of traffic cleared up. Driving over there was different, and Scotland was no exception, nothing like passing a tour bus within inches and also having a rock wall on your left! We had lunch at an awesome pub in Fort William and made it to Inverness driving by Loch Ness. No sightings of the beast but was a beautiful drive.</p>
+        </div>
+    </div>
+    <!-- Day Nine -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Nine</h2>
+            {% for video in videos %}
+                {% if video.name == "Ireland-Scotland-England-Day-Nine" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Nine:</strong> 4 June 2023 - We set out to find Sydney’s families castle at Caerlaverock in southern Scotland. This castle belonged to the Maxwell clan and was in pretty good shape for being almost 1000 years old. Sydney did not pass up the opportunity to point out which family had the biggest castle, the woman at the Semple Loch visitor center warned us about feuding clans 🙂 Since we were just a few miles from the English Border, the reason Caerlaverock was the sight of an English siege in 1300, we decided to have lunch in Carlisle. Looking at Google Maps, Wales was only a 2.5 hour drive from Carlisle, but since we had covered so many miles and kilometers already, decided it would wait for the next trip. From Carlise we went to stay in a real castle! The Melville Castle Hotel is located right outside of Edinburgh and was possibly the highlight of the whole trip. We had dinner delivered to the room, which had a dining room! Explored the grounds and generally relaxed from a long vacation. Was the perfect respite after much travelling.</p>
+        </div>
+    </div>
+    <!-- Day Ten -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Ten</h2>
+            {% for video in videos %}
+                {% if video.name == "Edinburgh-Day-Ten" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Ten:</strong> 5 June 2023 - The last day of the trip was spent in Edinburgh, its pronounced Eddin-burrah not Edenburg. Trust me you’ll want to practice unless you want English lessons from everyone in Scotland. We started off with the Johhnie Walker tour, if you are studying Marketing this should count for at least a three-hour class, was very impressive. Once that was done, we had reservations for their rooftop restaurant which provided sweeping views of the entire city. We then headed to the National Museum because they had just put the Declaration of Arbroath on display for the first time in eighteen years. This document was a declaration of independence from the English written in 1320, a 450-year predecessor to the US DOI, signed by the Maxwell Clan via a wax seal, some of which were still intact, but unsure whether the Maxwell one was or not. On the recommendation of a work colleague, we had booked the underground Edinburgh tour, we met the tour guide and explored the system of underground spaces that resulted from the expansion of the city needing to go vertical due to lack of space within the city walls. It provided an excellent history lesson and an insight into the sometimes wretched living conditions of the past. We completed the night with a dinner at Makar’s Mash a mashed potato restaurant, highly recommended.</p>
+        </div>
+    </div>
+    <!-- Day Eleven -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Eleven</h2>
+            {% for video in videos %}
+                {% if video.name == "Edinburgh-Day-Eleven" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Eleven:</strong> 6 June 2023 - “Leaving on a jet plane, don’t know when I’ll be back again…” Our trip complete we caught a cab to the Edinburgh airport to head back to Dublin and then Orlando. The trip was amazing, let us know if you need any tips on where to go and what to do. Overall, we saw as much as we could, looking forward to going back someday and spending more time at the highlights.</p>
         </div>
     </div>
 {% endblock %}
