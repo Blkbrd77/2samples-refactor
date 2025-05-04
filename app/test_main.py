@@ -176,7 +176,8 @@ def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg"' in html
-    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-England-Day-Nine-still-001.jpg"' in html
+    poster_url = "https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-England-Day-Nine-still-001.jpg"
+    assert f'poster="{poster_url}"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Ten-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Eleven-still-001.jpg"' in html
 
