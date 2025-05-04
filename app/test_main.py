@@ -130,7 +130,7 @@ def mock_s3_uk(monkeypatch: pytest.MonkeyPatch):
                         {'Key': 'stills/Ireland-Scotland-Day-Seven-still-001.jpg'},
                         {'Key': 'stills/Ireland-Scotland-Day-Eight-still-001.jpg'},
                         {'Key': 'stills/Ireland-Scotland-England-Day-Nine-still-001.jpg'},
-                        {'Key': 'stills/Edinburgh-Day-Ten-stil-001.jpg'},
+                        {'Key': 'stills/Edinburgh-Day-Ten-still-001.jpg'},
                         {'Key': 'stills/Edinburgh-Day-Eleven-still-001.jpg'}
                     ]
                 }
@@ -176,7 +176,7 @@ def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg"' in html
-    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Nine-still-001.jpg"' in html
+    assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-England-Day-Nine-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Ten-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Eleven-still-001.jpg"' in html
 
