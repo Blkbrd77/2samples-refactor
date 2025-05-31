@@ -78,7 +78,8 @@ def maps():
 
 @app.route('/greece')
 def greece():
-    return render_template('greece.html', placeholder_image=placeholder_image)
+    videos = get_video_data()
+    return render_template('greece.html', videos=videos, placeholder_image=placeholder_image)
 
 
 if __name__ == "__main__":

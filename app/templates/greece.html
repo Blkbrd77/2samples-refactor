@@ -1,107 +1,118 @@
 {% extends "base.html" %}
 {% block title %}GREECE{% endblock %}
 {% block content %}
-<div class="container">
-    <h1 style="text-align: center;">GREECE</h1>
-    <!-- Existing tile content, if any -->
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
+    <div class="container">
+        <h1 style="text-align: center;">GREECE</h1>
     </div>
-    <div class="video-text">
-        <p><strong>Day One:</strong> 10 May 2025: Arrive in Athens Check into hotel and explore.</p>
+    <!-- Day One -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day One</h2>
+            {% for video in videos %}
+                {% if video.name == "Greece-Day-1" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day One:</strong> May 9-10, 2025 Miami to Athens: After a ten and a half-hour flight we arrived in Athens. Once we received out bags and cleared customs we got into a taxi driven by Nikkos who expertly drove us into the city center. This trip was quite an experience around the tiny streets, lined on both sides with parked cars. Let’s just say that we are going to be extra careful walking about the city because over here pedestrians don’t seem to have the right-of-way.  We arrived at our hotel around noon, an amazing spot with a sidewalk cafe on a sycamore lined street. After checking in and a quick nap we headed out to explore. The weather was perfect and we walked around the Acropolis taking in the many sidewalk performers that were out Saturday afternoon. We found a rooftop cafe and sampled some greek cuisine. I was not 100% but the grilled octopus they served quickly revived me. Once we had eaten we headed out to shop, there were many shops close by and we enjoyed seeing all that they had to offer. We closed the night out with dinner at the Sense restaurant at the top of the hotel. The menu was a chef’s tasting and was an amazing offering of local flavors and presentations. We dined and watched the sunset on the Parthenon.
+</p>
+        </div>
     </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
+    <!-- Day Two -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Two</h2>
+            {% for video in videos %}
+                {% if video.name == "Greece Day 2" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Two:</strong>May 11, 2025 </p>
+        </div>
     </div>
-    <div class="video-text">
-        <p><strong>Day Two:</strong> 11 May 2025: The cruise begins!</p>
+    <!-- Day Three -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Days Three and Four</h2>
+            {% for video in videos %}
+                {% if video.name == "Greece Day 3&4" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Three:</strong> May 12-13, 2025 </p>
+        </div>
     </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
+    <!-- Day Five -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Five</h2>
+            {% for video in videos %}
+                {% if video.name == "Greece Day 5" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Four:</strong> May 14, 2025 </p>
+        </div>
     </div>
-    <div class="video-text">
-        <p><strong>Day Three:</strong> 12 May 2025: Santorini and a sailing adventure!</p>
+        </div>
+    <!-- Day Six -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Day Six</h2>
+            {% for video in videos %}
+                {% if video.name == "Greece Day 6" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Four:</strong> May 15, 2025 </p>
+        </div>
     </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
+        </div>
+    <!-- Days Seven and Eight -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Days Seven and Eight</h2>
+            {% for video in videos %}
+                {% if video.name == "Greece Day 7&8" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/{{ video.url.split('.')[-1] }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>Day Four:</strong> May 16-17, 2025</p>
+        </div>
     </div>
-    <div class="video-text">
-        <p><strong>Day Four:</strong> 13 May 2025: Rhodes and Wine Tasting!</p>
-    </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
-    </div>
-    <div class="video-text">
-        <p><strong>Day Five:</strong> 14 May 2025: Bodrum, Turkey taking an all day trip to Ehphesus and Mary's (yes that Mary) house!</p>
-    </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
-    </div>
-    <div class="video-text">
-        <p><strong>Day Six:</strong> 15 May 2025: Day at Sea.</p>
-    </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
-    </div>
-    <div class="video-text">
-        <p><strong>Day Seven:</strong> 16 May 2025: Mykonos, local home cooking demo.</p>
-    </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
-    </div>
-    <div class="video-text">
-        <p><strong>Day Eight:</strong> 17 May 2025: Mykonos Day Two and depart to return to Athens.</p>
-    </div>
-</div>
-<div class="video-container">
-    <div class="video-wrapper">
-        <h2>Video Coming Soon</h2>
-        <video controls poster="{{ placeholder_image }}" style="max-width: 100%; height: auto;">
-            <p>Your browser does not support the video tag. Check back later for video content.</p>
-        </video>
-    </div>
-    <div class="video-text">
-        <p><strong>Day Nine:</strong> 18 May 2025: Leaving on a jet plane.</p>
-    </div>
-</div>
 {% endblock %}
