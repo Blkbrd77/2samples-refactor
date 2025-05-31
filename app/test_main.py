@@ -137,6 +137,7 @@ def mock_s3_uk(monkeypatch: pytest.MonkeyPatch):
             return {'Contents': []}
     monkeypatch.setattr('app.main.s3_client', MockS3Client())
 
+
 @pytest.fixture
 def mock_s3_greece(monkeypatch: pytest.MonkeyPatch):
     class MockS3Client:
@@ -199,6 +200,7 @@ def test_uk_videos(client: FlaskClient, mock_s3_uk: None):
     assert f'poster="{poster_url}"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Ten-still-001.jpg"' in html
     assert 'poster="https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Eleven-still-001.jpg"' in html
+
 
 def test_greece_videos(client: FlaskClient, mock_s3_greece: None):
     response = client.get('/greece')
