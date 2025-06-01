@@ -83,8 +83,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS }}
-          application_name: 2samples-app
-          environment_name: 2samples-prod-env
+          application_name: 2samples-refactor
+          environment_name: 2samples-prod
           version_label: ${{ github.sha }}
           region: us-east-1
           deployment_package: app.zip
