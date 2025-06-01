@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Install python dependencies"
+      - python -m pip install --upgrade pip
+      - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - echo "Package application for Elastic Beanstalk"
+      - zip -r app.zip . -x "*.git*"
+      # - echo "Run tests"
+      # - python -m pip install flake8 pytest
+      # - pytest
+artifacts:
+  files:
+    - app.zip
