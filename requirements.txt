@@ -6,11 +6,14 @@ Flask==2.0.3
 jinja2==3.0.3      # Flask dependency, pinned for safety
 Werkzeug==2.2.2    # Flask dependency, pinned for consistency
 itsdangerous==2.0.1 # Flask dependency, pinned
-boto3==1.34.62 # AWS SDK for S3 interaction
-ffmpeg-python==0.2.0 #FFmpeg wrapper for stills generation
+boto3==1.34.62     # AWS SDK for S3 interaction
+ffmpeg-python==0.2.0 # FFmpeg wrapper for stills generation
 
 # Http Requests
 requests==2.31.0 # Added for test_main.py
+
+# WSGI Server
+gunicorn==23.0.0  # WSGI server for Flask app, matches logs
 
 # Automated tests
 pytest==7.4.4      # Matches devcontainer.json
@@ -18,4 +21,3 @@ pytest-cov>=4.0.0
 
 # Linting
 flake8==6.0.0
-
