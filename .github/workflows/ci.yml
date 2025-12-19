@@ -33,7 +33,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::654654285942:role/GitHubActionsDeployRole
+          role-to-assume: arn:aws:iam::211125453069:role/GitHubActionsDeployRole
           aws-region: us-east-1
 
       - name: Install dependencies
@@ -71,7 +71,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::654654285942:role/GitHubActionsDeployRole
+          role-to-assume: arn:aws:iam::211125453069:role/GitHubActionsDeployRole
           aws-region: us-east-1
 
       - name: Create deployment artifact
