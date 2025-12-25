@@ -1,5 +1,4 @@
-
-name: CI Pipeline with Staged Deployment
+name: CI Pipeline with Staging Deployment
 
 on:
   push:
@@ -61,7 +60,7 @@ jobs:
           name: coverage-report
           path: coverage.xml
 
-  deploy:
+  deploy-staging:
     runs-on: ubuntu-latest
     needs: test
     if: github.ref == 'refs/heads/main'
@@ -78,7 +77,44 @@ jobs:
       - name: Create deployment artifact
         run: |
           zip -r 2samples-refactor-${{ github.sha }}.zip . -x "*.git*"
-      
+
       - name: Upload to S3
         run: |
           aws s3 cp 2samples-refactor-${{ github.sha }}.zip s3://2samples-refactor-artifacts/source/2samples-refactor-${{ github.sha }}.zip
+
+      - name: Create EB Application Version
+        run: |
+          # Sanitize commit message for EB description (remove emojis and special chars, limit to 200 chars)
+          DESCRIPTION=$(echo "GitHub Actions deploy - ${{ github.sha }}" | tr -cd '[:alnum:][:space:]-_.' | head -c 200)
+          aws elasticbeanstalk create-application-version \
+            --application-name 2samples-refactor \
+            --version-label "v-${{ github.sha }}" \
+            --source-bundle S3Bucket="2samples-refactor-artifacts",S3Key="source/2samples-refactor-${{ github.sha }}.zip" \
+            --description "$DESCRIPTION"
+
+      - name: Deploy to Staging (2samples-env)
+        run: |
+          aws elasticbeanstalk update-environment \
+            --application-name 2samples-refactor \
+            --environment-name 2samples-env \
+            --version-label "v-${{ github.sha }}"
+
+      - name: Wait for Staging Deployment
+        run: |
+          echo "Waiting for staging environment to be ready..."
+          aws elasticbeanstalk wait environment-updated \
+            --application-name 2samples-refactor \
+            --environment-names 2samples-env
+
+      - name: Verify Staging Health
+        run: |
+          HEALTH=$(aws elasticbeanstalk describe-environment-health \
+            --environment-name 2samples-env \
+            --attribute-names HealthStatus \
+            --query 'HealthStatus' --output text)
+          echo "Staging environment health: $HEALTH"
+          if [ "$HEALTH" = "Severe" ]; then
+            echo "::error::Staging deployment failed - environment health is Severe"
+            exit 1
+          fi
+          echo "::notice::Staging deployment successful! To deploy to production, run the 'Deploy to Production' workflow manually."
