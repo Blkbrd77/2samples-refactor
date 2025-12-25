@@ -84,11 +84,13 @@ jobs:
 
       - name: Create EB Application Version
         run: |
+          # Sanitize commit message for EB description (remove emojis and special chars, limit to 200 chars)
+          DESCRIPTION=$(echo "GitHub Actions deploy - ${{ github.sha }}" | tr -cd '[:alnum:][:space:]-_.' | head -c 200)
           aws elasticbeanstalk create-application-version \
             --application-name 2samples-refactor \
             --version-label "v-${{ github.sha }}" \
             --source-bundle S3Bucket="2samples-refactor-artifacts",S3Key="source/2samples-refactor-${{ github.sha }}.zip" \
-            --description "Deployed from GitHub Actions - ${{ github.event.head_commit.message }}"
+            --description "$DESCRIPTION"
 
       - name: Deploy to Staging (2samples-env)
         run: |
