@@ -82,5 +82,11 @@ def greece():
     return render_template('greece.html', videos=videos, placeholder_image=placeholder_image)
 
 
+@app.route('/bahamas')
+def bahamas():
+    videos = get_video_data()
+    return render_template('bahamas.html', videos=videos, placeholder_image=placeholder_image)
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)  # pragma: no cover

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}BAHAMAS{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 style="text-align: center;">BAHAMAS</h1>
+    </div>
+    <!-- Bahamas 2025 -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <h2>Fourth of July Cruise 2025</h2>
+            {% for video in videos %}
+                {% if video.name == "Bahamas 2025" %}
+                    <video controls poster="{{ video.still }}">
+                        <source src="{{ video.url }}" type="video/mp4">
+                        <p>Video failed to load. <a href="{{ video.url }}">Download</a> or check back later.</p>
+                    </video>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="video-text">
+            <p><strong>July 2025:</strong> We celebrated the Fourth of July with a cruise alongside Sydney's parents! We departed from Cape Canaveral and sailed to Nassau and MSC's private cay. Sun, sand, and turquoise waters made for a perfect tropical getaway with the whole family.</p>
+        </div>
+    </div>
+{% endblock %}
