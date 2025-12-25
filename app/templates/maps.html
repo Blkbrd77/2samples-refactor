@@ -1,10 +1,756 @@
 {% extends "base.html" %}
-{% block title %}HOME{% endblock %}
+{% block title %}Travel Map{% endblock %}
 {% block content %}
-    <div class="container">
-        <h1 style="text-align: center;">MAPS</h1>
-        <p>Maps of our Travels</p>
+<style>
+    .maps-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .maps-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .maps-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #000;
+    }
+
+    .maps-header p {
+        color: #666;
+        font-size: 1.1rem;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .filter-tab {
+        padding: 12px 25px;
+        border: 2px solid #000;
+        background: #fff;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        font-size: 0.95rem;
+    }
+
+    .filter-tab:hover, .filter-tab.active {
+        background: #000;
+        color: #fff;
+    }
+
+    .filter-tab.jay { border-color: #F4D03F; }
+    .filter-tab.jay:hover, .filter-tab.jay.active { background: #F4D03F; color: #000; }
+
+    .filter-tab.sydney { border-color: #FF6B9D; }
+    .filter-tab.sydney:hover, .filter-tab.sydney.active { background: #FF6B9D; color: #000; }
+
+    .filter-tab.reagan { border-color: #FF8A65; }
+    .filter-tab.reagan:hover, .filter-tab.reagan.active { background: #FF8A65; color: #000; }
+
+    .filter-tab.taylor { border-color: #9B59B6; }
+    .filter-tab.taylor:hover, .filter-tab.taylor.active { background: #9B59B6; color: #fff; }
+
+    /* Two Column Layout */
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    /* Left Side - Family Member Cards */
+    .family-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .family-card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border-left: 5px solid;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .family-card:hover {
+        transform: translateX(5px);
+    }
+
+    .family-card.hidden {
+        display: none;
+    }
+
+    .family-card.jay { border-color: #F4D03F; }
+    .family-card.sydney { border-color: #FF6B9D; }
+    .family-card.reagan { border-color: #FF8A65; }
+    .family-card.taylor { border-color: #9B59B6; }
+
+    .family-card-header {
+        padding: 20px 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: linear-gradient(145deg, #000000, #404142);
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .family-card.jay .avatar { background: #F4D03F; color: #000; }
+    .family-card.sydney .avatar { background: #FF6B9D; }
+    .family-card.reagan .avatar { background: #FF8A65; }
+    .family-card.taylor .avatar { background: #9B59B6; color: #fff; }
+
+    .member-info h3 {
+        color: #fff;
+        margin: 0;
+        font-size: 1.3rem;
+    }
+
+    .member-info p {
+        color: #ccc;
+        margin: 5px 0 0 0;
+        font-size: 0.9rem;
+    }
+
+    .family-card-body {
+        padding: 20px 25px;
+    }
+
+    .destinations-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .destination-tag {
+        background: #f0f0f0;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .destination-tag.solo {
+        background: #e0e0e0;
+        font-style: italic;
+        font-size: 0.8rem;
+    }
+
+    .destination-tag .flag {
+        font-size: 1rem;
+    }
+
+    /* Right Side - Map */
+    .map-section {
+        position: sticky;
+        top: 80px;
+    }
+
+    .interactive-map {
+        background: linear-gradient(145deg, #1a1a2e, #16213e);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    .map-title {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+    }
+
+    .globe-container {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid #FFD700;
+        box-shadow:
+            0 0 50px rgba(255,215,0,0.25),
+            0 10px 30px rgba(0,0,0,0.3);
+        background: #000;
+    }
+
+    #globe {
+        width: 100%;
+        height: 100%;
+        cursor: grab;
+    }
+
+    #globe:active {
+        cursor: grabbing;
+    }
+
+    /* Summary Stats */
+    .stats-row {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-item .number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FFD700;
+    }
+
+    .stat-item .label {
+        font-size: 0.85rem;
+        color: #ccc;
+    }
+
+    /* Timeline Section */
+    .timeline-section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 2px solid #eee;
+    }
+
+    .timeline-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #000;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-left: 50px;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, #F4D03F, #FF6B9D, #FF8A65, #9B59B6);
+        border-radius: 2px;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+        padding: 25px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        margin-left: 30px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .timeline-item.hidden {
+        display: none;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -42px;
+        top: 30px;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: 4px solid #F4D03F;
+        border-radius: 50%;
+    }
+
+    .timeline-year {
+        position: absolute;
+        left: -120px;
+        top: 25px;
+        font-weight: bold;
+        color: #000;
+        font-size: 1.1rem;
+    }
+
+    .timeline-item h3 {
+        margin: 0 0 10px 0;
+        color: #000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .timeline-item h3 a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .timeline-item h3 a:hover {
+        color: #FFD700;
+    }
+
+    .timeline-travelers {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .mini-badge {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .mini-badge.jay { background: #F4D03F; color: #000; }
+    .mini-badge.sydney { background: #FF6B9D; }
+    .mini-badge.reagan { background: #FF8A65; }
+    .mini-badge.taylor { background: #9B59B6; color: #fff; }
+
+    .timeline-item p {
+        margin: 0;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .timeline-item.upcoming {
+        border: 2px dashed #FFD700;
+    }
+
+    .upcoming-badge {
+        background: #FFD700;
+        color: #000;
+        font-size: 0.7rem;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .map-section {
+            position: static;
+            order: -1;
+        }
+
+        .timeline-year {
+            position: static;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline {
+            padding-left: 40px;
+        }
+
+        .timeline-item {
+            margin-left: 20px;
+        }
+    }
+</style>
+
+<div class="maps-container">
+    <div class="maps-header">
+        <h1>Where We've Been</h1>
+        <p>A family journey across the globe</p>
     </div>
-</body>
-</html>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All Trips</button>
+        <button class="filter-tab jay" data-filter="jay">Jay</button>
+        <button class="filter-tab sydney" data-filter="sydney">Sydney</button>
+        <button class="filter-tab reagan" data-filter="reagan">Reagan</button>
+        <button class="filter-tab taylor" data-filter="taylor">Taylor</button>
+    </div>
+
+    <div class="content-wrapper">
+        <!-- Left Side - Family Cards -->
+        <div class="family-section">
+            <div class="family-card jay" data-member="jay">
+                <div class="family-card-header">
+                    <div class="avatar">J</div>
+                    <div class="member-info">
+                        <h3>Jay</h3>
+                        <p>14 destinations visited</p>
+                    </div>
+                </div>
+                <div class="family-card-body">
+                    <div class="destinations-list">
+                        <span class="destination-tag">Greece</span>
+                        <span class="destination-tag">Bahamas</span>
+                        <span class="destination-tag">Ireland</span>
+                        <span class="destination-tag">Northern Ireland</span>
+                        <span class="destination-tag">Scotland</span>
+                        <span class="destination-tag">England</span>
+                        <span class="destination-tag">Japan</span>
+                        <span class="destination-tag">Turkey</span>
+                        <span class="destination-tag">Mexico</span>
+                        <span class="destination-tag solo">Germany*</span>
+                        <span class="destination-tag solo">Iraq*</span>
+                        <span class="destination-tag solo">Taiwan*</span>
+                        <span class="destination-tag solo">Costa Rica*</span>
+                        <span class="destination-tag solo">Portugal*</span>
+                    </div>
+                    <p style="font-size: 0.75rem; color: #999; margin-top: 10px;">*Solo trips</p>
+                </div>
+            </div>
+
+            <div class="family-card sydney" data-member="sydney">
+                <div class="family-card-header">
+                    <div class="avatar">S</div>
+                    <div class="member-info">
+                        <h3>Sydney</h3>
+                        <p>9 destinations visited</p>
+                    </div>
+                </div>
+                <div class="family-card-body">
+                    <div class="destinations-list">
+                        <span class="destination-tag">Greece</span>
+                        <span class="destination-tag">Bahamas</span>
+                        <span class="destination-tag">Ireland</span>
+                        <span class="destination-tag">Northern Ireland</span>
+                        <span class="destination-tag">Scotland</span>
+                        <span class="destination-tag">England</span>
+                        <span class="destination-tag">Japan</span>
+                        <span class="destination-tag">Turkey</span>
+                        <span class="destination-tag">Mexico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-card reagan" data-member="reagan">
+                <div class="family-card-header">
+                    <div class="avatar">R</div>
+                    <div class="member-info">
+                        <h3>Reagan</h3>
+                        <p>7 destinations visited</p>
+                    </div>
+                </div>
+                <div class="family-card-body">
+                    <div class="destinations-list">
+                        <span class="destination-tag">Greece</span>
+                        <span class="destination-tag">Bahamas</span>
+                        <span class="destination-tag">Ireland</span>
+                        <span class="destination-tag">Northern Ireland</span>
+                        <span class="destination-tag">Scotland</span>
+                        <span class="destination-tag">England</span>
+                        <span class="destination-tag">Japan</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="family-card taylor" data-member="taylor">
+                <div class="family-card-header">
+                    <div class="avatar">T</div>
+                    <div class="member-info">
+                        <h3>Taylor</h3>
+                        <p>7 destinations visited</p>
+                    </div>
+                </div>
+                <div class="family-card-body">
+                    <div class="destinations-list">
+                        <span class="destination-tag">Greece</span>
+                        <span class="destination-tag">Bahamas</span>
+                        <span class="destination-tag">Ireland</span>
+                        <span class="destination-tag">Northern Ireland</span>
+                        <span class="destination-tag">Scotland</span>
+                        <span class="destination-tag">England</span>
+                        <span class="destination-tag">Japan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Globe Map -->
+        <div class="map-section">
+            <div class="interactive-map">
+                <h3 class="map-title">Our Global Footprint</h3>
+                <div class="globe-container">
+                    <div id="globe"></div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="number">14</div>
+                        <div class="label">Countries</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">3</div>
+                        <div class="label">Continents</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">4</div>
+                        <div class="label">Family Trips</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="timeline-section">
+        <h2>Our Journey Through Time</h2>
+        <div class="timeline">
+            <div class="timeline-item upcoming" data-travelers="jay sydney reagan taylor">
+                <span class="timeline-year">2026</span>
+                <h3>Mediterranean Cruise <span class="upcoming-badge">Upcoming</span></h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                    <span class="mini-badge sydney">S</span>
+                    <span class="mini-badge reagan">R</span>
+                    <span class="mini-badge taylor">T</span>
+                </div>
+                <p>MSC cruise departing from Rome, visiting Spain, France, and Italy.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay sydney reagan taylor">
+                <span class="timeline-year">2025</span>
+                <h3>Bahamas Cruise</h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                    <span class="mini-badge sydney">S</span>
+                    <span class="mini-badge reagan">R</span>
+                    <span class="mini-badge taylor">T</span>
+                </div>
+                <p>A Fourth of July cruise with Sydney's parents, departing Cape Canaveral and visiting Nassau and MSC's private cay.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay sydney reagan taylor">
+                <span class="timeline-year">2025</span>
+                <h3><a href="/greece">Greece Adventure</a></h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                    <span class="mini-badge sydney">S</span>
+                    <span class="mini-badge reagan">R</span>
+                    <span class="mini-badge taylor">T</span>
+                </div>
+                <p>Athens and the Acropolis followed by a Greek island cruise aboard the Resilient Lady. Rhodes wine tours, ancient Ephesus in Turkey, sailing in Santorini, and exploring Crete.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay sydney reagan taylor">
+                <span class="timeline-year">2023</span>
+                <h3><a href="/ireland">Ireland</a> & <a href="/uk">UK</a></h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                    <span class="mini-badge sydney">S</span>
+                    <span class="mini-badge reagan">R</span>
+                    <span class="mini-badge taylor">T</span>
+                </div>
+                <p>Eleven days across the Emerald Isle and Great Britain. Dublin, Blarney Castle, Cliffs of Moher, Giants Causeway, Glasgow, Loch Ness, and Edinburgh. Family heritage discoveries at Semple and Caerlaverock castles.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay sydney reagan taylor">
+                <span class="timeline-year">2019</span>
+                <h3><a href="/japan">Japan</a></h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                    <span class="mini-badge sydney">S</span>
+                    <span class="mini-badge reagan">R</span>
+                    <span class="mini-badge taylor">T</span>
+                </div>
+                <p>Explored Osaka, rode the Bullet Train to Nagoya, and experienced Tokyo ahead of the 2020 Olympics. A blend of ancient temples and modern city life.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay">
+                <span class="timeline-year">2017</span>
+                <h3>Taiwan</h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                </div>
+                <p>Business trip to attend program meetings with a customer project.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay">
+                <span class="timeline-year">2016</span>
+                <h3>Portugal</h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                </div>
+                <p>NATO Seasparrow Missile Program Management Review.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay">
+                <span class="timeline-year">2010</span>
+                <h3>Iraq</h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                </div>
+                <p>Six month deployment courtesy of Uncle Sam, serving as Ops Officer for a DCMA unit.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay">
+                <span class="timeline-year">1999</span>
+                <h3>Mexico</h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                </div>
+                <p>Quick trip to Tijuana visiting a buddy stationed in San Diego with the Navy.</p>
+            </div>
+
+            <div class="timeline-item" data-travelers="jay">
+                <span class="timeline-year">1996</span>
+                <h3>Costa Rica</h3>
+                <div class="timeline-travelers">
+                    <span class="mini-badge jay">J</span>
+                </div>
+                <p>Graduation surf trip with buddies to Jaco, surfing spots up and down the Pacific coast.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/globe.gl"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Destinations data with travelers
+    const allDestinations = [
+        { name: 'Japan', lat: 35.6762, lng: 139.6503, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Ireland', lat: 53.1424, lng: -7.6921, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Northern Ireland', lat: 54.7877, lng: -6.4923, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Scotland', lat: 56.4907, lng: -4.2026, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'England', lat: 52.3555, lng: -1.1743, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Greece', lat: 39.0742, lng: 21.8243, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Turkey', lat: 38.9637, lng: 35.2433, travelers: ['jay', 'sydney'] },
+        { name: 'Bahamas', lat: 25.0343, lng: -77.3963, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Mexico', lat: 23.6345, lng: -102.5528, travelers: ['jay', 'sydney'] },
+        { name: 'Germany', lat: 51.1657, lng: 10.4515, travelers: ['jay'] },
+        { name: 'Iraq', lat: 33.2232, lng: 43.6793, travelers: ['jay'] },
+        { name: 'Taiwan', lat: 23.6978, lng: 120.9605, travelers: ['jay'] },
+        { name: 'Costa Rica', lat: 9.7489, lng: -83.7534, travelers: ['jay'] },
+        { name: 'Portugal', lat: 39.3999, lng: -8.2245, travelers: ['jay'] }
+    ];
+
+    // Color mapping
+    const colorMap = {
+        jay: '#F4D03F',
+        sydney: '#FF6B9D',
+        reagan: '#FF8A65',
+        taylor: '#9B59B6'
+    };
+
+    let currentFilter = 'all';
+
+    // Function to get filtered destinations with colors
+    function getFilteredDestinations(filter) {
+        return allDestinations
+            .filter(d => filter === 'all' || d.travelers.includes(filter))
+            .map(d => ({
+                ...d,
+                color: filter === 'all' ? '#FFFFFF' : colorMap[filter]
+            }));
+    }
+
+    // Initialize Globe
+    const globeContainer = document.getElementById('globe');
+    const containerWidth = globeContainer.offsetWidth || 400;
+
+    const globe = Globe()
+        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+        .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .width(containerWidth)
+        .height(containerWidth)
+        .pointsData(getFilteredDestinations('all'))
+        .pointLat('lat')
+        .pointLng('lng')
+        .pointColor('color')
+        .pointAltitude(0.02)
+        .pointRadius(0.6)
+        .pointLabel(d => `<div style="background: rgba(0,0,0,0.8); color: ${d.color}; padding: 8px 12px; border-radius: 8px; font-weight: bold;">${d.name}</div>`)
+        .enablePointerInteraction(true)
+        (globeContainer);
+
+    // Auto-rotate
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = 0.5;
+
+    // Set initial view to show Europe
+    globe.pointOfView({ lat: 40, lng: 20, altitude: 2.5 });
+
+    // Click handler to fly to location
+    globe.onPointClick(point => {
+        globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
+    });
+
+    // Function to update globe points
+    function updateGlobePoints(filter) {
+        globe.pointsData(getFilteredDestinations(filter));
+    }
+
+    // Filter functionality
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const familyCards = document.querySelectorAll('.family-card');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+            currentFilter = filter;
+
+            // Update globe points
+            updateGlobePoints(filter);
+
+            // Filter family cards
+            familyCards.forEach(card => {
+                if (filter === 'all' || card.dataset.member === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Filter timeline items
+            timelineItems.forEach(item => {
+                const travelers = item.dataset.travelers.split(' ');
+                if (filter === 'all' || travelers.includes(filter)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+</script>
 {% endblock %}
