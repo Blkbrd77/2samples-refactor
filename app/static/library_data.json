@@ -1,0 +1,3397 @@
+{
+  "last_updated": "2025-12-26",
+  "source": "inventaire",
+  "inventaire_user": "f9a685e15825d73108b49c3465224b03",
+  "books": [
+    {
+      "title": "Jesus and the God of Israel: God Crucified and Other Studies on the New Testament's Christology of Divine Identity",
+      "author": "Richard Bauckham",
+      "cover": "https://inventaire.io/img/entities/ac2d879fdd04f7b660eb12a0dadff742f43a2e10",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802845597"
+    },
+    {
+      "title": "Fear and Trembling",
+      "author": "S\u00f8ren Kierkegaard",
+      "cover": "https://inventaire.io/img/entities/babf16c432a27b86a207b2d8b7677406bd32fa93",
+      "year": "1985",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780140444490"
+    },
+    {
+      "title": "Normal People",
+      "author": "Sally Rooney",
+      "cover": "https://inventaire.io/img/entities/231b8ce1c9649dfc36c3173a9e2329e34a4a2d87",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781984822185"
+    },
+    {
+      "title": "Magpie Murders",
+      "author": "Anthony Horowitz",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780062645234-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062645234"
+    },
+    {
+      "title": "A free man's worship, and other essays",
+      "author": "Bertrand Russell",
+      "cover": "https://inventaire.io/img/entities/dc47c487eabcb1443c6b1d3cdf321bc31d18fdce",
+      "year": "1976",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780048240217"
+    },
+    {
+      "title": "Anselm, Fides quaerens intellectum",
+      "author": "Karl Barth",
+      "cover": "https://inventaire.io/img/entities/7daa292325335ec2684f730653812e1f3621f257",
+      "year": "1985",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780915138753"
+    },
+    {
+      "title": "The People Rising",
+      "author": "Unknown Author",
+      "cover": null,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": null
+    },
+    {
+      "title": "Nature And The Supernatural, As Together Constituting The One System Of God.",
+      "author": "Horace Bushnell",
+      "cover": "https://inventaire.io/img/entities/1a865df2e1d221b0098d74c4be7d51ca33e5453a",
+      "year": "2010",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781445593296"
+    },
+    {
+      "title": "The nature of necessity",
+      "author": "Alvin Plantinga",
+      "cover": "https://inventaire.io/img/entities/5d307a90eb798c7e06ccd7c4138718e9b80ee1fc",
+      "year": "1982",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780198244141"
+    },
+    {
+      "title": "The advancement",
+      "author": "L. Russ Bush",
+      "cover": "https://inventaire.io/img/entities/aa499759591968388368c6fed4ecdc646d093bc9",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780805430349"
+    },
+    {
+      "title": "Truth in a Culture of Doubt: Engaging Skeptical Challenges to the Bible",
+      "author": "Andreas J. Kostenberger",
+      "cover": "https://inventaire.io/img/entities/5e70105b62872c18f1f9638f72466cbae1d8d397",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781433684043"
+    },
+    {
+      "title": "Knowledge and Christian belief",
+      "author": "Alvin Plantinga",
+      "cover": "https://inventaire.io/img/entities/0b155c6d4dd5887070ba7f7f8c4b9248806f675c",
+      "year": "2015",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802872043"
+    },
+    {
+      "title": "A Theology of Liberation",
+      "author": "Gustavo Guti\u00c3\u00a9rrez",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780883445426-M.jpg",
+      "year": "1988",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780883445426"
+    },
+    {
+      "title": "The Consequences of Ideas",
+      "author": "R. C. Sproul",
+      "cover": "https://inventaire.io/img/entities/f3c3d74fbe48be3e51a574140a593e043444e80d",
+      "year": "2000",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781581341720"
+    },
+    {
+      "title": "Israel",
+      "author": "Daniel I. Block",
+      "cover": "https://inventaire.io/img/entities/c548e6afedc2ff9bad504dcd73cf8b3efb134577",
+      "year": "2008",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780805446791"
+    },
+    {
+      "title": "On the Reliability of the Old Testament",
+      "author": "Kenneth A. Kitchen",
+      "cover": "https://inventaire.io/img/entities/aa91649ec8eb9ab885aea2028c794d35f7272c9e",
+      "year": "2006",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802803962"
+    },
+    {
+      "title": "Debunking the 1619 Project",
+      "author": "Mary Grabar",
+      "cover": "https://inventaire.io/img/entities/5238d2796b5530478ae5f1c0529e8bf7196f984b",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781684511778"
+    },
+    {
+      "title": "The risen Jesus & future hope",
+      "author": "Gary R. Habermas",
+      "cover": "https://inventaire.io/img/entities/50a0c9bde73fb64d258389132c5bf1614254434c",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780742532878"
+    },
+    {
+      "title": "Visible Saints",
+      "author": "Edmund S. Morgan",
+      "cover": "https://inventaire.io/img/entities/eb9a7fd122e2407f28e3eb1550d8414c1dacf4e2",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781614275305"
+    },
+    {
+      "title": "In Defense of the Bible",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/113073abaeb7127e491eefd8a52a8f9c27346575",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781433676789"
+    },
+    {
+      "title": "God I Don't Understand",
+      "author": "Christopher J. H. Wright",
+      "cover": "https://inventaire.io/img/entities/909819108c6d2accf528e42a1013fab37cdf4afa",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310530701"
+    },
+    {
+      "title": "Faith and reason",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/ee9c2c3e6de56106cc8d529b4e852622926294be",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830840403"
+    },
+    {
+      "title": "Dutch",
+      "author": "Edmund Morris",
+      "cover": "https://inventaire.io/img/entities/af3bb9ed3e445b423879f85a9c793bd2ebca3a2e",
+      "year": "2000",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780375756450"
+    },
+    {
+      "title": "We Were the Mulvaneys",
+      "author": "Joyce Carol Oates",
+      "cover": "https://inventaire.io/img/entities/cb87b565e03093749cafb63c456d07b036053558",
+      "year": "1997",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780452282827"
+    },
+    {
+      "title": "Doctor Sleep",
+      "author": "Stephen King",
+      "cover": "https://inventaire.io/img/entities/f84a881efea5acf7f0440fb5785e48cfa8537ebc",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781476727653"
+    },
+    {
+      "title": "Under the Tuscan sun : at home in Italy",
+      "author": "Frances Mayes",
+      "cover": "https://inventaire.io/img/entities/f8d826f42eaadc6adee107eded77232ee7e283f5",
+      "year": "1997",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780767900386"
+    },
+    {
+      "title": "Sideways",
+      "author": "Rex Pickett",
+      "cover": "https://inventaire.io/img/entities/8ccbeeb462e4b75b9927c562a505a4e530b51018",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780312342517"
+    },
+    {
+      "title": "Verity",
+      "author": "Colleen Hoover",
+      "cover": "https://inventaire.io/img/entities/6ba01c720484a7f2f9099c9b43d2dca3d2e6ad6e",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781538724736"
+    },
+    {
+      "title": "Fodor's Essential Ireland",
+      "author": "Fodor's Travel",
+      "cover": "https://inventaire.io/img/entities/726574a67a3079e20eb24e0b82d9becae2d7e929",
+      "year": "2022",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781640975255"
+    },
+    {
+      "title": "The Fault in Our Stars",
+      "author": "John Green",
+      "cover": "https://inventaire.io/img/entities/46daefca21aac7f1613ad5539b2ea5d97fe865a5",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780142424179"
+    },
+    {
+      "title": "The Revenant",
+      "author": "Michael Punke",
+      "cover": "https://inventaire.io/img/entities/0570072c7aed70b733b33568420eec3ff3ccad68",
+      "year": "2015",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781250101198"
+    },
+    {
+      "title": "Necessary Lies",
+      "author": "Diane Chamberlain",
+      "cover": "https://inventaire.io/img/entities/362871fcfc4dca83b3aa4dc08deb635b910ff84a",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781250054517"
+    },
+    {
+      "title": "All Fall Down",
+      "author": "Jennifer Weiner",
+      "cover": "https://inventaire.io/img/entities/1bb040c0314bdb5f1692d06fa986a327da43c025",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781451617788"
+    },
+    {
+      "title": "The case for democracy : the power of freedom to overcome tyranny and terror",
+      "author": "Natan Sharansky",
+      "cover": "https://inventaire.io/img/entities/6985ea460e33bdb4762fc73c653e7b95955655f4",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781586482619"
+    },
+    {
+      "title": "Clanlands",
+      "author": "Sam Heughan",
+      "cover": "https://inventaire.io/img/entities/72cde516d60f507139858493923221b2d5d0859f",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781529342000"
+    },
+    {
+      "title": "The alienist",
+      "author": "Caleb Carr",
+      "cover": "https://inventaire.io/img/entities/9a57294a0cae80b32269e9bfa77fa7c61444481d",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780679417798"
+    },
+    {
+      "title": "Animal",
+      "author": "Lisa Taddeo",
+      "cover": "https://inventaire.io/img/entities/398607e6e614b687887b2fc989a68cbbbdda9b9d",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781982122126"
+    },
+    {
+      "title": "Are you sleeping",
+      "author": "Kathleen Barber",
+      "cover": "https://inventaire.io/img/entities/349f8b42cccf43c4658f4468ad9e81761b1992c2",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781501157660"
+    },
+    {
+      "title": "A stranger in the house",
+      "author": "Shari Lape\u00f1a",
+      "cover": "https://inventaire.io/img/entities/188dd9a04611ea59e9258d1d07e649c1328acbeb",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780735221123"
+    },
+    {
+      "title": "Waypoints",
+      "author": "Sam Heughan",
+      "cover": "https://inventaire.io/img/entities/99e33dbc4f418167d57550f1940dd3ded74e98b1",
+      "year": "2022",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780316495530"
+    },
+    {
+      "title": "The Resurrection of Jesus",
+      "author": "Michael R. Licona",
+      "cover": "https://inventaire.io/img/entities/676fd0a06f8a6e95f467702e65af18541ecf8598",
+      "year": "2010",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830827190"
+    },
+    {
+      "title": "Keto-Green 16",
+      "author": "Anna Cabeca",
+      "cover": "https://inventaire.io/img/entities/bd4b41bb9ae6a6401b0feca81eb97252754e3f11",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780593157947"
+    },
+    {
+      "title": "The Hormone Fix",
+      "author": "Anna Cabeca DO OBGYN",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780525621645-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780525621645"
+    },
+    {
+      "title": "The Great Alone",
+      "author": "Kristin Hannah",
+      "cover": "https://inventaire.io/img/entities/800be5c7d5f52c3a5692966891ae8f27efd3f6e0",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780312577230"
+    },
+    {
+      "title": "Grasping God's word",
+      "author": "J. Scott Duvall",
+      "cover": "https://inventaire.io/img/entities/c9ef2f8cd588ee343d6f51b90e2cce5ff1c9871e",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310492573"
+    },
+    {
+      "title": "The dovekeepers",
+      "author": "Alice Hoffman",
+      "cover": "https://inventaire.io/img/entities/7ca8ef152f2005861effbc59d5b67f6e4097e5b4",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781451617481"
+    },
+    {
+      "title": "Lipstick Jungle",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/0a7f0c1becbc1c0bea7c7cbbd62ce711acbf71e7",
+      "year": "2005",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780786887071"
+    },
+    {
+      "title": "French Kids Eat Everything: How Our Family Moved to France, Cured Picky Eating, Banned Snacking, and Discovered 10 Simple Rules for Raising Happy,",
+      "author": "Karen Le Billon",
+      "cover": "https://inventaire.io/img/entities/15c001cec87c80afe6075f0395b9c11a63ae7990",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062103307"
+    },
+    {
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoyevsky",
+      "cover": "https://inventaire.io/img/entities/7c7f6cc1e03a70b4bc8bfca59a3a2dc90c03f17d",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781593080457"
+    },
+    {
+      "title": "Winter People",
+      "author": "Jennifer McMahon",
+      "cover": "https://inventaire.io/img/entities/5fef1874fe3dc66135ba958cf8c280d8ba1f3680",
+      "year": "2015",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780804169967"
+    },
+    {
+      "title": "Abundance of Katherines",
+      "author": "John Green",
+      "cover": "https://inventaire.io/img/entities/741d73f7d0efdf10c316604fd967c17feeec49b3",
+      "year": "2008",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780142410707"
+    },
+    {
+      "title": "Looking for Alaska",
+      "author": "John Green",
+      "cover": "https://inventaire.io/img/entities/c6ceec19b83155d5c915253d67f28d63970a3ac6",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780142402511"
+    },
+    {
+      "title": "Circe",
+      "author": "Madeline Miller",
+      "cover": "https://inventaire.io/img/entities/6ae7a5290c3d2eaf6edd46cf6ebd3ffd4da02ef3",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780316556347"
+    },
+    {
+      "title": "In a Dark, Dark Wood",
+      "author": "Ruth Ware",
+      "cover": "https://inventaire.io/img/entities/11c08189a2eb414a212eb090857fcb230d5a39dc",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781501112331"
+    },
+    {
+      "title": "All the Ugly and Wonderful Things",
+      "author": "Bryn Greenwood",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781250153968-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781250153968"
+    },
+    {
+      "title": "The Mastery Manual",
+      "author": "Sharma",
+      "cover": "https://inventaire.io/img/entities/afc3bb9f26f9fce6d86c14a198e61e5c8e606d9c",
+      "year": "2015",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9788184954081"
+    },
+    {
+      "title": "Number the Stars",
+      "author": "Lois Lowry",
+      "cover": "https://inventaire.io/img/entities/9df8cd06ba85d819e86aeb30fe3a0359e4225add",
+      "year": "1989",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780395510605"
+    },
+    {
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "cover": "https://inventaire.io/img/entities/26b8b022cdbbe2a2a40265d6aee3f69620718ada",
+      "year": "2000",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781587266195"
+    },
+    {
+      "title": "American Eve",
+      "author": "Paula Uruburu",
+      "cover": "https://inventaire.io/img/entities/9377f9757654a81d7fec1829c8329adde39b2257",
+      "year": "2008",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781594489938"
+    },
+    {
+      "title": "Start Up Masters 101",
+      "author": "Unknown Author",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781727658781-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781727658781"
+    },
+    {
+      "title": "Start Up Masters 101",
+      "author": "Unknown Author",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781727658781-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781727658781"
+    },
+    {
+      "title": "Lioness Arising",
+      "author": "Lisa Bevere",
+      "cover": "https://inventaire.io/img/entities/f4bccba1d3e104b757af5fbc42d97dca37f8788c",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780307457790"
+    },
+    {
+      "title": "Winning the Fatherhood Game",
+      "author": "J. Shannon Eads",
+      "cover": "https://inventaire.io/img/entities/6a0dbb5825feca4d9f7aa094a2a5945764236919",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780578335230"
+    },
+    {
+      "title": "What Are the Odds? From Crack Addict to CEO",
+      "author": "Mike Lindell",
+      "cover": "https://inventaire.io/img/entities/e7778ba165888d1d2387504e7f81eb9e0aebb865",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781734283402"
+    },
+    {
+      "title": "The Intolerance of Tolerance",
+      "author": "D. A. Carson",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780802869401-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802869401"
+    },
+    {
+      "title": "Hiking Colorado's Summits",
+      "author": "Unknown Author",
+      "cover": null,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": null
+    },
+    {
+      "title": "Learn To Solder",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/fcaca1fe84af8a34933c8e4e176ba475f74ed0ed",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781449337247"
+    },
+    {
+      "title": "The Devil in the White City",
+      "author": "Erik Larson",
+      "cover": "https://inventaire.io/img/entities/c2447faf478ab753aee8dcdfa56086426f0b2e39",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780375725609"
+    },
+    {
+      "title": "Little Face",
+      "author": "Sophie Hannah",
+      "cover": "https://inventaire.io/img/entities/edfdb59324a891f4a110321e36cd2ec388c10039",
+      "year": "2008",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780143114086"
+    },
+    {
+      "title": "Sharp Objects",
+      "author": "Gillian Flynn",
+      "cover": "https://inventaire.io/img/entities/25ae041eab532695ba8ad9c6a55cd34d6a3f686e",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780307341556"
+    },
+    {
+      "title": "Mad Honey",
+      "author": "Jodi Picoult",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781984818386-M.jpg",
+      "year": "2022",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781984818386"
+    },
+    {
+      "title": "The Women",
+      "author": "Kristin Hannah",
+      "cover": "https://inventaire.io/img/entities/7257a164c1b410e0621d78e07d9741411ab098ee",
+      "year": "2024",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781250178633"
+    },
+    {
+      "title": "Deep nutrition",
+      "author": "Catherine Shanahan",
+      "cover": "https://inventaire.io/img/entities/c83fe333e8dadfbc385272457c3f95004398b858",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781250113825"
+    },
+    {
+      "title": "Fast Like a Girl",
+      "author": "Mindy Pelz",
+      "cover": "https://inventaire.io/img/entities/05fee65689939b502295d2d713929e1632b6bc1c",
+      "year": "2022",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781401969929"
+    },
+    {
+      "title": "The Shack",
+      "author": "William P. Young",
+      "cover": "https://inventaire.io/img/entities/e277b5ac31723a7eaae52d8e73420ba7b13657ce",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780964729230"
+    },
+    {
+      "title": "Lunch in Paris",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/762f6bf0b7580f65ae7600fc6a529d76c821edc8",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780316042789"
+    },
+    {
+      "title": "The Good Earth",
+      "author": "Pearl S. Buck",
+      "cover": "https://inventaire.io/img/entities/d78ae0e464ba2748b3a3d082d78548af5e1c5240",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780743272933"
+    },
+    {
+      "title": "Alleged Discrepancies of the Bible",
+      "author": "John W. Haley",
+      "cover": "https://inventaire.io/img/entities/4e13b0d4aea6ceeeb16486ed0c4c99b482f0264e",
+      "year": "1996",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780883681572"
+    },
+    {
+      "title": "Pocket glossary of health information management and technology",
+      "author": "Claire Blondeau",
+      "cover": "https://inventaire.io/img/entities/9c92bf549f3aa72b9bf7e862d8e3ff8b65491391",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781584263142"
+    },
+    {
+      "title": "1491",
+      "author": "Charles C. Mann",
+      "cover": "https://inventaire.io/img/entities/817ff51c8d3b8e12e42060c4524a01528fad1eef",
+      "year": "2006",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781400032051"
+    },
+    {
+      "title": "High Achiever",
+      "author": "Tiffany Jenkins",
+      "cover": "https://inventaire.io/img/entities/80e91ddbbb98256568aa1fc470199e075e40d9d1",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780593135938"
+    },
+    {
+      "title": "American Psycho",
+      "author": "Bret Easton Ellis",
+      "cover": "https://inventaire.io/img/entities/f8ec722ab2ffd61bd10d3ac2dfd15e908961aea2",
+      "year": "1991",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780679735779"
+    },
+    {
+      "title": "Last Thing He Told Me",
+      "author": "Laura Dave",
+      "cover": "https://inventaire.io/img/entities/af6d18f182d8264b8d96e613640de6b43c5de5b9",
+      "year": "2023",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781501171352"
+    },
+    {
+      "title": "God and Moral Obligation",
+      "author": "C. Stephen Evans",
+      "cover": "https://inventaire.io/img/entities/8b780c30d744363d292487e079699731b223d1af",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780198715375"
+    },
+    {
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "cover": "https://inventaire.io/img/entities/064141108f0e2f143411fa2679e465178ae084b6",
+      "year": "1956",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451519009"
+    },
+    {
+      "title": "The End of the Affair",
+      "author": "Graham Greene",
+      "cover": "https://inventaire.io/img/entities/55ab5d6530ab532c7ea4259db599dbaa6d238cf6",
+      "year": "1999",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780140291094"
+    },
+    {
+      "title": "The Adventures of Tom Sawyer (Collins Classics)",
+      "author": "\u121b\u122d\u12ad \u1275\u12cc\u12ed\u1295",
+      "cover": "https://inventaire.io/img/entities/0a5247f1328b0cd9f37a7aad6222ec8516a22772",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780007420117"
+    },
+    {
+      "title": "Little Fires Everywhere",
+      "author": "Celeste Ng",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780735224315-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780735224315"
+    },
+    {
+      "title": "The Man in the High Castle",
+      "author": "Philip K. Dick",
+      "cover": "https://inventaire.io/img/entities/28af37ff850419f0a3fdb5424b097e6654ed5d7f",
+      "year": "1992",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780679740674"
+    },
+    {
+      "title": "The No Spin Zone",
+      "author": "Unknown Author",
+      "cover": null,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": null
+    },
+    {
+      "title": "The Rules of Magic",
+      "author": "Unknown Author",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781501137488-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781501137488"
+    },
+    {
+      "title": "Greenlights",
+      "author": "Nick Lyons",
+      "cover": "https://inventaire.io/img/entities/d654c6d53544b4c2feabd4f34e0d0f821e19a740",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780593139134"
+    },
+    {
+      "title": "When life gives you lululemons",
+      "author": "Lauren Weisberger",
+      "cover": "https://inventaire.io/img/entities/e38d25914c2de8889cb9395a7437d496d42d40db",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781476778457"
+    },
+    {
+      "title": "The Saints of Swallow Hill",
+      "author": "Donna Everhart",
+      "cover": "https://inventaire.io/img/entities/96b16891e08ce65b3b87fb12e20a77b9b9b7e92e",
+      "year": "2022",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781496733320"
+    },
+    {
+      "title": "The Possessed",
+      "author": "Fyodor Dostoyevsky",
+      "cover": "https://inventaire.io/img/entities/c93805965b9d1065ee99a8a67b5b21b5da888575",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781545468364"
+    },
+    {
+      "title": "The Glass Castle",
+      "author": "Jeannette Walls",
+      "cover": "https://inventaire.io/img/entities/8ad1fe9ea008d152892fb6244a3073c2e172b9c7",
+      "year": "2006",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780743247542"
+    },
+    {
+      "title": "Martin Luther King, Jr. , on Leadership",
+      "author": "Donald T. Phillips",
+      "cover": "https://inventaire.io/img/entities/cb4024b152bcb39858d3b0652a69a4650357c2b0",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781538705575"
+    },
+    {
+      "title": "The Country Girls",
+      "author": "Edna O'Brien",
+      "cover": "https://inventaire.io/img/entities/0ad91281c4047c73896d684032be8a5b071d1158",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780374537357"
+    },
+    {
+      "title": "Coding All-In-One for Dummies",
+      "author": "Chris Minnick",
+      "cover": "https://inventaire.io/img/entities/bdcc6658dcbe939343e8f8d087b9312a938dc8ca",
+      "year": "2022",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781119889564"
+    },
+    {
+      "title": "Frederick Douglass Republicans The Movement To Reignite Americas Passion For Liberty",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/b0bec791ce99ea99032ef54b3a2ebd958a239598",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781456758165"
+    },
+    {
+      "title": "The Searcher",
+      "author": "Tana French",
+      "cover": "https://inventaire.io/img/entities/e8e019bd596a3627a3e4b656065341b4a115bf54",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780735224674"
+    },
+    {
+      "title": "The many faces of evil",
+      "author": "John Samuel Feinberg",
+      "cover": "https://inventaire.io/img/entities/893d13ec450f828eda3ec177ac9abea23b00772b",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781581345674"
+    },
+    {
+      "title": "The Question of Canon: Challenging the Status Quo in the New Testament Debate",
+      "author": "Michael J. Kruger",
+      "cover": "https://inventaire.io/img/entities/60d4642d1243be63860c133c471b002ff9b2020b",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830840311"
+    },
+    {
+      "title": "Good God",
+      "author": "David Baggett",
+      "cover": "https://inventaire.io/img/entities/93345cb40eb787c1e515af1086eef9552eaa8127",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780199751815"
+    },
+    {
+      "title": "God and Cosmos",
+      "author": "David Baggett",
+      "cover": "https://inventaire.io/img/entities/fb66b99f914a004bb032933af3f4e71d22fdb34c",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780199931217"
+    },
+    {
+      "title": "The canon of scripture",
+      "author": "F. F. Bruce",
+      "cover": "https://inventaire.io/img/entities/8df8280e93e74fb749d20409710a46c979c6b4dc",
+      "year": "1988",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830812585"
+    },
+    {
+      "title": "The Complete Guide to Fasting",
+      "author": "Jimmy Moore",
+      "cover": "https://inventaire.io/img/entities/eaa4be37ae0c5e0efcc7de4fdf1fcc716199a545",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781628600018"
+    },
+    {
+      "title": "The Last Battle",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/02bdeefad2e5de96611ddf0fb8d09b01a05fd4d0",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064471084"
+    },
+    {
+      "title": "The Silver Chair",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/5f3d7e764e4ed7645640d190d10d768b9018b0b3",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064471091"
+    },
+    {
+      "title": "The voyage of the Dawn Treader",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/52ee5e908bd9ef2d9feb1a8572c3516f98568ace",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064471077"
+    },
+    {
+      "title": "Prince Caspian",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/deb9ec4a3dcfa1b2e1da633727bf3c259cc8d5fe",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064471053"
+    },
+    {
+      "title": "The horse and his boy",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/1ff84843a31514aa4a86dd233cf53c15effdcb7f",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064471060"
+    },
+    {
+      "title": "The Lion, the Witch, and the Wardrobe",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/a486de3462c9a7625fb7aef4d627c9c14c8b1a4e",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064471046"
+    },
+    {
+      "title": "The Magician's Nephew (The Chronicles of Narnia, #6)",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/519096809a6b9b4814a9c7e18bb0f0f6b97a98e0",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064471107"
+    },
+    {
+      "title": "The great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "cover": "https://inventaire.io/img/entities/0cd5f4d76a38489d0c474d889ce8e257102c7a0b",
+      "year": "1950",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780140007466"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "cover": "https://inventaire.io/img/entities/93181de78e7dcf87c337fccbc06a19c9644fad48",
+      "year": "1960",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451524935"
+    },
+    {
+      "title": "The Evening and the Morning",
+      "author": "Ken Follett",
+      "cover": "https://inventaire.io/img/entities/c7d3abbf71fe1b468575055822124997a66a1dcc",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451478016"
+    },
+    {
+      "title": "The Dying Citizen",
+      "author": "Victor Davis Hanson",
+      "cover": "https://inventaire.io/img/entities/8c7bf651cfd05fa4d93cc97e6e778b6b7d3bc7d4",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781541647534"
+    },
+    {
+      "title": "Daisy Jones & The Six",
+      "author": "Taylor Jenkins Reid",
+      "cover": "https://inventaire.io/img/entities/cccb0aff13141d3a208e3a1978cee460dc2763bc",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781524798628"
+    },
+    {
+      "title": "Charlotte's web",
+      "author": "E. B. White",
+      "cover": "https://inventaire.io/img/entities/eb37ff073330d9dd8078ee604ac8a725a0008cf7",
+      "year": "1980",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780064400558"
+    },
+    {
+      "title": "My \u00c1ntonia",
+      "author": "Willa Cather",
+      "cover": null,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": null
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "cover": "https://inventaire.io/img/entities/34e29cda93e74c13f165479cc17b787bb8707ac5",
+      "year": "1998",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780060929879"
+    },
+    {
+      "title": "Christianity",
+      "author": "Bamber Gascoigne",
+      "cover": "https://inventaire.io/img/entities/2a50af170a5696bfdc7ec0ee1d0152f3a231af6b",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780786711482"
+    },
+    {
+      "title": "The glass menagerie",
+      "author": "Tennessee Williams",
+      "cover": "https://inventaire.io/img/entities/953a8ce18af3317484a6a8177fc20a8e1df9f7ae",
+      "year": "1999",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780811214049"
+    },
+    {
+      "title": "Great Code the Bible and Literature",
+      "author": "Northrop Frye",
+      "cover": "https://inventaire.io/img/entities/25178f7b4b447dd4755bb9807917e7410519c935",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780774701365"
+    },
+    {
+      "title": "Scripture twisting",
+      "author": "James W. Sire",
+      "cover": "https://inventaire.io/img/entities/afbf1b1992d8fa8972f0c1490bdd204c713f2cd6",
+      "year": "1980",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780877846116"
+    },
+    {
+      "title": "Eschatology of Victory",
+      "author": "J. Marcellus Kik",
+      "cover": "https://inventaire.io/img/entities/5690a0e7c63b450a25e01e54355454f0f2a114e5",
+      "year": "1991",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780875523132"
+    },
+    {
+      "title": "Love your God with all your mind",
+      "author": "J. P. Moreland",
+      "cover": "https://inventaire.io/img/entities/3fe1b411d390cd5ac9b49346132c7473669cc7ac",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781617479007"
+    },
+    {
+      "title": "Prayer Journal",
+      "author": "Christian Art Gifts",
+      "cover": "https://inventaire.io/img/entities/9736372bc65d2c5f0b00c389acce98db0c375370",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781432114831"
+    },
+    {
+      "title": "The Top 10 Leadership Conversations in the Bible",
+      "author": "Steve Moore",
+      "cover": "https://inventaire.io/img/entities/4d52733a53ef252493ec798669a67555aa557f63",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780999350805"
+    },
+    {
+      "title": "How to Listen to God",
+      "author": "Charles F. Stanley",
+      "cover": "https://inventaire.io/img/entities/1d0e31fa557a99bc127088c7734ec0eeb0216247",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780785264149"
+    },
+    {
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel Garc\u00eda M\u00e1rquez",
+      "cover": "https://inventaire.io/img/entities/b954bb7842e8309e3faccf3ad6a734665e702a9a",
+      "year": "1970",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780060740450"
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J. R. R. Tolkien",
+      "cover": "https://inventaire.io/img/entities/7e4addf357ca611687e7d7a109c19ae0da605578",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780547928227"
+    },
+    {
+      "title": "East of Eden",
+      "author": "John Steinbeck",
+      "cover": "https://inventaire.io/img/entities/9e6563e55922a28f80df45587895e82a80060bcd",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780142004234"
+    },
+    {
+      "title": "Midnight in the Garden of Good and Evil",
+      "author": "John Berendt",
+      "cover": "https://inventaire.io/img/entities/0d8825da73f693e5c7e8ea46b81c44e994e7e5ff",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780679429227"
+    },
+    {
+      "title": "Introduction to Biblical Interpretation",
+      "author": "Craig Blomberg",
+      "cover": "https://inventaire.io/img/entities/14ffbc0c64e5686dc5c0754b47072cc78c347b5e",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310524175"
+    },
+    {
+      "title": "Christian apologetics",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/f7845576e3c6bcc6647dbf89e274cb57c6e7801c",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830839353"
+    },
+    {
+      "title": "Philosophical Foundations for a Christian Worldview",
+      "author": "J. P. Moreland",
+      "cover": "https://inventaire.io/img/entities/83e7dd38959ab59c5ae1e4f4460e6b51b4d50dce",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830851874"
+    },
+    {
+      "title": "The Secret Life of Bees",
+      "author": "Sue Monk Kidd",
+      "cover": "https://inventaire.io/img/entities/1015d9e520de90b04c1f5cb57654e1e15d80fb87",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780142001745"
+    },
+    {
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini",
+      "cover": null,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": null
+    },
+    {
+      "title": "Farther than any man : the rise and fall of Captain Cook",
+      "author": "Martin Dugard",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780743400695-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780743400695"
+    },
+    {
+      "title": "Big Little Lies",
+      "author": "Liane Moriarty",
+      "cover": "https://inventaire.io/img/entities/87c0329c3e07900b840556c16796337324606ff7",
+      "year": "2015",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780425274866"
+    },
+    {
+      "title": "Leading Small Groups",
+      "author": "Chris Surratt",
+      "cover": "https://inventaire.io/img/entities/28b3050943de3dd607f9128d10e228baa6e58e6c",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781535934695"
+    },
+    {
+      "title": "living language japanese reading & writing",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/f176fc04fb66acb8d93fa11a15d483d0015353b8",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780307971784"
+    },
+    {
+      "title": "Untamed",
+      "author": "Glennon Doyle",
+      "cover": "https://inventaire.io/img/entities/df4a48f5a03d652d3c6ac55161868b152f569c19",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781984801258"
+    },
+    {
+      "title": "The Girls",
+      "author": "Emma Cline",
+      "cover": "https://inventaire.io/img/entities/3fcd4bff6446f7992a65eda05938bd521fbd4c52",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780812998603"
+    },
+    {
+      "title": "Miss Peregrine\u2019s Home for Peculiar Children (Miss Peregrine\u2019s Peculiar Children, #1)",
+      "author": "Ransom Riggs",
+      "cover": "https://inventaire.io/img/entities/ad5efee5aa11522ca2de96e919b5d961341595d5",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781594744761"
+    },
+    {
+      "title": "Is God a moral monster? making sense of the Old Testament God",
+      "author": "Paul Copan",
+      "cover": "https://inventaire.io/img/entities/6f46f6c1f432512775a1f4f3d1788db061ad77ce",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780801072758"
+    },
+    {
+      "title": "The Topeka school",
+      "author": "Ben Lerner",
+      "cover": "https://inventaire.io/img/entities/352d6d82a191daff5dc60cb9edf40092a6b68c37",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780374277789"
+    },
+    {
+      "title": "The Signature of All Things",
+      "author": "Elizabeth Gilbert",
+      "cover": "https://inventaire.io/img/entities/7c3c190497acc00b70daafda05fdd6d1a32c9844",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780670024858"
+    },
+    {
+      "title": "The Unhoneymooners",
+      "author": "Christina Lauren",
+      "cover": "https://inventaire.io/img/entities/5fb0101e4819d7de9f86be838875334527f6dd97",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781501128035"
+    },
+    {
+      "title": "The Lying Game",
+      "author": "Ruth Ware",
+      "cover": "https://inventaire.io/img/entities/b8df4d9f5cacb75299fbf3de00a6def177b4f5c6",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781501156205"
+    },
+    {
+      "title": "The science of homeopathy",
+      "author": "Charles Frazier",
+      "cover": "https://inventaire.io/img/entities/d379212f9163fbc9204050058cf1e9773d89678b",
+      "year": "1980",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802142849"
+    },
+    {
+      "title": "Whiskypedia",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/145d41c035f3a3ac6ca7eade8af6fdb30208c0a7",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781780278056"
+    },
+    {
+      "title": "Brew Ware",
+      "author": "Karl F. Lutzen",
+      "cover": "https://inventaire.io/img/entities/72fd8b9cb03fd48a5622726d6d0c160b93ff4a04",
+      "year": "1996",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780882669267"
+    },
+    {
+      "title": "The Wine Bible",
+      "author": "Karen MacNeil",
+      "cover": null,
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": null
+    },
+    {
+      "title": "Wicked success is inside every woman",
+      "author": "Vickie L. Milazzo",
+      "cover": "https://inventaire.io/img/entities/fe48105f4358b0fcb4b5508c67f6661fe8e262f6",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781118100523"
+    },
+    {
+      "title": "Missional Renaissance",
+      "author": "Reggie Mcneal",
+      "cover": "https://inventaire.io/img/entities/30cd33ab4af43dde5e30f594d276fa747fc4b89b",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780470243442"
+    },
+    {
+      "title": "Old Man, New Man",
+      "author": "Stephen Strang",
+      "cover": "https://inventaire.io/img/entities/00143885c90359e0edfabce22819375c65ac20ba",
+      "year": "2000",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780884196976"
+    },
+    {
+      "title": "What Every Christian Ought to Know",
+      "author": "Adrian Rogers",
+      "cover": "https://inventaire.io/img/entities/5b1635bbe610fdb23d23fb20a8d282f44c28246d",
+      "year": "2005",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780805426922"
+    },
+    {
+      "title": "Christian origins and the question of God",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/73919937983305d5cf8ac542d84a4e7ee1bab70a",
+      "year": "1992",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780800626815"
+    },
+    {
+      "title": "Hero maker",
+      "author": "Dave Ferguson",
+      "cover": "https://inventaire.io/img/entities/3d0d1b0ac1285a68c2e4e699f2b9f1c59d09b0af",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310536932"
+    },
+    {
+      "title": "Halftime",
+      "author": "Bob P Buford",
+      "cover": "https://inventaire.io/img/entities/c126bec0836691f39852179c84565c7d7a14b4be",
+      "year": "2008",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310284246"
+    },
+    {
+      "title": "Studying the historical Jesus",
+      "author": "Darrell L. Bock",
+      "cover": "https://inventaire.io/img/entities/d344ebd55ada063b6d70db80b02c1247d678eaa1",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780801024511"
+    },
+    {
+      "title": "Rationality, religions belief, and moral commitment",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/21614ce7435d29a4c232129287f91ff8daa1278c",
+      "year": "1986",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780801493812"
+    },
+    {
+      "title": "Evil and the Justice of God",
+      "author": "N. T. Wright",
+      "cover": "https://inventaire.io/img/entities/3719152485d51079bad55cea38d14183bfb90777",
+      "year": "2006",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830834150"
+    },
+    {
+      "title": "Disturbing divine behavior",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/06d7ae9614bbf558409f6c4413211cf8cbb625ef",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780800663445"
+    },
+    {
+      "title": "The Paradigm",
+      "author": "Jonathan Cahn",
+      "cover": "https://inventaire.io/img/entities/ef94456e24b19d072173b9ab0e34a176dd82ddcb",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781629994765"
+    },
+    {
+      "title": "Matthew",
+      "author": "John Macarthur",
+      "cover": "https://inventaire.io/img/entities/7274f04bb76b9d3392489879ae71e3f2a386f8be",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781418509590"
+    },
+    {
+      "title": "Lonely Planet Tokyo (City Guide)",
+      "author": "Rebecca Milner",
+      "cover": "https://inventaire.io/img/entities/b7d2ce89a62baf3b469e8f896c1e0e65b12c94a9",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781786570338"
+    },
+    {
+      "title": "Mississippi Blood",
+      "author": "Greg Iles",
+      "cover": "https://inventaire.io/img/entities/3e5b218544507c480a2e9e67f23fbaacbafec9a7",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062311160"
+    },
+    {
+      "title": "Firefly Lane",
+      "author": "Kristin Hannah",
+      "cover": "https://inventaire.io/img/entities/1ac62c84a734da0dd8e2ea963cd61a8cfc6b44ca",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780312537074"
+    },
+    {
+      "title": "In cold blood : a true account of a multiple murder and its consequences",
+      "author": "Truman Capote",
+      "cover": "https://inventaire.io/img/entities/0e2122ee9d568768cb3f9f5a30d53ea3bf216373",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780679745587"
+    },
+    {
+      "title": "The Woman in Cabin 10",
+      "author": "Ruth Ware",
+      "cover": "https://inventaire.io/img/entities/f241bf35d4cabe16054f65a985a8eb94909ef3ed",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781501132957"
+    },
+    {
+      "title": "Angela's Ashes",
+      "author": "Frank Mccourt",
+      "cover": "https://inventaire.io/img/entities/8594d97db8f6590d1b65388fdb61f19015805c18",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780684842677"
+    },
+    {
+      "title": "Getting Around TOKYO: POCKET ATLAS AND TRANSPORTATION GUIDE: Includes Yokohama, Kamakura, Yokota, Yokosuka, Hakone and Mt Fuji",
+      "author": "Boye Lafayette De Mente",
+      "cover": "https://inventaire.io/img/entities/ec614c021014748a5030337447d059c221cfa688",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9784805309650"
+    },
+    {
+      "title": "Anna Karenina",
+      "author": "Leo Tolstoy",
+      "cover": "https://inventaire.io/img/entities/cb1a4be834c29f15399615fb1a29df6d39591a17",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780143035008"
+    },
+    {
+      "title": "The Case for the Resurrection of Jesus",
+      "author": "Gary R. Habermas",
+      "cover": "https://inventaire.io/img/entities/09b926541440272c1ea5efa96118cf881a23b2e5",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780825427886"
+    },
+    {
+      "title": "Life without limits",
+      "author": "Nick Vujicic",
+      "cover": "https://inventaire.io/img/entities/4ac3f338e27abac6bef5c5f06ccb849ba463d66d",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780307589743"
+    },
+    {
+      "title": "Murder on the Orient Express",
+      "author": "Unknown Author",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780062073495-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062073495"
+    },
+    {
+      "title": "Northern spy",
+      "author": "Flynn Berry",
+      "cover": "https://inventaire.io/img/entities/434c099495fb084f0bd3085605ed5724392ca81c",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780735224995"
+    },
+    {
+      "title": "The Dialogues of Socrates",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/f0bad7809b5cb72bd561e8c08aa9ec0d2ac8d6d8",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781788283083"
+    },
+    {
+      "title": "The Origin of Species (Barnes & Noble Classics Series)",
+      "author": "Charles Darwin",
+      "cover": "https://inventaire.io/img/entities/4cb34201bd6c40b8fbb140f1a5d0a6bc1a225753",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781593080778"
+    },
+    {
+      "title": "We Will Not Be Silenced",
+      "author": "Erwin Lutzer",
+      "cover": "https://inventaire.io/img/entities/4b1b1857f068f30bd3e95ed4c3d5108b5b372fa0",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780736981798"
+    },
+    {
+      "title": "The Ideal Team Player",
+      "author": "Patrick Lencioni",
+      "cover": "https://inventaire.io/img/entities/462b18b2a9f5a92d779f1f51ee4ff0a4e055e67d",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781119209591"
+    },
+    {
+      "title": "The problem of evil",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/a2265185f451d29604d7546754d9464c071bbf60",
+      "year": "1992",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780198248668"
+    },
+    {
+      "title": "Celebration of discipline",
+      "author": "Richard J. Foster",
+      "cover": "https://inventaire.io/img/entities/6f9f7f4ce3405b6bfdf0ae8e4a593447ea5bd93c",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062803887"
+    },
+    {
+      "title": "Something in the Water",
+      "author": "Catherine Steadman",
+      "cover": "https://inventaire.io/img/entities/d0faf90cb712c746cd06a243a5f4f8ebdab94bef",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781524797188"
+    },
+    {
+      "title": "The Total Money Makeover",
+      "author": "Dave Ramsey",
+      "cover": "https://inventaire.io/img/entities/3c1cf701ada8bbf02cd69fe158d5c04c80af5299",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780785289081"
+    },
+    {
+      "title": "Make America healthy again",
+      "author": "Nicole Saphier M. D.",
+      "cover": "https://inventaire.io/img/entities/4a2f680bf772e5d7b8e93ff4157e519d81fc8511",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062961006"
+    },
+    {
+      "title": "How to Read a Book",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/e7827fe4dedfdcc8054f165ec5b265cd84b8cb45",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781476790152"
+    },
+    {
+      "title": "A Manual for Writers of Research Papers, Theses, and Dissertations, Ninth Edition",
+      "author": "Kate L. Turabian",
+      "cover": "https://inventaire.io/img/entities/2f29cd3e8eac092f3884e3875f471c47eb1732bb",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780226430577"
+    },
+    {
+      "title": "The structure of scientific revolutions",
+      "author": "Thomas Kuhn",
+      "cover": "https://inventaire.io/img/entities/cf5d9bb62e0c0989a5d47dbe5ddb0410666580c3",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780226458120"
+    },
+    {
+      "title": "Science Without God?",
+      "author": "Peter Harrison",
+      "cover": "https://inventaire.io/img/entities/2f8c8537abf142ce4ed8b15dfe3aee41ac75c022",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780198834588"
+    },
+    {
+      "title": "Longitude : The True Story of a Lone Genius Who Solved the Greatest Scientific Problem of His Time",
+      "author": "Dava Sobel",
+      "cover": "https://inventaire.io/img/entities/a5f9ed184a9db5d4304fdf48f6ec6a1dfb02a5e3",
+      "year": "1995",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802713124"
+    },
+    {
+      "title": "The Anglo-Saxons",
+      "author": "James Campbell",
+      "cover": "https://inventaire.io/img/entities/0c748445768f106ca53d33ee790a16a41a94c0c0",
+      "year": "1991",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780140143959"
+    },
+    {
+      "title": "The Midnight Library",
+      "author": "Matt Haig",
+      "cover": "https://inventaire.io/img/entities/5dfd7c9ba2838e4fb73e7e67c40e1b70ec748b30",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780525559474"
+    },
+    {
+      "title": "Beneath a Scarlet Sky",
+      "author": "Mark T. Sullivan",
+      "cover": "https://inventaire.io/img/entities/25c4a05af80c7f0f8028a8f8f9c38f1ae291b22e",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781503943377"
+    },
+    {
+      "title": "In Defense of Miracles",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/eb0c8b48397db8def873ba062904008d91e5bec3",
+      "year": "1997",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830815289"
+    },
+    {
+      "title": "People of the lie",
+      "author": "M. Scott Peck",
+      "cover": "https://inventaire.io/img/entities/cfaec11c47def043656cff29e3e38a18aded0254",
+      "year": "1998",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780684848594"
+    },
+    {
+      "title": "Foundations of Spiritual Formation",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/59a5dd87782f0cef28410ff29cb572b3c7ef03b9",
+      "year": "2008",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780825434693"
+    },
+    {
+      "title": "Sola Scriptura",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/2e4c4eafe44f1f0b8bfeac537318fa1a54a12435",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781567693331"
+    },
+    {
+      "title": "Common Grace and the Gospel",
+      "author": "Cornelius van Til",
+      "cover": "https://inventaire.io/img/entities/b19561635ff7624c0874fcad0798dd621307efab",
+      "year": "2015",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781596385832"
+    },
+    {
+      "title": "The Story of Beautiful Girl",
+      "author": "Rachel Simon",
+      "cover": "https://inventaire.io/img/entities/4591c0e10f7f2532764387c1c304f5a21400f317",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780446574464"
+    },
+    {
+      "title": "Doubts About Darwin",
+      "author": "Thomas Woodward",
+      "cover": "https://inventaire.io/img/entities/556d8db3fd834af232232f141f7804d8c4994a01",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780801064432"
+    },
+    {
+      "title": "How to be your dog's best friend",
+      "author": "Monks of New Skete.",
+      "cover": "https://inventaire.io/img/entities/1df8a9fe61165a6cfb2e1f2fecb01e3f15727d6c",
+      "year": "1978",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780316604918"
+    },
+    {
+      "title": "I Was Broke. Now I'm Not",
+      "author": "Joseph Sangl",
+      "cover": "https://inventaire.io/img/entities/9ebecadfdf8e4a38e8ba6831ae7905e461747288",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780692293416"
+    },
+    {
+      "title": "The Antifa",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/9f07aebb29fbf6bba0e57df29eaa3630ff221d35",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780999705964"
+    },
+    {
+      "title": "The 5 AM Club",
+      "author": "Robin Sharma",
+      "cover": "https://inventaire.io/img/entities/9920857a3e7ec8a251b33d28af3370be2c3ff9f0",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9789387944893"
+    },
+    {
+      "title": "Where The Crawdads Sing",
+      "author": "Delia Owens",
+      "cover": "https://inventaire.io/img/entities/25b4045f885e1eef148036c26a93721f1f8b8fc5",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780735219090"
+    },
+    {
+      "title": "The Journey of Modern Theology",
+      "author": "Roger E. Olson",
+      "cover": "https://inventaire.io/img/entities/1875ea07c9996ee7bf171041f1bbefd6669cde10",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830840212"
+    },
+    {
+      "title": "The English-Greek Reverse Interlinear New Testament",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/8a796485783eacaac2a2cad8fb362bc455513747",
+      "year": "2006",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781581346282"
+    },
+    {
+      "title": "The Niv Interlinear Hebrew-English Old Testament, Volume 2",
+      "author": "John R. Kohlenberger III",
+      "cover": "https://inventaire.io/img/entities/e1c3e0c437567ea8b8225d411c00a0cc8b415c9c",
+      "year": "1980",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310388906"
+    },
+    {
+      "title": "Economics",
+      "author": "Campbell R. Mcconnell",
+      "cover": "https://inventaire.io/img/entities/d3e369f1a7c51645c64fe3d39a310db2d819b748",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780072340365"
+    },
+    {
+      "title": "Government contract law",
+      "author": "Charles Tiefer",
+      "cover": "https://inventaire.io/img/entities/9c5f030d98299c0499f1e33a4df1ed411e5e9ce7",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780890894378"
+    },
+    {
+      "title": "Evidence That Demands a Verdict",
+      "author": "Josh McDowell",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781401676704-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781401676704"
+    },
+    {
+      "title": "Macroeconomics",
+      "author": "Stephen D. Williamson",
+      "cover": "https://inventaire.io/img/entities/591051e1b213f3c0a42087098938718d4bc66838",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780201710465"
+    },
+    {
+      "title": "Spreadsheet Modeling and Decision Analysis",
+      "author": "Cliff Ragsdale",
+      "cover": "https://inventaire.io/img/entities/3e67336152e6e81fd24717c0b9e3124435ec6729",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780324183993"
+    },
+    {
+      "title": "Microeconomics (5th Edition)",
+      "author": "Robert Pindyck",
+      "cover": "https://inventaire.io/img/entities/9e9e8d43ffe14e17d9feda2eae36bd6352345607",
+      "year": "2000",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780130165831"
+    },
+    {
+      "title": "Introduction to Biblical Hermeneutics",
+      "author": "Walter Kaiser, Jr.",
+      "cover": "https://inventaire.io/img/entities/534c6f1ef43c21a9900408e14a1a24426d66668e",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310279518"
+    },
+    {
+      "title": "Microsoft Project 2010 step by step",
+      "author": "Carl S. Chatfield",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780735626959-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780735626959"
+    },
+    {
+      "title": "Joint Publication JP 5-0 Joint Planning December 2020",
+      "author": "United States Government US Army",
+      "cover": "https://inventaire.io/img/entities/e2855e86a53828f8112d4e60ae977b277127c452",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9798592075216"
+    },
+    {
+      "title": "The richest man in Babylon",
+      "author": "George Samuel Clason",
+      "cover": "https://inventaire.io/img/entities/30d3dfe14188ac942ff8e8470a9dbde8e32fac91",
+      "year": "1988",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451165206"
+    },
+    {
+      "title": "Out of the Crisis",
+      "author": "W. Edwards Deming",
+      "cover": "https://inventaire.io/img/entities/64e0ba85e331781e2132cf30cca668b27091bc95",
+      "year": "1982",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780911379013"
+    },
+    {
+      "title": "Writing that works",
+      "author": "Kenneth Roman",
+      "cover": "https://inventaire.io/img/entities/08eea9e9558ecc38dff5ba80fdaadcc27e29fb7b",
+      "year": "2000",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780060956431"
+    },
+    {
+      "title": "Escaping the Build Trap",
+      "author": "Melissa Perri",
+      "cover": "https://inventaire.io/img/entities/17835cfc043fd06d0ec95f438e960383b2d7991a",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781491973790"
+    },
+    {
+      "title": "The servant",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/b1f1f8e40f4e0699da8d9c5e1c36188c64f72825",
+      "year": "1998",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780761513698"
+    },
+    {
+      "title": "Guide to Colorado backroads & 4-wheel drive trails",
+      "author": "Charles A. Wells",
+      "cover": "https://inventaire.io/img/entities/4a3952a25c3e498b68c667bf52f675724658b239",
+      "year": "1998",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780966497601"
+    },
+    {
+      "title": "Falling Up",
+      "author": "Shel Silverstein",
+      "cover": "https://inventaire.io/img/entities/e197c55553013eac99f806302915534d434894fc",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780060248024"
+    },
+    {
+      "title": "The SAS Survival Handbook",
+      "author": "Lofty Wiseman",
+      "cover": "https://inventaire.io/img/entities/4f2824d9a2291c502ba000685ac82ab7195555b2",
+      "year": "2014",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062378071"
+    },
+    {
+      "title": "The Pilot's Wife",
+      "author": "Anita Shreve",
+      "cover": "https://inventaire.io/img/entities/99b444edb084c77d799d05b355d5403b189d72fd",
+      "year": "1999",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780316601955"
+    },
+    {
+      "title": "Can Science Explain Everything?",
+      "author": "John Lennox",
+      "cover": "https://inventaire.io/img/entities/59718c3a86677f7af1dda3981e10cd0c5bc1eec1",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781784984113"
+    },
+    {
+      "title": "The Aviator's Wife",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/cdd406c551b9a2915d4ce95c6cd83a92918e24d7",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780345528681"
+    },
+    {
+      "title": "Interpreting the Bible",
+      "author": "J. Stafford Wright",
+      "cover": "https://inventaire.io/img/entities/cc51a5f88a6553b5945e67c6d3b897ec365aeb6a",
+      "year": "1955",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780877841272"
+    },
+    {
+      "title": "The Republic",
+      "author": "Plato",
+      "cover": "https://inventaire.io/img/entities/c99a6bfa20789b16b44d8f591744fcd8a1a088dd",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781784286996"
+    },
+    {
+      "title": "Ten Great Works of Philosophy",
+      "author": "Richard Chizmar",
+      "cover": "https://inventaire.io/img/entities/21409abd3021d38c0c2cb3ce996fc8c0e79e3280",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451528308"
+    },
+    {
+      "title": "Mayflower",
+      "author": "Nathaniel Philbrick",
+      "cover": "https://inventaire.io/img/entities/5592c5632c5f9294e45eca12718ad81303aecd8f",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780143111979"
+    },
+    {
+      "title": "Our song of hope",
+      "author": "Reformed Church in America.",
+      "cover": "https://inventaire.io/img/entities/200715bb9d9c6a3580de40080cf45af129d177df",
+      "year": "1975",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802816047"
+    },
+    {
+      "title": "The Idea of History",
+      "author": "R. G. Collingwood",
+      "cover": "https://inventaire.io/img/entities/bf7f3fbbfc1833484efdda1e1253b963722f0778",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780192853066"
+    },
+    {
+      "title": "Jesus, Interrupted",
+      "author": "Bart D. Ehrman",
+      "cover": "https://inventaire.io/img/entities/e90a7275836f0db5eab5aa94f0672ee2c4e8c8ee",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780061173943"
+    },
+    {
+      "title": "Thinking about religion",
+      "author": "Richard L. Purtill",
+      "cover": "https://inventaire.io/img/entities/3c25c98d8efa0528b2afe0434b57ff866286bd68",
+      "year": "1978",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780139177248"
+    },
+    {
+      "title": "The design revolution",
+      "author": "William A. Dembski",
+      "cover": "https://inventaire.io/img/entities/bc221ae91469eedd80cc1cdaa2a320b7fa0f9430",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830823758"
+    },
+    {
+      "title": "Romans, a shorter commentary",
+      "author": "C. E. B. Cranfield",
+      "cover": "https://inventaire.io/img/entities/a723e828708261538f5443cc7846cfe8a19cccb5",
+      "year": "1985",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802800121"
+    },
+    {
+      "title": "Reading Genesis 1-2",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/bf46e0414735b1dcf56549a85c12fa45e76d4376",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781598568882"
+    },
+    {
+      "title": "The idolatry of God",
+      "author": "Peter Rollins",
+      "cover": "https://inventaire.io/img/entities/5ed4aa7d35c47e1dfb656312340a9287ab962beb",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781451609028"
+    },
+    {
+      "title": "Thinking About Christian Apologetics",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/8e9ccc1640c0dc04887694e9c1cde86903c1ad73",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830839452"
+    },
+    {
+      "title": "The 5000 Year Leap",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/e553c47a81e64063b81480e0c39d40f66f59e2fc",
+      "year": "1981",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780880801485"
+    },
+    {
+      "title": "Misreading Scripture With Western Eyes",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/6749e9258cc350fae3055fb76c660164d74846ec",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780830837823"
+    },
+    {
+      "title": "The Will To Power",
+      "author": "Friedrich Nietzsche",
+      "cover": "https://inventaire.io/img/entities/dbb56649ac2f69d56e3376753e2e72c144f63691",
+      "year": "2006",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780760777770"
+    },
+    {
+      "title": "Christian apologetics past and present",
+      "author": "Unknown Author",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781581349078-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781581349078"
+    },
+    {
+      "title": "The methods of ethics",
+      "author": "Henry Sidgwick",
+      "cover": "https://inventaire.io/img/entities/8cc4c5e84bf5a6a2d9d247132526450b04e39a0f",
+      "year": "1981",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780915145287"
+    },
+    {
+      "title": "Mere apologetics",
+      "author": "Alister McGrath",
+      "cover": "https://inventaire.io/img/entities/b2c4dac1cc81ae6e91d73d1ea9fd4c313923d176",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780801014161"
+    },
+    {
+      "title": "Evangelical theology",
+      "author": "Karl Barth",
+      "cover": "https://inventaire.io/img/entities/67de00db8553b2a956e0346d91cab54d733bc2e3",
+      "year": "1979",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780802818195"
+    },
+    {
+      "title": "Concluding Unscientific Postscript To The Philosophical Crumbs",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/427c087769d25775c788650e6f08327284ba94a0",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780521709101"
+    },
+    {
+      "title": "Christian apologetics past and present",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/696043a1aa42ebe41330cd596dbf3b8085842177",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781581349061"
+    },
+    {
+      "title": "The Complete C. S. Lewis Signature Classics",
+      "author": "C. S. Lewis",
+      "cover": "https://inventaire.io/img/entities/b76a0d1fa10665b1d8f5615ccfcf1321747facd3",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780061208492"
+    },
+    {
+      "title": "A History of Apologetics",
+      "author": "Avery Dulles",
+      "cover": "https://inventaire.io/img/entities/b25d63fda0c11c69aab81ffc292c4f3262860a42",
+      "year": "2005",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780898709339"
+    },
+    {
+      "title": "American heroes on the homefront",
+      "author": "Oliver North",
+      "cover": "https://inventaire.io/img/entities/a2c4bc04a55206f514f8ccc7f605a69e478a6fc8",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781476714325"
+    },
+    {
+      "title": "The strength training anatomy workout",
+      "author": "Fre\u0301de\u0301ric Delavier",
+      "cover": "https://inventaire.io/img/entities/bbdf70e7cfed7f045d145607e395fa7152867e88",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781450400954"
+    },
+    {
+      "title": "Black & Decker Complete Guide to Custom Shelves & Built-ins",
+      "author": "Theresa Coleman",
+      "cover": "https://inventaire.io/img/entities/be7f082e0e27e0ba1e8a97e2e7292eb67647cb7e",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781589233034"
+    },
+    {
+      "title": "Range: Why Generalists Triumph in a Specialized World",
+      "author": "David Epstein",
+      "cover": "https://inventaire.io/img/entities/5e6508c39a00a4fef16446799e1521e83c7d36d1",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780735214484"
+    },
+    {
+      "title": "The Advantage",
+      "author": "Patrick Lencioni",
+      "cover": "https://inventaire.io/img/entities/dcacb1f66490ffee2aa8f31ff5aa52199091b3d5",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780470941522"
+    },
+    {
+      "title": "Space Policy in the Twenty-First Century (New Series in NASA History)",
+      "author": "W. Henry Lambright",
+      "cover": "https://inventaire.io/img/entities/9142c7b0066187fbc9ca9288732c8c294d8d8315",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780801870682"
+    },
+    {
+      "title": "In Business As in Life, You Don't Get What You Deserve, You Get What You Negotiate",
+      "author": "Chester L. Karrass",
+      "cover": "https://inventaire.io/img/entities/ae35122c1dc797c8fbcf83953d0552ccdaaa3a3c",
+      "year": "1996",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780965227490"
+    },
+    {
+      "title": "Our Lady of Perpetual Hunger",
+      "author": "Lisa Donovan",
+      "cover": "https://inventaire.io/img/entities/7ce2fcaec9b1c509a1895430066bdea0d7691ca0",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780525560944"
+    },
+    {
+      "title": "Good to Great",
+      "author": "James C. Collins",
+      "cover": "https://inventaire.io/img/entities/a93b703ef53d5b50cf8af70b5f6ae255981b126a",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780066620992"
+    },
+    {
+      "title": "A short history of nearly everything",
+      "author": "Bill Bryson",
+      "cover": "https://inventaire.io/img/entities/e02c7c220f0bae21687431265222d34ac94ac40a",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780767908184"
+    },
+    {
+      "title": "Black Rednecks and White Liberals",
+      "author": "Thomas Sowell",
+      "cover": "https://inventaire.io/img/entities/c15eb7800884e38b8bc1d56b96ebd50ee76a11a5",
+      "year": "2005",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781594030864"
+    },
+    {
+      "title": "John Adams",
+      "author": "David McCullough",
+      "cover": "https://inventaire.io/img/entities/c842b2826bbd17cf29172e65340293b7505bc1a6",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780684813639"
+    },
+    {
+      "title": "The autobiography of Benjamin Franklin",
+      "author": "Benjamin Franklin",
+      "cover": "https://inventaire.io/img/entities/b726a240f11faf3863798e98a784846350b6c657",
+      "year": "1996",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780486290737"
+    },
+    {
+      "title": "Lonely Planet Scotland 11",
+      "author": "Isabel Albiston",
+      "cover": "https://inventaire.io/img/entities/fc85e28ea3abc880a3234927e29821671426713c",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781787016422"
+    },
+    {
+      "title": "Flyboys",
+      "author": "James Bradley",
+      "cover": "https://inventaire.io/img/entities/88d8319ae6f08825bf9d879295ef575f005d41ae",
+      "year": "2004",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780316159432"
+    },
+    {
+      "title": "The Federalist Papers",
+      "author": "Alexander Hamilton",
+      "cover": "https://inventaire.io/img/entities/843334d31169c44dcd30db54c52fb94925a31177",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451528810"
+    },
+    {
+      "title": "South: the Endurance Expedition",
+      "author": "Ernest Shackleton",
+      "cover": "https://inventaire.io/img/entities/f582b1f795553100413cab715e2572200ffeba7d",
+      "year": "1999",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451198808"
+    },
+    {
+      "title": "The origins of American constitutionalism",
+      "author": "Donald S. Lutz",
+      "cover": "https://inventaire.io/img/entities/9f6d5dbd6dd44a0c38ecafbe30465f229b53c716",
+      "year": "1988",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780807115060"
+    },
+    {
+      "title": "The inner game of trading",
+      "author": "Robert Koppel",
+      "cover": "https://inventaire.io/img/entities/a11af9e8dbf003d96b94a7d0d530351561bd0aa7",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780786311897"
+    },
+    {
+      "title": "Database Design for Mere Mortals",
+      "author": "Michael J. Hernandez",
+      "cover": "https://inventaire.io/img/entities/d217e3cd2db1b1980b96f1e87b1eec4e6ac14601",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780201752847"
+    },
+    {
+      "title": "Fool",
+      "author": "Christopher Moore",
+      "cover": "https://inventaire.io/img/entities/fc085801c9f1451111802ba3098ae64e012aebf6",
+      "year": "2010",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780060590321"
+    },
+    {
+      "title": "The Seven Habits of Highly Effective People : Restoring the Character Ethic",
+      "author": "Stephen Covey",
+      "cover": "https://inventaire.io/img/entities/50993ca20f7bc8985d9e71e7d0fff1d832a5a6a9",
+      "year": "1989",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780671708634"
+    },
+    {
+      "title": "Spacefaring : The Human Dimension",
+      "author": "Albert A. Harrison",
+      "cover": "https://inventaire.io/img/entities/ed72730be6ec097b973ebd85cc85e6005940b9be",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780520236776"
+    },
+    {
+      "title": "Something That Will Surprise the World",
+      "author": "Susan Dunn",
+      "cover": "https://inventaire.io/img/entities/f0cbc13243f197d3d511e766732609bcad305953",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780465017805"
+    },
+    {
+      "title": "The American revelation",
+      "author": "Neil Baldwin",
+      "cover": "https://inventaire.io/img/entities/77e4819504d66eb9c88b60618b9789dac9447e94",
+      "year": "2005",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780312325435"
+    },
+    {
+      "title": "For the common defense",
+      "author": "Peter. Maslowksi",
+      "cover": "https://inventaire.io/img/entities/3e5ad955d77f63544a5231af3015fcc39f5ab636",
+      "year": "1984",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780029215807"
+    },
+    {
+      "title": "Give Me Tomorrow",
+      "author": "Patrick K. O'Donnell",
+      "cover": "https://inventaire.io/img/entities/993a350fe4790ce7e27597e468da88348b3fbfa4",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780306820441"
+    },
+    {
+      "title": "Raspberry Pi 3",
+      "author": "Unknown Author",
+      "cover": "https://covers.openlibrary.org/b/isbn/9781544112657-M.jpg",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781544112657"
+    },
+    {
+      "title": "Liberty and freedom",
+      "author": "David Hackett Fischer",
+      "cover": "https://inventaire.io/img/entities/2e7cc4fd77ae36f95a6154cd1253d16ed6a749e9",
+      "year": "2005",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780195162530"
+    },
+    {
+      "title": "Of Mice and Men",
+      "author": "John Steinbeck",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780553240740-M.jpg",
+      "year": "1982",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780553240740"
+    },
+    {
+      "title": "The Day the American Revolution Began",
+      "author": "William H. Hallahan",
+      "cover": "https://inventaire.io/img/entities/0c0705e5affa8dc2d78f6a4c2a3de87a389eb3c0",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780380796052"
+    },
+    {
+      "title": "Summer I Turned Pretty",
+      "author": "Jenny Han",
+      "cover": "https://inventaire.io/img/entities/73629da556471a6873ecd6dba4331f78deb9ece0",
+      "year": "2022",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781665922074"
+    },
+    {
+      "title": "A figure of speech",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/239f32c4cd2ec25e83c291453d024f96aff35c89",
+      "year": "1973",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780440943747"
+    },
+    {
+      "title": "The Decameron",
+      "author": "Giovanni Boccaccio",
+      "cover": "https://inventaire.io/img/entities/6ad24dc60a1409226fb4bb20660111c67e12d8c0",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451528667"
+    },
+    {
+      "title": "Lord of the Flies",
+      "author": "William Golding",
+      "cover": "https://inventaire.io/img/entities/4f7bf8268bf81bc90f39ba55e868f8f873a57a61",
+      "year": "1959",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780399501487"
+    },
+    {
+      "title": "Fall of Giants",
+      "author": "Ken Follett",
+      "cover": "https://inventaire.io/img/entities/f8455fbfd47ee97664de3facca3067181b4f1fc3",
+      "year": "2012",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451232854"
+    },
+    {
+      "title": "The last refuge of scoundrels",
+      "author": "Paul Lussier",
+      "cover": "https://inventaire.io/img/entities/523b4de8987f89aeb9473dea6a086b44af11f6f8",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780446523424"
+    },
+    {
+      "title": "Nuts!",
+      "author": "Kevin Freiberg",
+      "cover": "https://inventaire.io/img/entities/c0186cecbc5beabef01ff3a03e2666981bfe412f",
+      "year": "1996",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781885167187"
+    },
+    {
+      "title": "The Motley Fool's What to Do with Your Money Now",
+      "author": "David Gardner",
+      "cover": "https://inventaire.io/img/entities/782877b1d0a012b4ddbcb41d28bab12904837350",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780743233781"
+    },
+    {
+      "title": "The Dean Witter guide to personal investing",
+      "author": "Robert M. Gardiner",
+      "cover": "https://inventaire.io/img/entities/184641cae8eaf4463dffa45e6ade82a38a46b2cd",
+      "year": "1997",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780525943006"
+    },
+    {
+      "title": "A Land Remembered, Vol. 1 (Student Edition)",
+      "author": "Patrick Smith",
+      "cover": "https://inventaire.io/img/entities/29554c835f4b21ccc26fbbb8e97248e67952c31e",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781561642236"
+    },
+    {
+      "title": "The negotiating game",
+      "author": "Chester Louis Karrass",
+      "cover": "https://inventaire.io/img/entities/ad34a15fddf8186d0ea75850c4bb0ba6abc197c4",
+      "year": "1992",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780887305689"
+    },
+    {
+      "title": "Stock market logic",
+      "author": "Norman G. Fosback",
+      "cover": "https://inventaire.io/img/entities/6c314f5af3aaffa81f081fbe0db8b6a2df317739",
+      "year": "1976",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780917604492"
+    },
+    {
+      "title": "Reminiscences of a stock operator",
+      "author": "Edwin Lef\u00e8vre",
+      "cover": "https://inventaire.io/img/entities/984a3bf32e24d92382d71ca8e8b98050bcefc526",
+      "year": "1994",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780471059707"
+    },
+    {
+      "title": "Florida",
+      "author": "Lauren Groff",
+      "cover": "https://inventaire.io/img/entities/3e3165b272f64b09320e67d586af6b918a95df5e",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781594634512"
+    },
+    {
+      "title": "The Southerner's handbook",
+      "author": "Editors Of Garden And Gun",
+      "cover": "https://inventaire.io/img/entities/aebe2337afed4b5dddfb5979da6f10c7d14f632b",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780062242389"
+    },
+    {
+      "title": "2001: A Space Odyssey (Space Odyssey, #1)",
+      "author": "Arthur C. Clarke",
+      "cover": "https://inventaire.io/img/entities/b228ca217268e7e955831857855a2110783a31c4",
+      "year": "2000",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780451457998"
+    },
+    {
+      "title": "Great Expectations (Collins Classics)",
+      "author": "Charles Dickens",
+      "cover": "https://inventaire.io/img/entities/e7a56fcc4f664356171e8be2ecb24f25b343a740",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780007350872"
+    },
+    {
+      "title": "Ulysses",
+      "author": "Cedric Watts",
+      "cover": "https://inventaire.io/img/entities/583cbde922eb539ad01f60481186171940f644c4",
+      "year": "2010",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781840226355"
+    },
+    {
+      "title": "Ulysses",
+      "author": "Cedric Watts",
+      "cover": "https://inventaire.io/img/entities/583cbde922eb539ad01f60481186171940f644c4",
+      "year": "2010",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781840226355"
+    },
+    {
+      "title": "Brave New Wealthy World",
+      "author": "John C. Edmunds",
+      "cover": "https://inventaire.io/img/entities/f862e3f8a8dc13b2ab3fc60b706e0c84415c9e96",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780130381606"
+    },
+    {
+      "title": "Radical Loving Care",
+      "author": "Erie Chapman",
+      "cover": "https://inventaire.io/img/entities/a75e50f65c29add0f9f400cebb12ed6c8487eccb",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780974736600"
+    },
+    {
+      "title": "Marathon",
+      "author": "Jeff Galloway",
+      "cover": "https://inventaire.io/img/entities/b366cfeb3810727219a023a7c6bf1797dc7f067e",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780936070254"
+    },
+    {
+      "title": "Case for Easter",
+      "author": "Lee Strobel",
+      "cover": "https://inventaire.io/img/entities/c50207026c7e17be1aca4a7e62ffbda7e374d773",
+      "year": "2019",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780310339502"
+    },
+    {
+      "title": "A Clash of Kings",
+      "author": "George R. R. Martin",
+      "cover": "https://inventaire.io/img/entities/d14b03c2ec2de6725043f216e35399af8915e864",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780553579901"
+    },
+    {
+      "title": "A Game of Thrones",
+      "author": "George R. R. Martin",
+      "cover": "https://inventaire.io/img/entities/9597d49ae47449fa92d6e365fdd15ab93ce9a425",
+      "year": "1997",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780553573404"
+    },
+    {
+      "title": "Fire & Blood",
+      "author": "George R. R. Martin",
+      "cover": "https://inventaire.io/img/entities/6fcaad477b8d52a4d917de7a000c4f8648f1298f",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780593357538"
+    },
+    {
+      "title": "A Dance with Dragons",
+      "author": "George R. R. Martin",
+      "cover": "https://inventaire.io/img/entities/428f707b978cc4405625e59ddb595c0750b45ba0",
+      "year": "2013",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780553582017"
+    },
+    {
+      "title": "The Drama of Atheist Humanism",
+      "author": "Henri de Lubac",
+      "cover": "https://inventaire.io/img/entities/feb60859148bbd0a4539f0334ca015663e095933",
+      "year": "1995",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780898704433"
+    },
+    {
+      "title": "The Colored Patriots of the American Revolution",
+      "author": "William Cooper Nell",
+      "cover": "https://inventaire.io/img/entities/65ff133b3c6a251a1e212c56ca5b987a86c46c3e",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781973379478"
+    },
+    {
+      "title": "Why simple wins",
+      "author": "Lisa Bodell",
+      "cover": "https://inventaire.io/img/entities/eed8e062bf4593c01bb8b5defd658446d0856d6c",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781629561295"
+    },
+    {
+      "title": "The U.S. Constitution and fascinating facts about it",
+      "author": "Terry L. Jordan",
+      "cover": "https://inventaire.io/img/entities/d6db88cb61e1ad2425ca174f8276892528cbd93b",
+      "year": "1999",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781891743009"
+    },
+    {
+      "title": "Revolt in the desert",
+      "author": "T. E. Lawrence",
+      "cover": "https://inventaire.io/img/entities/831e77d669715a1d62374a993466399a50446e89",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781848856653"
+    },
+    {
+      "title": "Fishing Georgia, 2nd",
+      "author": "Kevin Dallmier",
+      "cover": "https://inventaire.io/img/entities/290be7dbddf1f6f2cdda3dd1bb7e48f51de48860",
+      "year": "2007",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781599211404"
+    },
+    {
+      "title": "Entreleadership",
+      "author": "Dave Ramsey",
+      "cover": "https://inventaire.io/img/entities/1240bdcff80deaf95ac58b5e7ded05ce2bff10b8",
+      "year": "2011",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781451617856"
+    },
+    {
+      "title": "Camping Colorado",
+      "author": "Melinda Crow",
+      "cover": "https://inventaire.io/img/entities/c5b3de876805cb9a429ff61d8b342e57002751b0",
+      "year": "2001",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781585921010"
+    },
+    {
+      "title": "How to Raise a Conservative Daughter",
+      "author": "Michelle Easton",
+      "cover": "https://inventaire.io/img/entities/344619ef95c0d75f94b38bd4af92e0000a688e98",
+      "year": "2021",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781684512263"
+    },
+    {
+      "title": "Just in Case",
+      "author": "Kathy Harrison",
+      "cover": "https://inventaire.io/img/entities/0b9845ce6de26db2c8d2576690fdb4661738f989",
+      "year": "2008",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781603420358"
+    },
+    {
+      "title": "Leader Launchpad",
+      "author": "Howard M. Shore",
+      "cover": "https://inventaire.io/img/entities/630a987864293036851227eebecf18c8d48ea6de",
+      "year": "2020",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781645434818"
+    },
+    {
+      "title": "Team of teams",
+      "author": "Unknown Author",
+      "cover": "https://inventaire.io/img/entities/bceb3de0a384fb757e2dac6c7f090be3992ad5fc",
+      "year": null,
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781591847489"
+    },
+    {
+      "title": "Hurricane season",
+      "author": "Lauren K. Denton",
+      "cover": "https://inventaire.io/img/entities/e3948f4f3e6d3906b0d74714ca7dfae197e01873",
+      "year": "2018",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780718084257"
+    },
+    {
+      "title": "The millionaire next door",
+      "author": "Thomas J. Stanley",
+      "cover": "https://inventaire.io/img/entities/5fba15d2d90e4011f1ffea8b4a6da341a9120fa5",
+      "year": "1996",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781563523304"
+    },
+    {
+      "title": "Sniper trading",
+      "author": "George Angell",
+      "cover": "https://inventaire.io/img/entities/e1089d07a65a199bad3acaa7c3d5e9deda0ede4b",
+      "year": "2002",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780471394228"
+    },
+    {
+      "title": "Nurse's Gratitude Reboot",
+      "author": "Danan Whiddon",
+      "cover": "https://inventaire.io/img/entities/e134494df50600fa1b734351782f809ea057c462",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781365034794"
+    },
+    {
+      "title": "Igniting the American Revolution",
+      "author": "Derek W. Beck",
+      "cover": "https://inventaire.io/img/entities/bfc583f895b553b4e644810f4e1c29b571ab1baa",
+      "year": "2016",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781492631323"
+    },
+    {
+      "title": "The great money binge",
+      "author": "George Melloan",
+      "cover": "https://inventaire.io/img/entities/2d55cb8ce60ddd1d51ddbd4e2e31d2e91313a782",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781439164075"
+    },
+    {
+      "title": "A Storm of Swords",
+      "author": "George R. R. Martin",
+      "cover": "https://inventaire.io/img/entities/d676806dd7a5b41a18197cf54cbb88d7edc87616",
+      "year": "2003",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780553573428"
+    },
+    {
+      "title": "The Complete Works of E. M. Bounds",
+      "author": "E. M. Bounds",
+      "cover": "https://inventaire.io/img/entities/628fbdf3bb95be6498aedcd1cf826877ad4649f0",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781543166958"
+    },
+    {
+      "title": "A Feast for Crows",
+      "author": "George R. R. Martin",
+      "cover": "https://inventaire.io/img/entities/80d5ad5910d5a515d8276408660fab4721904d77",
+      "year": "2006",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9780553582024"
+    },
+    {
+      "title": "ITIL For Beginners",
+      "author": "ClydeBank Technology",
+      "cover": "https://inventaire.io/img/entities/4727587202ca1d12568983a4f5253264557e6744",
+      "year": "2017",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781945051333"
+    },
+    {
+      "title": "Ruth",
+      "author": "Kelly Minter",
+      "cover": "https://inventaire.io/img/entities/f5a066031bd19a7249ed12dc0e6f5e121832d933",
+      "year": "2009",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781415866931"
+    },
+    {
+      "title": "Broke",
+      "author": "Glenn Beck",
+      "cover": "https://inventaire.io/img/entities/6554b4fe4ce79378dc2f4b505eed5421c91d6e07",
+      "year": "2010",
+      "status": "read",
+      "rating": null,
+      "category": "General",
+      "isbn": "9781439187197"
+    }
+  ]
+}

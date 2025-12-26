@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 import boto3
+import json
+import os
 
 
 app = Flask(__name__)
@@ -86,6 +88,18 @@ def greece():
 def bahamas():
     videos = get_video_data()
     return render_template('bahamas.html', videos=videos, placeholder_image=placeholder_image)
+
+
+@app.route('/library')
+def library():
+    # Load library data from local JSON (will be S3-cached in production)
+    json_path = os.path.join(app.static_folder, 'library_data.json')
+    try:
+        with open(json_path, 'r') as f:
+            library_data = json.load(f)
+    except FileNotFoundError:
+        library_data = {'books': [], 'last_updated': 'N/A', 'source': 'none'}
+    return render_template('library.html', library_data=library_data)
 
 
 if __name__ == "__main__":

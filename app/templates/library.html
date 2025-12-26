@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Library{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 style="text-align: center;">LIBRARY</h1>
+        <p style="text-align: center; margin-bottom: 10px;">Books we've read, are reading, or want to read.</p>
+        <p style="text-align: center; font-size: 12px; color: #666; margin-bottom: 30px;">
+            Last updated: {{ library_data.last_updated }} | {{ library_data.books|length }} books
+        </p>
+
+        <!-- Filter Tabs -->
+        <div class="library-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="read">Read</button>
+            <button class="filter-btn" data-filter="reading">Reading</button>
+            <button class="filter-btn" data-filter="to-read">To Read</button>
+        </div>
+
+        <!-- Book Grid -->
+        <div class="book-grid">
+            {% for book in library_data.books %}
+            <div class="book-card" data-status="{{ book.status }}">
+                <div class="book-cover">
+                    <img src="{{ book.cover }}" alt="{{ book.title }}" onerror="this.src='https://d1rhrn7ca7di1b.cloudfront.net/images/comingSoon.jpg'">
+                    {% if book.status == 'reading' %}
+                    <span class="book-badge reading">Reading</span>
+                    {% elif book.status == 'to-read' %}
+                    <span class="book-badge to-read">To Read</span>
+                    {% endif %}
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">{{ book.title }}</h3>
+                    <p class="book-author">{{ book.author }}</p>
+                    <p class="book-meta">{{ book.category }} | {{ book.year }}</p>
+                    {% if book.rating %}
+                    <div class="book-rating">
+                        {% for i in range(book.rating) %}
+                        <span class="star filled">&#9733;</span>
+                        {% endfor %}
+                        {% for i in range(5 - book.rating) %}
+                        <span class="star">&#9733;</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; font-size: 12px; color: #666;">
+            Powered by <a href="https://inventaire.io" target="_blank" style="color: #FFCA28;">Inventaire</a>
+        </p>
+    </div>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filter books
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.book-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.status === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
