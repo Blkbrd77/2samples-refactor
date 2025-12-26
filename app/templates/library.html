@@ -5,8 +5,13 @@
         <h1 style="text-align: center;">LIBRARY</h1>
         <p style="text-align: center; margin-bottom: 10px;">Books we've read, are reading, or want to read.</p>
         <p style="text-align: center; font-size: 12px; color: #666; margin-bottom: 30px;">
-            Last updated: {{ library_data.last_updated }} | {{ library_data.books|length }} books
+            Last updated: {{ library_data.last_updated }} | <span id="visible-count">{{ library_data.books|length }} books</span>
         </p>
+
+        <!-- Search Box -->
+        <div class="library-search">
+            <input type="text" id="book-search" placeholder="Search by title or author..." autocomplete="off">
+        </div>
 
         <!-- Filter Tabs -->
         <div class="library-filters">
@@ -19,7 +24,7 @@
         <!-- Book Grid -->
         <div class="book-grid">
             {% for book in library_data.books %}
-            <div class="book-card" data-status="{{ book.status }}">
+            <div class="book-card" data-status="{{ book.status }}" data-title="{{ book.title|lower }}" data-author="{{ book.author|lower }}">
                 <div class="book-cover">
                     <img src="{{ book.cover }}" alt="{{ book.title }}" onerror="this.src='https://d1rhrn7ca7di1b.cloudfront.net/images/comingSoon.jpg'">
                     {% if book.status == 'reading' %}
@@ -53,23 +58,61 @@
     </div>
 
     <script>
+        // State
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        // Apply both filter and search
+        function applyFilters() {
+            const searchTerm = currentSearch.toLowerCase();
+            document.querySelectorAll('.book-card').forEach(card => {
+                const matchesFilter = currentFilter === 'all' || card.dataset.status === currentFilter;
+                const matchesSearch = !searchTerm ||
+                    card.dataset.title.includes(searchTerm) ||
+                    card.dataset.author.includes(searchTerm);
+
+                if (matchesFilter && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update visible count
+            const visibleCount = document.querySelectorAll('.book-card[style="display: flex;"]').length;
+            const totalCount = document.querySelectorAll('.book-card').length;
+            const countEl = document.getElementById('visible-count');
+            if (countEl) {
+                countEl.textContent = visibleCount === totalCount ?
+                    `${totalCount} books` :
+                    `Showing ${visibleCount} of ${totalCount} books`;
+            }
+        }
+
         // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Update active button
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-
-                // Filter books
-                const filter = this.dataset.filter;
-                document.querySelectorAll('.book-card').forEach(card => {
-                    if (filter === 'all' || card.dataset.status === filter) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+                currentFilter = this.dataset.filter;
+                applyFilters();
             });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('book-search');
+        searchInput.addEventListener('input', function() {
+            currentSearch = this.value;
+            applyFilters();
+        });
+
+        // Clear search on Escape
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                currentSearch = '';
+                applyFilters();
+            }
         });
     </script>
 {% endblock %}

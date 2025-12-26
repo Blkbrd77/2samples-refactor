@@ -183,6 +183,30 @@ body {
 }
 
 /* Library Styles */
+.library-search {
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+.library-search input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.library-search input:focus {
+    border-color: #FFCA28;
+    box-shadow: 0 0 10px rgba(255, 202, 40, 0.3);
+}
+
+.library-search input::placeholder {
+    color: #999;
+}
+
 .library-filters {
     display: flex;
     justify-content: center;
