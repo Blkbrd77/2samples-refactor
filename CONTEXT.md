@@ -2,10 +2,11 @@
 
 ## Project Overview
 
-Family travel portfolio website migrating from **Flask/Python on AWS Elastic Beanstalk** to **Astro on Cloudflare Pages** to reduce hosting costs.
+Family travel portfolio website. Migrated from **Flask/Python on AWS Elastic Beanstalk** to **Astro on Cloudflare Pages** to reduce hosting costs. Migration complete — Astro site is live on the custom domain.
 
-- **Flask app (current production):** `app/`
-- **Astro app (migration target):** `2samples-astro/`
+- **Production site:** `https://2samples.com` (Astro on Cloudflare Pages)
+- **Flask app (legacy):** `app/` — still in repo, pending EB decommission
+- **Astro app (production):** `2samples-astro/`
 - **Media assets:** AWS S3 bucket `2samples-static-assets-211125453069`, served via CloudFront CDN `https://d1rhrn7ca7di1b.cloudfront.net` (staying on AWS regardless of hosting platform)
 
 ## Architecture Decisions
@@ -71,21 +72,18 @@ Family travel portfolio website migrating from **Flask/Python on AWS Elastic Bea
 | Security headers | CSP, X-Frame-Options, etc. in public/_headers |
 | Testing infrastructure | Vitest + Playwright configured and passing |
 
-### Partially Migrated (Content Gaps)
-
-| Page | Flask Has | Astro Has | Missing |
-|------|----------|----------|---------|
-| **UK** | 7 day sections (Days 5-11), 7 videos | 1 section (Day 5 only), 1 video | Days 6-11 content and video entries in `destinations.ts` |
-| **Greece** | 6 day sections (Days 1-8), 6 videos | 1 section (generic), 1 video | Day-by-day breakdown and video entries in `destinations.ts` |
-| **Bahamas** | 1 section | 1 section | Content matches, but description is brief |
+| UK page | 7 video sections (Days 5-11), content matches Flask |
+| Greece page | 6 video sections (Days 1-8), content matches Flask |
+| Bahamas page | 1 video section, content matches Flask |
+| Custom domain | `2samples.com` and `www.2samples.com` on Cloudflare DNS |
+| Cloudflare Pages deployment | Auto-deploys on push to `main` |
 
 ### Not Yet Implemented
 
 | Feature | Details |
 |---------|---------|
-| **CI/CD for Astro** | `.github/workflows/ci.yml` only covers the Flask app. Need a workflow for the Astro build/test/deploy. |
-| **Custom domain / DNS** | No CNAME or DNS configuration for Cloudflare. Current production is on AWS EB. |
-| **Decommission AWS EB** | Once Cloudflare is stable and DNS is switched, shut down Elastic Beanstalk to save costs. |
+| **CI/CD for Astro** | `.github/workflows/ci.yml` only covers the Flask app. Need a workflow to run Astro tests on PRs. |
+| **Decommission AWS EB** | Shut down Elastic Beanstalk environment to save costs. Keep S3 and CloudFront (still serving media). |
 
 ## Video Data Strategy (Decided)
 
@@ -101,15 +99,17 @@ const placeholderVideos = [
 ];
 ```
 
-## Cloudflare Pages Deployment (Live)
+## Cloudflare Pages Deployment (Live — Production)
 
-- **URL:** `https://2samples-refactor-astro-cf.pages.dev/`
+- **Custom domain:** `https://2samples.com` / `https://www.2samples.com`
+- **Pages URL:** `https://2samples-refactor-astro-cf.pages.dev/`
 - **Project:** Connected to `Blkbrd77/2samples-refactor` repo via Git integration
 - **Root directory:** `2samples-astro`
 - **Build command:** `npm run build`
 - **Deploy command:** `npx wrangler pages deploy dist`
 - **Auto-deploys:** On push to `main`
 - **Config file:** `wrangler.jsonc` in `2samples-astro/`
+- **DNS:** Nameservers moved from Namecheap default to Cloudflare. Domain managed in Cloudflare DNS.
 
 ### Cloudflare Gotchas Encountered
 - Root `.gitignore` had `lib/` (Python pattern) which blocked `src/lib/` — fixed to `/lib/`
@@ -134,9 +134,9 @@ s3://2samples-static-assets-211125453069/
 
 ## Suggested Next Steps (Priority Order)
 
-1. **Add CI/CD workflow** for Astro (test + build on PRs)
-2. **Configure custom domain** — DNS CNAME switch from AWS EB to Cloudflare Pages
-3. **Decommission AWS EB** once Cloudflare is stable with custom domain
+1. **Add CI/CD workflow** for Astro (run tests on PRs before auto-deploy)
+2. **Decommission AWS EB** — terminate the environment, keep S3/CloudFront for media
+3. **Update jaysamples.com project description** — reflect Astro/Cloudflare stack
 
 ## Useful Commands
 
@@ -159,4 +159,5 @@ npm run typecheck    # TypeScript check
 | AWS CloudFront | CDN for media | `https://d1rhrn7ca7di1b.cloudfront.net` |
 | Inventaire.io | Book library data | User: `f9a685e15825d73108b49c3465224b03` |
 | Globe.gl | 3D globe visualization | Loaded from `https://unpkg.com/globe.gl` |
-| Cloudflare Pages | Astro hosting (live) | `https://2samples-refactor-astro-cf.pages.dev/` |
+| Cloudflare Pages | Astro hosting (production) | `https://2samples.com` |
+| Cloudflare DNS | Domain management | Nameservers on Cloudflare, domain registered at Namecheap |
