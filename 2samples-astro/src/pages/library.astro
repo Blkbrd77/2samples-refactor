@@ -2,22 +2,9 @@
 import Base from '../layouts/Base.astro';
 import BookCard from '../components/BookCard.astro';
 import type { LibraryData } from '../lib/library';
-import fs from 'node:fs';
-import path from 'node:path';
+import rawLibraryData from '../../public/library_data.json';
 
-// Load library data at build time
-let libraryData: LibraryData;
-try {
-  const jsonPath = path.join(process.cwd(), 'public', 'library_data.json');
-  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
-  libraryData = JSON.parse(fileContent);
-} catch {
-  libraryData = {
-    last_updated: 'N/A',
-    source: 'none',
-    books: [],
-  };
-}
+const libraryData = rawLibraryData as LibraryData;
 ---
 
 <Base title="Library">
