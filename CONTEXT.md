@@ -83,52 +83,38 @@ Family travel portfolio website migrating from **Flask/Python on AWS Elastic Bea
 
 | Feature | Details |
 |---------|---------|
-| **Dynamic S3 video fetching** | `storage.ts` has `getVideoData()` built and ready, but all destination pages use **hardcoded placeholder video arrays** instead of calling it. Each page has a `placeholderVideos` const with manually-constructed CloudFront URLs. Need to wire up actual S3 fetching or decide on build-time vs runtime approach. |
-| **Cloudflare deployment** | Adapter is configured, but no wrangler.toml exists. No Cloudflare Pages project has been set up yet (no deployment pipeline). |
 | **CI/CD for Astro** | `.github/workflows/ci.yml` only covers the Flask app. Need a workflow for the Astro build/test/deploy. |
 | **Custom domain / DNS** | No CNAME or DNS configuration for Cloudflare. Current production is on AWS EB. |
-| **Environment variables** | S3 credentials and config need to be set up in Cloudflare Pages environment (S3_BUCKET_NAME, CLOUDFRONT_URL, AWS_REGION, AWS creds). |
+| **Decommission AWS EB** | Once Cloudflare is stable and DNS is switched, shut down Elastic Beanstalk to save costs. |
 
-## Content Details for Missing Sections
+## Video Data Strategy (Decided)
 
-### UK Page — Missing Days 6-11 (from Flask `templates/uk.html`)
+Using **hardcoded CloudFront URLs** — no AWS credentials needed on Cloudflare. Each destination page has a `placeholderVideos` array with direct CloudFront URLs. When adding new videos, update the array in the page file. Most video files use `.mov` extension (verified against S3). The `storage.ts` S3 utilities remain in the codebase but are unused.
 
-- **Day Six:** Belfast, Poitin tasting, Mourne Seafood. Video: `Ireland-Scotland-Day-Six.mov`
-- **Day Seven:** Dublin to Glasgow via Ryan Air. Video: `Ireland-Scotland-Day-Seven.mov`
-- **Day Eight:** Semple Castle (family heritage), Loch Ness drive. Video: `Ireland-Scotland-Day-Eight.mov`
-- **Day Nine:** Caerlaverock Castle (Maxwell family), lunch in England, Melville Castle Hotel. Video: `Ireland-Scotland-England-Day-Nine.mov`
-- **Day Ten:** Edinburgh — Johnnie Walker tour, Declaration of Arbroath, underground tour, Makar's Mash. Video: `Edinburgh-Day-Ten.mov`
-- **Day Eleven:** Return to Orlando. Video: `Edinburgh-Day-Eleven.mp4`
-
-### Greece Page — Missing Day-by-Day (from Flask `templates/greece.html`)
-
-- **Day One:** Miami to Athens, Acropolis, Sense restaurant rooftop. Video: `Greece-Day-1.mov`
-- **Day Two:** Boarding Resilient Lady Virgin Cruise. Video: `Greece Day 2` (note: space in name)
-- **Days Three & Four:** Sea day, Rhodes wine tour. Video: `Greece Day 3&4`
-- **Day Five:** Bodrum Turkey, Ephesus, Virgin Mary House. Video: `Greece Day 5`
-- **Day Six:** Santorini catamaran, swimming in volcano. Video: `Greece Day 6`
-- **Days Seven & Eight:** Chania, Crete (Mykonos cancelled). Video: `Greece Days 7&8`
-
-## Video Data Pattern
-
-Each destination page currently uses this pattern (placeholder approach):
 ```typescript
 const placeholderVideos = [
   {
-    url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/VideoName.mp4',
+    url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/VideoName.mov',
     name: 'VideoName',
     still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/VideoName-still-001.jpg'
   },
 ];
 ```
 
-The `storage.ts` utility can fetch real data from S3:
-```typescript
-import { getVideoData } from '../lib/storage';
-const videos = await getVideoData('videos/'); // fetches from S3 at request time
-```
+## Cloudflare Pages Deployment (Live)
 
-Decision needed: use build-time fetching, runtime SSR fetching, or keep hardcoded CloudFront URLs (simplest, no AWS creds needed on Cloudflare).
+- **URL:** `https://2samples-refactor-astro-cf.pages.dev/`
+- **Project:** Connected to `Blkbrd77/2samples-refactor` repo via Git integration
+- **Root directory:** `2samples-astro`
+- **Build command:** `npm run build`
+- **Deploy command:** `npx wrangler pages deploy dist`
+- **Auto-deploys:** On push to `main`
+- **Config file:** `wrangler.jsonc` in `2samples-astro/`
+
+### Cloudflare Gotchas Encountered
+- Root `.gitignore` had `lib/` (Python pattern) which blocked `src/lib/` — fixed to `/lib/`
+- `node:fs` doesn't exist on Cloudflare Workers — library page now uses direct JSON import instead
+- Video files in S3 are mostly `.mov`, not `.mp4` — placeholder URLs must match actual extensions
 
 ## S3 Bucket Structure
 
@@ -144,16 +130,13 @@ s3://2samples-static-assets-211125453069/
 - **Centralized content:** All destination section data lives in `src/lib/destinations.ts` — add new sections there, pages render them automatically via `.map()`
 - **Component reuse:** `VideoSection.astro` renders any video section given a title, videoName, video array, and description
 - **Client-side interactivity:** Maps globe and Library search/filter use inline `<script>` tags with vanilla JS (no client framework)
-- **Build-time data:** Library loads `library_data.json` at build time via `Astro.glob` / `fetch`
+- **Build-time data:** Library loads `library_data.json` via direct JSON import (bundled by Vite, works on Cloudflare Workers)
 
 ## Suggested Next Steps (Priority Order)
 
-1. **Complete UK and Greece content** in `destinations.ts` — add missing day sections and video entries
-2. **Decide video data strategy** — hardcoded CloudFront URLs (no AWS creds needed) vs. S3 fetch at build/runtime
-3. **Set up Cloudflare Pages deployment** — create project, connect repo, configure build command (`npm run build`)
-4. **Add CI/CD workflow** for Astro (test + build + deploy to Cloudflare)
-5. **Configure environment** — custom domain, DNS, any needed env vars
-6. **Decommission AWS EB** once Cloudflare is stable
+1. **Add CI/CD workflow** for Astro (test + build on PRs)
+2. **Configure custom domain** — DNS CNAME switch from AWS EB to Cloudflare Pages
+3. **Decommission AWS EB** once Cloudflare is stable with custom domain
 
 ## Useful Commands
 
@@ -176,4 +159,4 @@ npm run typecheck    # TypeScript check
 | AWS CloudFront | CDN for media | `https://d1rhrn7ca7di1b.cloudfront.net` |
 | Inventaire.io | Book library data | User: `f9a685e15825d73108b49c3465224b03` |
 | Globe.gl | 3D globe visualization | Loaded from `https://unpkg.com/globe.gl` |
-| Cloudflare Pages | Target hosting (not yet deployed) | — |
+| Cloudflare Pages | Astro hosting (live) | `https://2samples-refactor-astro-cf.pages.dev/` |
