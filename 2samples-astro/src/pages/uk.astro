@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoSection from '../components/VideoSection.astro';
+import { destinations } from '../lib/destinations';
+
+const placeholderVideos = [
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Five.mov', name: 'Ireland-Scotland-Day-Five', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Five-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Six.mov', name: 'Ireland-Scotland-Day-Six', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Six-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Seven.mov', name: 'Ireland-Scotland-Day-Seven', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Seven-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Eight.mov', name: 'Ireland-Scotland-Day-Eight', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Eight-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-England-Day-Nine.mov', name: 'Ireland-Scotland-England-Day-Nine', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-England-Day-Nine-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Edinburgh-Day-Ten.mov', name: 'Edinburgh-Day-Ten', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Ten-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Edinburgh-Day-Eleven.mp4', name: 'Edinburgh-Day-Eleven', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Edinburgh-Day-Eleven-still-001.jpg' },
+];
+
+const destination = destinations.uk;
+const videos = placeholderVideos;
+---
+
+<Base title={destination.pageTitle}>
+  <div class="container">
+    <h1 style="text-align: center;">{destination.title}</h1>
+  </div>
+  {destination.sections.map((section) => (
+    <VideoSection
+      title={section.title}
+      videoName={section.videoName}
+      videos={videos}
+      description={section.description}
+    />
+  ))}
+</Base>

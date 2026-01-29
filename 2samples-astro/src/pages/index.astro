@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import Tile from '../components/Tile.astro';
+
+const CLOUDFRONT_URL = 'https://d1rhrn7ca7di1b.cloudfront.net';
+
+const tiles = [
+  {
+    image: `${CLOUDFRONT_URL}/images/IMG_3137.jpeg`,
+    imageAlt: 'Japan',
+    title: 'JAPAN',
+    description: "Our first trip abroad was to Japan. We flew to Osaka and met Jay's Sister Mandi up from Okinawa where she was stationed.",
+    buttonText: 'JAPAN',
+    buttonHref: '/japan',
+  },
+  {
+    image: `${CLOUDFRONT_URL}/images/RenderedImage.jpeg`,
+    imageAlt: 'Republic of Ireland',
+    title: 'REPUBLIC OF IRELAND',
+    description: 'We finally got to go on the trip we had originally planned in 2020 we all know what happened that year...',
+    buttonText: 'IRELAND',
+    buttonHref: '/ireland',
+  },
+  {
+    image: `${CLOUDFRONT_URL}/images/IMG_3305-225x300.jpeg`,
+    imageAlt: 'United Kingdom',
+    title: 'UNITED KINGDOM',
+    description: "Flew to Scotland, then enjoyed a memorable lunch in England, experiencing three-quarters of the UK. Wales awaits our next adventure!",
+    buttonText: 'UNITED KINGDOM',
+    buttonHref: '/uk',
+  },
+  {
+    image: `${CLOUDFRONT_URL}/images/JaySydParthenon.jpeg`,
+    imageAlt: 'Greece',
+    title: 'GREECE',
+    description: 'We are celbrating our 20th Wedding Anniversary with a cruise through the Greek Islands!',
+    buttonText: 'GREECE',
+    buttonHref: '/greece',
+  },
+  {
+    image: `${CLOUDFRONT_URL}/stills/Bahamas%202025-still-001.jpg`,
+    imageAlt: 'Bahamas',
+    title: 'BAHAMAS',
+    description: "Fourth of July cruise with Sydney's parents! Cape Canaveral to Nassau and MSC's private cay.",
+    buttonText: 'BAHAMAS',
+    buttonHref: '/bahamas',
+  },
+  {
+    image: `${CLOUDFRONT_URL}/images/globe-tile.jpg`,
+    imageAlt: 'Our Travels',
+    title: 'OUR TRAVELS',
+    description: 'Explore our journey across the globe with an interactive 3D map, family destinations, and travel timeline.',
+    buttonText: 'OUR TRAVELS',
+    buttonHref: '/maps',
+  },
+];
+---
+
+<Base title="HOME">
+  <div class="container">
+    <h1>HOME</h1>
+    <div class="tiles">
+      {tiles.map((tile) => (
+        <Tile
+          image={tile.image}
+          imageAlt={tile.imageAlt}
+          title={tile.title}
+          description={tile.description}
+          buttonText={tile.buttonText}
+          buttonHref={tile.buttonHref}
+        />
+      ))}
+    </div>
+  </div>
+</Base>

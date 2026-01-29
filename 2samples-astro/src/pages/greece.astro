@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoSection from '../components/VideoSection.astro';
+import { destinations } from '../lib/destinations';
+
+const placeholderVideos = [
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Greece-Day-1.mov', name: 'Greece-Day-1', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Greece-Day-1-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Greece%20Day%202.mov', name: 'Greece Day 2', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Greece%20Day%202-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Greece%20Day%203%264.mov', name: 'Greece Day 3&4', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Greece%20Day%203%264-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Greece%20Day%205.mov', name: 'Greece Day 5', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Greece%20Day%205-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Greece%20Day%206.mov', name: 'Greece Day 6', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Greece%20Day%206-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Greece%20Days%207%268.mov', name: 'Greece Days 7&8', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Greece%20Days%207%268-still-001.jpg' },
+];
+
+const destination = destinations.greece;
+const videos = placeholderVideos;
+---
+
+<Base title={destination.pageTitle}>
+  <div class="container">
+    <h1 style="text-align: center;">{destination.title}</h1>
+  </div>
+  {destination.sections.map((section) => (
+    <VideoSection
+      title={section.title}
+      videoName={section.videoName}
+      videos={videos}
+      description={section.description}
+    />
+  ))}
+</Base>

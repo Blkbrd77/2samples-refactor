@@ -1,0 +1,30 @@
+---
+import type { Video } from '../lib/types';
+
+interface Props {
+  title: string;
+  videoName: string;
+  videos: Video[];
+  description: string;
+}
+
+const { title, videoName, videos, description } = Astro.props;
+
+const video = videos.find((v) => v.name === videoName);
+---
+
+{video && (
+  <div class="video-container">
+    <div class="video-wrapper">
+      <h2>{title}</h2>
+      <video controls poster={video.still || undefined}>
+        <source src={video.url} type={`video/${video.url.split('.').pop()}`} />
+        <source src={video.url} type="video/mp4" />
+        <p>Video failed to load. <a href={video.url}>Download</a> or check back later.</p>
+      </video>
+    </div>
+    <div class="video-text">
+      <p set:html={description} />
+    </div>
+  </div>
+)}

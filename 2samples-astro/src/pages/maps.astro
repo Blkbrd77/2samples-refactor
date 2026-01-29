@@ -1,0 +1,363 @@
+---
+import Base from '../layouts/Base.astro';
+
+const familyMembers = [
+  {
+    id: 'jay',
+    name: 'Jay',
+    initial: 'J',
+    destinationCount: 14,
+    destinations: ['Greece', 'Bahamas', 'Ireland', 'Northern Ireland', 'Scotland', 'England', 'Japan', 'Turkey', 'Mexico'],
+    soloDestinations: ['Germany', 'Iraq', 'Taiwan', 'Costa Rica', 'Portugal'],
+  },
+  {
+    id: 'sydney',
+    name: 'Sydney',
+    initial: 'S',
+    destinationCount: 9,
+    destinations: ['Greece', 'Bahamas', 'Ireland', 'Northern Ireland', 'Scotland', 'England', 'Japan', 'Turkey', 'Mexico'],
+    soloDestinations: [],
+  },
+  {
+    id: 'reagan',
+    name: 'Reagan',
+    initial: 'R',
+    destinationCount: 7,
+    destinations: ['Greece', 'Bahamas', 'Ireland', 'Northern Ireland', 'Scotland', 'England', 'Japan'],
+    soloDestinations: [],
+  },
+  {
+    id: 'taylor',
+    name: 'Taylor',
+    initial: 'T',
+    destinationCount: 7,
+    destinations: ['Greece', 'Bahamas', 'Ireland', 'Northern Ireland', 'Scotland', 'England', 'Japan'],
+    soloDestinations: [],
+  },
+];
+
+const timeline = [
+  {
+    year: '2026',
+    title: 'Mediterranean Cruise',
+    travelers: ['jay', 'sydney', 'reagan', 'taylor'],
+    description: 'MSC cruise departing from Rome, visiting Spain, France, and Italy.',
+    upcoming: true,
+  },
+  {
+    year: '2025',
+    title: 'Bahamas Cruise',
+    travelers: ['jay', 'sydney', 'reagan', 'taylor'],
+    description: "A Fourth of July cruise with Sydney's parents, departing Cape Canaveral and visiting Nassau and MSC's private cay.",
+  },
+  {
+    year: '2025',
+    title: 'Greece Adventure',
+    link: '/greece',
+    travelers: ['jay', 'sydney', 'reagan', 'taylor'],
+    description: 'Athens and the Acropolis followed by a Greek island cruise aboard the Resilient Lady. Rhodes wine tours, ancient Ephesus in Turkey, sailing in Santorini, and exploring Crete.',
+  },
+  {
+    year: '2023',
+    title: 'Ireland & UK',
+    links: [{ text: 'Ireland', href: '/ireland' }, { text: 'UK', href: '/uk' }],
+    travelers: ['jay', 'sydney', 'reagan', 'taylor'],
+    description: 'Eleven days across the Emerald Isle and Great Britain. Dublin, Blarney Castle, Cliffs of Moher, Giants Causeway, Glasgow, Loch Ness, and Edinburgh.',
+  },
+  {
+    year: '2019',
+    title: 'Japan',
+    link: '/japan',
+    travelers: ['jay', 'sydney', 'reagan', 'taylor'],
+    description: 'Explored Osaka, rode the Bullet Train to Nagoya, and experienced Tokyo ahead of the 2020 Olympics.',
+  },
+  {
+    year: '2017',
+    title: 'Taiwan',
+    travelers: ['jay'],
+    description: 'Business trip to attend program meetings with a customer project.',
+  },
+  {
+    year: '2016',
+    title: 'Portugal',
+    travelers: ['jay'],
+    description: 'NATO Seasparrow Missile Program Management Review.',
+  },
+  {
+    year: '2010',
+    title: 'Iraq',
+    travelers: ['jay'],
+    description: 'Six month deployment courtesy of Uncle Sam, serving as Ops Officer for a DCMA unit.',
+  },
+  {
+    year: '1999',
+    title: 'Mexico',
+    travelers: ['jay'],
+    description: 'Quick trip to Tijuana visiting a buddy stationed in San Diego with the Navy.',
+  },
+  {
+    year: '1996',
+    title: 'Costa Rica',
+    travelers: ['jay'],
+    description: 'Graduation surf trip with buddies to Jaco, surfing spots up and down the Pacific coast.',
+  },
+];
+---
+
+<Base title="Travel Map">
+  <style>
+    .maps-container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+    .maps-header { text-align: center; margin-bottom: 40px; }
+    .maps-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: #000; }
+    .maps-header p { color: #666; font-size: 1.1rem; }
+    .filter-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .filter-tab { padding: 12px 25px; border: 2px solid #000; background: #fff; border-radius: 30px; cursor: pointer; transition: all 0.3s ease; font-weight: bold; font-size: 0.95rem; }
+    .filter-tab:hover, .filter-tab.active { background: #000; color: #fff; }
+    .filter-tab.jay { border-color: #F4D03F; }
+    .filter-tab.jay:hover, .filter-tab.jay.active { background: #F4D03F; color: #000; }
+    .filter-tab.sydney { border-color: #FF6B9D; }
+    .filter-tab.sydney:hover, .filter-tab.sydney.active { background: #FF6B9D; color: #000; }
+    .filter-tab.reagan { border-color: #FF8A65; }
+    .filter-tab.reagan:hover, .filter-tab.reagan.active { background: #FF8A65; color: #000; }
+    .filter-tab.taylor { border-color: #9B59B6; }
+    .filter-tab.taylor:hover, .filter-tab.taylor.active { background: #9B59B6; color: #fff; }
+    .content-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .family-section { display: flex; flex-direction: column; gap: 25px; }
+    .family-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border-left: 5px solid; transition: transform 0.3s ease; }
+    .family-card:hover { transform: translateX(5px); }
+    .family-card.hidden { display: none; }
+    .family-card.jay { border-color: #F4D03F; }
+    .family-card.sydney { border-color: #FF6B9D; }
+    .family-card.reagan { border-color: #FF8A65; }
+    .family-card.taylor { border-color: #9B59B6; }
+    .family-card-header { padding: 20px 25px; display: flex; align-items: center; gap: 15px; background: linear-gradient(145deg, #000000, #404142); }
+    .avatar { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #000; }
+    .family-card.jay .avatar { background: #F4D03F; }
+    .family-card.sydney .avatar { background: #FF6B9D; }
+    .family-card.reagan .avatar { background: #FF8A65; }
+    .family-card.taylor .avatar { background: #9B59B6; color: #fff; }
+    .member-info h3 { color: #fff; margin: 0; font-size: 1.3rem; }
+    .member-info p { color: #ccc; margin: 5px 0 0 0; font-size: 0.9rem; }
+    .family-card-body { padding: 20px 25px; }
+    .destinations-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .destination-tag { background: #f0f0f0; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; }
+    .destination-tag.solo { background: #e0e0e0; font-style: italic; font-size: 0.8rem; }
+    .map-section { position: sticky; top: 80px; }
+    .interactive-map { background: linear-gradient(145deg, #1a1a2e, #16213e); border-radius: 20px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+    .map-title { color: #fff; text-align: center; margin-bottom: 20px; font-size: 1.3rem; }
+    .globe-container { width: 100%; max-width: 400px; height: 400px; margin: 0 auto; border-radius: 50%; position: relative; overflow: hidden; border: 3px solid #FFD700; box-shadow: 0 0 50px rgba(255,215,0,0.25); background: #000; }
+    #globe { width: 100%; height: 100%; cursor: grab; }
+    .stats-row { display: flex; justify-content: space-around; margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); }
+    .stat-item { text-align: center; }
+    .stat-item .number { font-size: 2rem; font-weight: bold; color: #FFD700; }
+    .stat-item .label { font-size: 0.85rem; color: #ccc; }
+    .timeline-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid #eee; }
+    .timeline-section h2 { text-align: center; margin-bottom: 40px; color: #000; }
+    .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 50px; }
+    .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #F4D03F, #FF6B9D, #FF8A65, #9B59B6); border-radius: 2px; }
+    .timeline-item { position: relative; margin-bottom: 40px; padding: 25px; background: #fff; border-radius: 15px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-left: 30px; transition: opacity 0.3s ease; }
+    .timeline-item.hidden { display: none; }
+    .timeline-item::before { content: ''; position: absolute; left: -42px; top: 30px; width: 20px; height: 20px; background: #fff; border: 4px solid #F4D03F; border-radius: 50%; }
+    .timeline-year { position: absolute; left: -120px; top: 25px; font-weight: bold; color: #000; font-size: 1.1rem; }
+    .timeline-item h3 { margin: 0 0 10px 0; color: #000; display: flex; align-items: center; gap: 10px; }
+    .timeline-item h3 a { color: #000; text-decoration: none; }
+    .timeline-item h3 a:hover { color: #FFD700; }
+    .timeline-travelers { display: flex; gap: 8px; margin-bottom: 10px; }
+    .mini-badge { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; color: #000; }
+    .mini-badge.jay { background: #F4D03F; }
+    .mini-badge.sydney { background: #FF6B9D; }
+    .mini-badge.reagan { background: #FF8A65; }
+    .mini-badge.taylor { background: #9B59B6; color: #fff; }
+    .timeline-item p { margin: 0; color: #666; line-height: 1.6; }
+    .timeline-item.upcoming { border: 2px dashed #FFD700; }
+    .upcoming-badge { background: #FFD700; color: #000; font-size: 0.7rem; padding: 3px 10px; border-radius: 15px; font-weight: bold; text-transform: uppercase; }
+    @media (max-width: 900px) {
+      .content-wrapper { grid-template-columns: 1fr; }
+      .map-section { position: static; order: -1; }
+      .timeline-year { position: static; margin-bottom: 10px; display: block; }
+      .timeline { padding-left: 40px; }
+      .timeline-item { margin-left: 20px; }
+    }
+  </style>
+
+  <div class="maps-container">
+    <div class="maps-header">
+      <h1>Where We've Been</h1>
+      <p>A family journey across the globe</p>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All Trips</button>
+      <button class="filter-tab jay" data-filter="jay">Jay</button>
+      <button class="filter-tab sydney" data-filter="sydney">Sydney</button>
+      <button class="filter-tab reagan" data-filter="reagan">Reagan</button>
+      <button class="filter-tab taylor" data-filter="taylor">Taylor</button>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="family-section">
+        {familyMembers.map((member) => (
+          <div class={`family-card ${member.id}`} data-member={member.id}>
+            <div class="family-card-header">
+              <div class="avatar">{member.initial}</div>
+              <div class="member-info">
+                <h3>{member.name}</h3>
+                <p>{member.destinationCount} destinations visited</p>
+              </div>
+            </div>
+            <div class="family-card-body">
+              <div class="destinations-list">
+                {member.destinations.map((dest) => (
+                  <span class="destination-tag">{dest}</span>
+                ))}
+                {member.soloDestinations.map((dest) => (
+                  <span class="destination-tag solo">{dest}*</span>
+                ))}
+              </div>
+              {member.soloDestinations.length > 0 && (
+                <p style="font-size: 0.75rem; color: #999; margin-top: 10px;">*Solo trips</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="map-section">
+        <div class="interactive-map">
+          <h3 class="map-title">Our Global Footprint</h3>
+          <div class="globe-container">
+            <div id="globe"></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <div class="number">14</div>
+              <div class="label">Countries</div>
+            </div>
+            <div class="stat-item">
+              <div class="number">3</div>
+              <div class="label">Continents</div>
+            </div>
+            <div class="stat-item">
+              <div class="number">4</div>
+              <div class="label">Family Trips</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-section">
+      <h2>Our Journey Through Time</h2>
+      <div class="timeline">
+        {timeline.map((item) => (
+          <div class={`timeline-item ${item.upcoming ? 'upcoming' : ''}`} data-travelers={item.travelers.join(' ')}>
+            <span class="timeline-year">{item.year}</span>
+            <h3>
+              {item.link ? (
+                <a href={item.link}>{item.title}</a>
+              ) : item.links ? (
+                <>
+                  {item.links.map((link, i) => (
+                    <>
+                      <a href={link.href}>{link.text}</a>
+                      {i < item.links.length - 1 && ' & '}
+                    </>
+                  ))}
+                </>
+              ) : (
+                item.title
+              )}
+              {item.upcoming && <span class="upcoming-badge">Upcoming</span>}
+            </h3>
+            <div class="timeline-travelers">
+              {item.travelers.map((t) => (
+                <span class={`mini-badge ${t}`}>{t[0].toUpperCase()}</span>
+              ))}
+            </div>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <script is:inline src="https://unpkg.com/globe.gl"></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      const allDestinations = [
+        { name: 'Japan', lat: 35.6762, lng: 139.6503, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Ireland', lat: 53.1424, lng: -7.6921, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Northern Ireland', lat: 54.7877, lng: -6.4923, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Scotland', lat: 56.4907, lng: -4.2026, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'England', lat: 52.3555, lng: -1.1743, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Greece', lat: 39.0742, lng: 21.8243, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Turkey', lat: 38.9637, lng: 35.2433, travelers: ['jay', 'sydney'] },
+        { name: 'Bahamas', lat: 25.0343, lng: -77.3963, travelers: ['jay', 'sydney', 'reagan', 'taylor'] },
+        { name: 'Mexico', lat: 23.6345, lng: -102.5528, travelers: ['jay', 'sydney'] },
+        { name: 'Germany', lat: 51.1657, lng: 10.4515, travelers: ['jay'] },
+        { name: 'Iraq', lat: 33.2232, lng: 43.6793, travelers: ['jay'] },
+        { name: 'Taiwan', lat: 23.6978, lng: 120.9605, travelers: ['jay'] },
+        { name: 'Costa Rica', lat: 9.7489, lng: -83.7534, travelers: ['jay'] },
+        { name: 'Portugal', lat: 39.3999, lng: -8.2245, travelers: ['jay'] }
+      ];
+
+      const colorMap = { jay: '#F4D03F', sydney: '#FF6B9D', reagan: '#FF8A65', taylor: '#9B59B6' };
+
+      function getFilteredDestinations(filter) {
+        return allDestinations
+          .filter(d => filter === 'all' || d.travelers.includes(filter))
+          .map(d => ({ ...d, color: filter === 'all' ? '#FFFFFF' : colorMap[filter] }));
+      }
+
+      const globeContainer = document.getElementById('globe');
+      const containerWidth = globeContainer.offsetWidth || 400;
+
+      const globe = Globe()
+        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+        .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .width(containerWidth)
+        .height(containerWidth)
+        .pointsData(getFilteredDestinations('all'))
+        .pointLat('lat')
+        .pointLng('lng')
+        .pointColor('color')
+        .pointAltitude(0.02)
+        .pointRadius(0.6)
+        .pointLabel(d => `<div style="background: rgba(0,0,0,0.8); color: ${d.color}; padding: 8px 12px; border-radius: 8px; font-weight: bold;">${d.name}</div>`)
+        .enablePointerInteraction(true)
+        (globeContainer);
+
+      globe.controls().autoRotate = true;
+      globe.controls().autoRotateSpeed = 0.5;
+      globe.pointOfView({ lat: 40, lng: 20, altitude: 2.5 });
+
+      globe.onPointClick(point => {
+        globe.pointOfView({ lat: point.lat, lng: point.lng, altitude: 1.5 }, 1000);
+      });
+
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const familyCards = document.querySelectorAll('.family-card');
+      const timelineItems = document.querySelectorAll('.timeline-item');
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          this.classList.add('active');
+
+          const filter = this.dataset.filter;
+          globe.pointsData(getFilteredDestinations(filter));
+
+          familyCards.forEach(card => {
+            card.classList.toggle('hidden', filter !== 'all' && card.dataset.member !== filter);
+          });
+
+          timelineItems.forEach(item => {
+            const travelers = item.dataset.travelers.split(' ');
+            item.classList.toggle('hidden', filter !== 'all' && !travelers.includes(filter));
+          });
+        });
+      });
+    });
+  </script>
+</Base>

@@ -1,0 +1,46 @@
+---
+import type { Book } from '../lib/library';
+
+interface Props {
+  book: Book;
+}
+
+const { book } = Astro.props;
+const fallbackImage = 'https://d1rhrn7ca7di1b.cloudfront.net/images/comingSoon.jpg';
+---
+
+<div
+  class="book-card"
+  data-status={book.status}
+  data-title={book.title.toLowerCase()}
+  data-author={book.author.toLowerCase()}
+>
+  <div class="book-cover">
+    <img
+      src={book.cover || fallbackImage}
+      alt={book.title}
+      onerror={`this.src='${fallbackImage}'`}
+    />
+    {book.status === 'reading' && (
+      <span class="book-badge reading">Reading</span>
+    )}
+    {book.status === 'to-read' && (
+      <span class="book-badge to-read">To Read</span>
+    )}
+  </div>
+  <div class="book-info">
+    <h3 class="book-title">{book.title}</h3>
+    <p class="book-author">{book.author}</p>
+    <p class="book-meta">{book.category} | {book.year || 'N/A'}</p>
+    {book.rating && (
+      <div class="book-rating">
+        {Array.from({ length: book.rating }).map(() => (
+          <span class="star filled">&#9733;</span>
+        ))}
+        {Array.from({ length: 5 - book.rating }).map(() => (
+          <span class="star">&#9733;</span>
+        ))}
+      </div>
+    )}
+  </div>
+</div>

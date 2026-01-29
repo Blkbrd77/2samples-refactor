@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+import BookCard from '../components/BookCard.astro';
+import type { LibraryData } from '../lib/library';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load library data at build time
+let libraryData: LibraryData;
+try {
+  const jsonPath = path.join(process.cwd(), 'public', 'library_data.json');
+  const fileContent = fs.readFileSync(jsonPath, 'utf-8');
+  libraryData = JSON.parse(fileContent);
+} catch {
+  libraryData = {
+    last_updated: 'N/A',
+    source: 'none',
+    books: [],
+  };
+}
+---
+
+<Base title="Library">
+  <div class="container">
+    <h1 style="text-align: center;">LIBRARY</h1>
+    <p style="text-align: center; margin-bottom: 10px;">Books we've read, are reading, or want to read.</p>
+    <p style="text-align: center; font-size: 12px; color: #666; margin-bottom: 30px;">
+      Last updated: {libraryData.last_updated} | <span id="visible-count">{libraryData.books.length} books</span>
+    </p>
+
+    <!-- Search Box -->
+    <div class="library-search">
+      <input type="text" id="book-search" placeholder="Search by title or author..." autocomplete="off" />
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="library-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="read">Read</button>
+      <button class="filter-btn" data-filter="reading">Reading</button>
+      <button class="filter-btn" data-filter="to-read">To Read</button>
+    </div>
+
+    <!-- Book Grid -->
+    <div class="book-grid">
+      {libraryData.books.map((book) => (
+        <BookCard book={book} />
+      ))}
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; font-size: 12px; color: #666;">
+      Powered by <a href="https://inventaire.io" target="_blank" style="color: #FFCA28;">Inventaire</a>
+    </p>
+  </div>
+
+  <script is:inline>
+    // State
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    // Apply both filter and search
+    function applyFilters() {
+      const searchTerm = currentSearch.toLowerCase();
+      document.querySelectorAll('.book-card').forEach(card => {
+        const matchesFilter = currentFilter === 'all' || card.dataset.status === currentFilter;
+        const matchesSearch = !searchTerm ||
+          card.dataset.title.includes(searchTerm) ||
+          card.dataset.author.includes(searchTerm);
+
+        if (matchesFilter && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Update visible count
+      const visibleCount = document.querySelectorAll('.book-card[style="display: flex;"]').length ||
+        document.querySelectorAll('.book-card:not([style*="display: none"])').length;
+      const totalCount = document.querySelectorAll('.book-card').length;
+      const countEl = document.getElementById('visible-count');
+      if (countEl) {
+        countEl.textContent = visibleCount === totalCount ?
+          `${totalCount} books` :
+          `Showing ${visibleCount} of ${totalCount} books`;
+      }
+    }
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentFilter = this.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('book-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        currentSearch = this.value;
+        applyFilters();
+      });
+
+      // Clear search on Escape
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          this.value = '';
+          currentSearch = '';
+          applyFilters();
+        }
+      });
+    }
+  </script>
+</Base>

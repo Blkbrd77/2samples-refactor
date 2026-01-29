@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoSection from '../components/VideoSection.astro';
+import { destinations } from '../lib/destinations';
+
+const placeholderVideos = [
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-One.mp4', name: 'Ireland-Scotland-Day-One', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-One-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Two.mp4', name: 'Ireland-Scotland-Day-Two', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Two-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Three.mp4', name: 'Ireland-Scotland-Day-Three', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Three-still-001.jpg' },
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Ireland-Scotland-Day-Four.mp4', name: 'Ireland-Scotland-Day-Four', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Ireland-Scotland-Day-Four-still-001.jpg' },
+];
+
+const destination = destinations.ireland;
+const videos = placeholderVideos;
+---
+
+<Base title={destination.pageTitle}>
+  <div class="container">
+    <h1 style="text-align: center;">{destination.title}</h1>
+  </div>
+  {destination.sections.map((section) => (
+    <VideoSection
+      title={section.title}
+      videoName={section.videoName}
+      videos={videos}
+      description={section.description}
+    />
+  ))}
+</Base>

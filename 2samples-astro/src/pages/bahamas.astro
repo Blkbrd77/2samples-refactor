@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoSection from '../components/VideoSection.astro';
+import { destinations } from '../lib/destinations';
+
+const placeholderVideos = [
+  { url: 'https://d1rhrn7ca7di1b.cloudfront.net/videos/Bahamas%202025.mp4', name: 'Bahamas 2025', still: 'https://d1rhrn7ca7di1b.cloudfront.net/stills/Bahamas%202025-still-001.jpg' },
+];
+
+const destination = destinations.bahamas;
+const videos = placeholderVideos;
+---
+
+<Base title={destination.pageTitle}>
+  <div class="container">
+    <h1 style="text-align: center;">{destination.title}</h1>
+  </div>
+  {destination.sections.map((section) => (
+    <VideoSection
+      title={section.title}
+      videoName={section.videoName}
+      videos={videos}
+      description={section.description}
+    />
+  ))}
+</Base>
